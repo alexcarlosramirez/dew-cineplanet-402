@@ -5,7 +5,7 @@ import org.junit.*;
 import pe.edu.upc.dw2011cp007.model.UsuarioModel;
 import pe.edu.upc.dw2011cp007.repository.UsuarioRepository;
 import static org.junit.Assert.*;//importar todos los metodos estaticos
-
+ 
 public class UsuarioTest {
 
 	@Test //recordar que esto identifica que es un metodo de prueba
