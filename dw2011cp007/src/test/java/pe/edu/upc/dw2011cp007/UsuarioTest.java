@@ -9,6 +9,12 @@ import static org.junit.Assert.*;//importar todos los metodos estaticos
   
 public class UsuarioTest {
 
+	
+	
+	
+	
+	
+	
 	@Test //recordar que esto identifica que es un metodo de prueba
 	public void grabarUsuario() {
 		 
@@ -23,7 +29,7 @@ public class UsuarioTest {
 		usuario.setJefeInmediato("Loquillo");
 		usuario.setTipoDocumento("DNI");
 		usuario.setNumeroDocumento("43689535");
-		usuario.setPasswordUsuario("123456");
+		usuario.setPasswordUsuario("");
 		usuario.setEstadoPassword("Vencida");
 		usuario.setEstadoUsuario("Activo");  //Activo, Suspendido o Bloqueado. 
 		usuario.setNroVecesLoguedo(0);//numero de veces logueado
