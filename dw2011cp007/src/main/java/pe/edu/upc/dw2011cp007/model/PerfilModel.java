@@ -39,15 +39,8 @@ public class PerfilModel {
 	 */
 	private int estadoPerfil;
 	
-	/*	0= Exitoso
-	 * 	1= Error en logitud NombrePerfil
-	 * 	2= Funcion ya asignada
-	 */
 	private int retorno;
 	
-	//private ArrayList<FuncionesModel> listaFunciones;
-
-
 	public int getIdPerfil() {
 		return idPerfil;
 	}
