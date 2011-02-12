@@ -1,5 +1,7 @@
 package pe.edu.upc.dw2011cp007.model;
 
+import java.util.HashMap;
+
 public class UsuarioModel {
 
 	private String idUsuario;	

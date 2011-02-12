@@ -42,10 +42,12 @@ public class PerfilRepository {
 	}
 	
 	public int buscarperfil(String perfil){
+		//System.out.println("buscar " + perfil);
 		int retorno=0;
 		Iterator itbp= CtrlPerfil.entrySet().iterator();
 		while(itbp.hasNext()){
 			Map.Entry<Integer, PerfilModel> lp=(Map.Entry<Integer, PerfilModel>)itbp.next();
+		//	System.out.println("recorre " + lp.getValue().getNombrePerfil());
 			if (lp.getValue().getNombrePerfil().equals(perfil)){
 				retorno=1;
 			}
