@@ -7,19 +7,37 @@ import java.util.Map;
 import pe.edu.upc.dw2011cp007.model.PerfilModel;
 
 public class PerfilRepository {
-	private HashMap<Integer,PerfilModel> CtrlPerfil=new HashMap<Integer, PerfilModel>();
-	private HashMap<Integer, String> listafunciones;
-	private PerfilModel perfil;
 
+	/*	Errores
+	 *  0= Exitoso
+	 * 	1= Error en logitud NombrePerfil
+	 * 	2= Funcion ya asignada
+	 */
+	private HashMap<Integer,PerfilModel> CtrlPerfil=new HashMap<Integer, PerfilModel>();
+	HashMap<Integer, String> listafunciones;
+	
+
+	public int asignarfuncion(String perfil, String funcion){
+		int retorno=0;
+		PerfilModel buscado=new PerfilModel();
+		buscado=buscarperfil(perfil);
+		
+		int vretornado= buscarfuncion(buscado, funcion);
+		if (vretornado==0){
+			buscado.getListadofuncion().put(buscado.getListadofuncion().size()+1, funcion);
+			System.out.println(buscado.getListadofuncion().size()+" "+ funcion +" Registrado");
+		}
+		retorno=vretornado;
+		return retorno;
+	}
 	public int grabarperfil(int operacion,PerfilModel perfilmodel) {
 		
 		// TODO Auto-generated method stub
 		//listafunciones= new HashMap<Integer, String>();
 		perfilmodel.setIdPerfil(operacion);
 		String nomperfil= perfilmodel.getNombrePerfil();
-		int ret=buscarperfil(nomperfil);
-		
-		if (ret==1){
+		PerfilModel ret=buscarperfil(nomperfil);
+		if (ret != null){
 			System.out.println("Nombre de Perfil ya existe");
 			return 1;
 		}else{
@@ -29,30 +47,30 @@ public class PerfilRepository {
 		}
 	}
 	
-	public int buscarfuncion(String funcion){
+	public int buscarfuncion(PerfilModel perfilmodel,String funcion){
 		int retorno=0;
-		listafunciones=perfil.getListadofuncion();
+		listafunciones=perfilmodel.getListadofuncion();
 		Iterator it= listafunciones.entrySet().iterator();
 		while(it.hasNext()){
 			Map.Entry<Integer, String> lf=(Map.Entry<Integer, String>)it.next();
-			
+			if (lf.getValue().equals(funcion)){
+				retorno=2;
+			}
 		}
-		
 		return retorno;
 	}
 	
-	public int buscarperfil(String perfil){
-		//System.out.println("buscar " + perfil);
-		int retorno=0;
+	public PerfilModel buscarperfil(String perfil){
+		PerfilModel retorno=null;
 		Iterator itbp= CtrlPerfil.entrySet().iterator();
 		while(itbp.hasNext()){
 			Map.Entry<Integer, PerfilModel> lp=(Map.Entry<Integer, PerfilModel>)itbp.next();
-		//	System.out.println("recorre " + lp.getValue().getNombrePerfil());
 			if (lp.getValue().getNombrePerfil().equals(perfil)){
-				retorno=1;
+				retorno=lp.getValue();
 			}
 		}
 		return retorno;
 	}
 
+	
 }
