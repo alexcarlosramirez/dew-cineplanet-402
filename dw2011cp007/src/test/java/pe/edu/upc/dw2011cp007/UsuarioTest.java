@@ -96,5 +96,39 @@ public class UsuarioTest {
 		
 	}
 	
+	@Test
+	public void loguearusuario(){
+	/////LOGUEAR UDUARIO
+		int retorno;
+		retorno=0;
+		grabarUsuario();
+		//*LOGUEARUSUARIO (INTENTO NRO,USUARIO,PASSWORD)*//
+		String idUsuarioant="";
+		int i=0;
+		int numIntentos=0;
+		
+			while ( i<4 ) {
+		
+			i++;
+			String idUsuario="YLopezVito";
+			String password="YLopezVitogfdg";
+			if (numIntentos > 0 && idUsuario==idUsuarioant){
+				numIntentos++;
+			}
+			else	{
+				numIntentos=1;
+			}
+			retorno=repository.loguearUsuario(numIntentos,idUsuario,password);
+			if (retorno==0){
+				i=4;
+			}
+			idUsuarioant=idUsuario;
+			if (retorno==2){
+				retorno=0;
+			}
+			assertTrue("Fin Logueo: "+ retorno,retorno==0);
+
+		} 
+	}
 	
 }
