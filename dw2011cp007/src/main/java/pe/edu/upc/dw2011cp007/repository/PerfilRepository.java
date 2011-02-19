@@ -21,7 +21,10 @@ public class PerfilRepository {
 		int retorno=0;
 		PerfilModel buscado=new PerfilModel();
 		buscado=buscarperfil(perfil);
-		
+		if (buscado==null){
+			
+			return 1;
+		}
 		int vretornado= buscarfuncion(buscado, funcion);
 		if (vretornado==0){
 			buscado.getListadofuncion().put(buscado.getListadofuncion().size()+1, funcion);
@@ -30,18 +33,20 @@ public class PerfilRepository {
 		retorno=vretornado;
 		return retorno;
 	}
-	public int grabarperfil(int operacion,PerfilModel perfilmodel) {
+	public int grabarperfil(PerfilModel perfilmodel) {
 		
 		// TODO Auto-generated method stub
-		//listafunciones= new HashMap<Integer, String>();
-		perfilmodel.setIdPerfil(operacion);
+		
 		String nomperfil= perfilmodel.getNombrePerfil();
-		PerfilModel ret=buscarperfil(nomperfil);
+		PerfilModel ret=new PerfilModel();
+		ret=buscarperfil(nomperfil);
 		if (ret != null){
 			System.out.println("Nombre de Perfil ya existe");
 			return 1;
 		}else{
-			CtrlPerfil.put(perfilmodel.getIdPerfil(), perfilmodel);
+			int id=CtrlPerfil.size()+1;
+			perfilmodel.setIdPerfil(id);
+			CtrlPerfil.put(id, perfilmodel);
 			System.out.println("Se registro satisfactoriamente el perfil " + perfilmodel.getIdPerfil()+" - "+perfilmodel.getNombrePerfil());
 			return 0;
 		}
@@ -69,6 +74,17 @@ public class PerfilRepository {
 				retorno=lp.getValue();
 			}
 		}
+		return retorno;
+	}
+	public int actualizarvigencia(String perfil, int vigencia) {
+		// TODO Auto-generated method stub
+		int retorno=0;
+		PerfilModel buscado;
+		buscado=buscarperfil(perfil);
+		if (buscado==null){
+			retorno=1;
+		}
+		buscado.setVigenciaPerfil(vigencia);
 		return retorno;
 	}
 
