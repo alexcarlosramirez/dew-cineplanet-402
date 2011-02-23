@@ -106,7 +106,7 @@ public class PerfilesTest {
 		PerfilModel perfil_buscado;//=new PerfilModel();
 		grabarperfil();
 		perfil_buscado=repository.buscarperfil("Administrador");
-		assertNull("No se guardo la informacion correctamente", perfil_buscado);
+		assertNotNull("Informacion no se guardo correctamente", perfil_buscado);
 		System.out.println(perfil_buscado.getIdPerfil()+"");
 		System.out.println(perfil_buscado.getNombrePerfil());
 		System.out.println(perfil_buscado.getDescripcionPerfil());
