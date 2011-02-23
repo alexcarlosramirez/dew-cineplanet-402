@@ -33,6 +33,12 @@ public class PerfilRepository {
 		retorno=vretornado;
 		return retorno;
 	}
+	public HashMap<Integer, PerfilModel> getCtrlPerfil() {
+		return CtrlPerfil;
+	}
+	public void setCtrlPerfil(HashMap<Integer, PerfilModel> ctrlPerfil) {
+		CtrlPerfil = ctrlPerfil;
+	}
 	public int grabarperfil(PerfilModel perfilmodel) {
 		
 		// TODO Auto-generated method stub
