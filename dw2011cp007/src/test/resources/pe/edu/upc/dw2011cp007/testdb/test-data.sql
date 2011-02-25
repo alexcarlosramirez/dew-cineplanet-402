@@ -1,3 +1,4 @@
+
 insert into re_tb_pais values (1, 'PERU');
 insert into re_tb_pais values (2, 'COLOMBIA');
 insert into re_tb_pais values (3, 'BRAZIL');
