@@ -13,10 +13,21 @@ import static org.junit.Assert.*;
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(
 		locations={
-				"classpath:rewards/test-infrastructure-config.xml",
-				"classpath:rewards/internal/application-config.xml"})
-
-
+				"classpath:test/resources/pe/edu/upc/dw2011cp007/config/test-infrastructure-config.xml",
+				"classpath:main/resources/pe/edu/upc/dw2011cp007/config/application-config.xml"})
+	
 public class CineConexionTest {
-
+	/**
+	 * The object being tested.
+	 */
+	
+	@Autowired
+	/*
+	private RewardNetwork rewardNetwork;
+    */
+	
+	@Test
+	public void testCineParaUsuario() {
+	assertEquals(1,1);
+	}	
 }
