@@ -1,9 +1,8 @@
-
-insert into re_tb_pais values (1, 'PERU');
-insert into re_tb_pais values (2, 'COLOMBIA');
-insert into re_tb_pais values (3, 'BRAZIL');
-insert into re_tb_pais values (4, 'ESPAÑA');
-insert into re_tb_pais values (5, 'ESTADOS UNIDOS');
+insert into cp_tb_pais values (1, 'PERU');
+insert into cp_tb_pais values (2, 'COLOMBIA');
+insert into cp_tb_pais values (3, 'BRAZIL');
+insert into cp_tb_pais values (4, 'ESPAÑA');
+insert into cp_tb_pais values (5, 'ESTADOS UNIDOS');
 
 insert into cp_tb_cine values (1, 'CINEPLANET MIRAFLORES');
 insert into cp_tb_cine values (2, 'CINEPLANET REALPLAZA WILSON');
@@ -76,16 +75,16 @@ insert into cp_tb_peliculacine values (8, 1, '2011-03-01', null);
 insert into cp_tb_peliculacine values (8, 3, '2011-03-01', null);
 insert into cp_tb_peliculacine values (8, 5, '2011-03-01', null);
 
-insert into cp_tb_peliculacine values (11,3, 1, '2011-02-12','12-18',1,1);
-insert into cp_tb_peliculacine values (12,3, 2, '2011-02-13','16-22',0,1);
-insert into cp_tb_peliculacine values (13,3, 3, '2011-02-14','12-18',1,0);
-insert into cp_tb_peliculacine values (14,3, 4, '2011-02-15','16-22',0,0);
-insert into cp_tb_peliculacine values (15,3, 5, SYSDATE,'16-22',0,0);
-insert into cp_tb_peliculacine values (16,4, 1, SYSDATE,'12-18',0,1);
-insert into cp_tb_peliculacine values (17,4, 2, SYSDATE,'16-22',0,1);
-insert into cp_tb_peliculacine values (18,5, 3, SYSDATE,'12-18',0,0);
-insert into cp_tb_peliculacine values (19,5, 4, SYSDATE,'16-22',0,0);
-insert into cp_tb_peliculacine values (20,5, 5, SYSDATE,'12-18',0,0);
-insert into cp_tb_peliculacine values (21,6, 1, SYSDATE,'16-22',0,0);
-insert into cp_tb_peliculacine values (22,6, 3, SYSDATE,'12-18',0,0);
-insert into cp_tb_peliculacine values (23,6, 5, SYSDATE,'16-22',0,0);
+insert into cp_tb_horario values (11,3, 1, '2011-02-12','12-18',1,1);
+insert into cp_tb_horario values (12,3, 2, '2011-02-13','16-22',0,1);
+insert into cp_tb_horario values (13,3, 3, '2011-02-14','12-18',1,0);
+insert into cp_tb_horario values (14,3, 4, '2011-02-15','16-22',0,0);
+insert into cp_tb_horario values (15,3, 5, SYSDATE,'16-22',0,0);
+insert into cp_tb_horario values (16,4, 1, SYSDATE,'12-18',0,1);
+insert into cp_tb_horario values (17,4, 2, SYSDATE,'16-22',0,1);
+insert into cp_tb_horario values (18,5, 3, SYSDATE,'12-18',0,0);
+insert into cp_tb_horario values (19,5, 4, SYSDATE,'16-22',0,0);
+insert into cp_tb_horario values (20,5, 5, SYSDATE,'12-18',0,0);
+insert into cp_tb_horario values (21,6, 1, SYSDATE,'16-22',0,0);
+insert into cp_tb_horario values (22,6, 3, SYSDATE,'12-18',0,0);
+insert into cp_tb_horario values (23,6, 5, SYSDATE,'16-22',0,0);
