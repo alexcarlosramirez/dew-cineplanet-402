@@ -93,4 +93,9 @@ public class PeliculaModel {
 	public void setClasificacionPelicula(int clasificacionPelicula) {
 		this.clasificacionPelicula = clasificacionPelicula;
 	}
+
+	@Override
+	public String toString() {
+		return idPelicula + " - " + nombrepelicula;
+	}
 }
