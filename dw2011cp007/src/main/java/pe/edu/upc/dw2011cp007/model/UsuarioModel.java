@@ -2,6 +2,8 @@ package pe.edu.upc.dw2011cp007.model;
 
 import java.util.HashMap;
 
+import pe.edu.upc.dw2011cp007.repository.PerfilRepository;
+
 public class UsuarioModel {
 
 	private String idUsuario;	
@@ -18,7 +20,7 @@ public class UsuarioModel {
 	private String EstadoPassword;
 	private String EstadoUsuario;
 	private int NroVecesLoguedo;
-	private PerfilModel perfilModel;
+	private PerfilRepository perfiles_asignados;
 	
 	public String getIdUsuario() {
 		return idUsuario;
@@ -104,11 +106,11 @@ public class UsuarioModel {
 	public void setNroVecesLoguedo(int nroVecesLoguedo) {
 		NroVecesLoguedo = nroVecesLoguedo;
 	}
-	public PerfilModel getPerfilModel() {
-		return perfilModel;
+	public void setPerfiles_asignados(PerfilRepository perfiles_asignados) {
+		this.perfiles_asignados = perfiles_asignados;
 	}
-	public void setPerfilModel(PerfilModel perfilModel) {
-		this.perfilModel = perfilModel;
+	public PerfilRepository getPerfiles_asignados() {
+		return perfiles_asignados;
 	}
 
 

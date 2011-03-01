@@ -100,4 +100,8 @@ public class UsuarioTest {
 		} 
 	}
 	
+	public void validacorreo(){
+		String correo="probando@loquesea.com";
+		
+	}
 }

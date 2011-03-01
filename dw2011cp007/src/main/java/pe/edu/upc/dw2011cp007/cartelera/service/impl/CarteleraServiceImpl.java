@@ -14,8 +14,7 @@ public class CarteleraServiceImpl implements CarteleraService {
 	private HorarioRepository horarioRepository;
 
 	@Autowired
-	public CarteleraServiceImpl(
-			HorarioRepository horarioRepository) {
+	public CarteleraServiceImpl(HorarioRepository horarioRepository) {
 		this.horarioRepository = horarioRepository;
 	}
 

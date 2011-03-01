@@ -88,3 +88,8 @@ insert into cp_tb_horario values (20,5, 5, SYSDATE,'12-18',0,0);
 insert into cp_tb_horario values (21,6, 1, SYSDATE,'16-22',0,0);
 insert into cp_tb_horario values (22,6, 3, SYSDATE,'12-18',0,0);
 insert into cp_tb_horario values (23,6, 5, SYSDATE,'16-22',0,0);
+
+insert into cp_tb_userinterno values ('MCOSIOESPI','COSIO','ESPINO','MIGUEL','SISTEMAS','ADM. SISTEMAS','2153000','1512','DM_MCOSIO@EQUIFAX.COM.PE','','1','42587813','1234567891','1');
+
+insert into cp_tb_perfil values (1,'ADMINISTRATOR','SUPER USUARIO DEL SISTEMA',100,1);
+insert into cp_tb_perfil values (2,'OPERADOR','PERFIL DE OPERACIONES',100,1);

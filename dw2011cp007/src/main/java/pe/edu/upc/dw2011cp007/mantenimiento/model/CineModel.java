@@ -18,4 +18,9 @@ public class CineModel {
 	public void setNombrecine(String nombrecine) {
 		this.nombrecine = nombrecine;
 	}
+
+	@Override
+	public String toString() {
+		return idCine + " = " + nombrecine;
+	}
 }

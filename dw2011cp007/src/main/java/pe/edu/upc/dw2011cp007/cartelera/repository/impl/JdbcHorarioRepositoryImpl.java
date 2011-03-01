@@ -22,7 +22,7 @@ public class JdbcHorarioRepositoryImpl implements HorarioRepository {
 	private DataSource dataSource;
 
 	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
-		String sql = "SELECT * FROM cp_tb_horario WHERE fe_diahorario BETWEEN ? and ?";
+		String sql = "SELECT distinct p.* FROM cp_tb_horario h, cp_tb_pelicula p WHERE fe_diahorario BETWEEN ? and ? and p.id_pelicula = h.id_pelicula";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -37,7 +37,7 @@ public class JdbcHorarioRepositoryImpl implements HorarioRepository {
 			while (rs.next()) {
 				PeliculaModel peliculaModel = new PeliculaModel();
 				peliculaModel.setIdPelicula(rs.getInt("id_pelicula"));
-				System.out.println(peliculaModel.getIdPelicula());
+				peliculaModel.setNombrepelicula(rs.getString("no_pelicula"));
 				listaPeliculaModel.add(peliculaModel);
 			}
 		} catch (SQLException e) {

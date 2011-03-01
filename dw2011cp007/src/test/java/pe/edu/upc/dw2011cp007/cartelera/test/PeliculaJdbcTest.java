@@ -38,6 +38,9 @@ public class PeliculaJdbcTest {
 	public void buscarPelicula() {
 		//peliculas de estreno
 		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
+		for (PeliculaModel peliculaModel : listaPelicula) {
+			System.out.println(peliculaModel);
+		}
 		assertTrue(listaPelicula.size()>0);
 	}
 }

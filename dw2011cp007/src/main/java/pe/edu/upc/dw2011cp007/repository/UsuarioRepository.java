@@ -45,6 +45,11 @@ public class UsuarioRepository {
 	}
 	
 	
+	public HashMap<Integer, UsuarioModel> getCtrlUsuario() {
+		return CtrlUsuario;
+	}
+
+
 	public int ValidamosIngresoUsuario(UsuarioModel usuario,int tipo) {
 	
 		
@@ -105,10 +110,6 @@ public class UsuarioRepository {
 	}
 	
 	public int grabarUsuario(int operacion,UsuarioModel usuario) {
-		
-
-		
-
 
 		String nroDocumento= usuario.getNumeroDocumento();
 		String nomApeUsuario= (usuario.getNombreUsuario() + usuario.getApellidoPaternoUsuario() + usuario.getApellidoPaternoUsuario());

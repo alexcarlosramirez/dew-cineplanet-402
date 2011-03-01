@@ -10,6 +10,10 @@ drop table cp_tb_pelicula if exists;
 drop table cp_tb_peliculaartista if exists;
 drop table cp_tb_peliculacine if exists;
 drop table cp_tb_horario if exists;
+--prueba usuario
+drop table cp_tb_userinterno if exists;
+drop table cp_tb_perfil if exists;
+
 
 create table cp_tb_pais (
   id_pais int not null,
@@ -77,3 +81,31 @@ create table cp_tb_horario (
 );
 alter table cp_tb_horario add constraint cp_pk_horario primary key (id_horario,id_pelicula,id_cine);
 alter table cp_tb_horario add constraint cp_fk_hor_pelcin foreign key (id_pelicula,id_cine) references cp_tb_peliculacine (id_pelicula, id_cine);
+
+create table cp_tb_userinterno (
+	id_usuario varchar(10) not null,
+	no_apepaterno varchar(30),
+	no_apematerno varchar(30),
+	no_nombreusuario varchar(30),
+	no_unidadtrabajo varchar(20),
+	no_puestolaboral varchar(20),
+	nu_telefono varchar(10),
+	nu_anexo varchar(4),
+	no_email varchar(40),
+	id_jefeinmediato varchar(10),
+	no_tipodoc varchar(1),
+	no_numdoc varchar(11),
+	no_password varchar(10),
+	no_estadousuario varchar(1),
+);
+alter table cp_tb_userinterno add constraint cp_pk_userinterno primary key (id_usuario);
+
+
+create table cp_tb_perfil (
+  id_perfil             int not null,
+  no_nombreperfil       varchar(30),
+  tx_descripcion        varchar(100),
+  nu_diasvigencia       int,
+  co_estado             int,
+);
+alter table cp_tb_perfil add constraint cp_pk_perfil primary key (id_perfil);
