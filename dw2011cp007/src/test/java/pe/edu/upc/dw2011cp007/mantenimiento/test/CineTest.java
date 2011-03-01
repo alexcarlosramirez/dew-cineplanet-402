@@ -26,11 +26,30 @@ public class CineTest {
 		CineModel cineModel = new CineModel();
 		cineModel.setIdCine(6);
 		cineModel.setNombrecine("AZANGARO 3D");
+
+		//inserta
 		boolean resInserta = mantenimientoService.registrarCine(cineModel);
 		assertTrue(resInserta);
 
 		CineModel cineModelBuscar = mantenimientoService.buscarCinePorId(6);
 		assertNotNull(cineModelBuscar);
-		System.out.println(cineModelBuscar);
+		System.out.println("inserta + " + cineModelBuscar);
+
+		//actualiza
+		cineModel.setNombrecine("MALVINAS 4D");
+		boolean resUpdate = mantenimientoService.actualizarCine(cineModel);
+		assertTrue(resUpdate);
+
+		cineModelBuscar = mantenimientoService.buscarCinePorId(6);
+		assertNotNull(cineModelBuscar);
+		System.out.println("actualiza + " + cineModelBuscar);
+
+		//elimina
+		boolean resDelete = mantenimientoService.eliminarCine(cineModel);
+		assertTrue(resDelete);
+
+		cineModelBuscar = mantenimientoService.buscarCinePorId(6);
+		assertNull(cineModelBuscar);
+		System.out.println("elimina + " + cineModelBuscar);
 	}
 }

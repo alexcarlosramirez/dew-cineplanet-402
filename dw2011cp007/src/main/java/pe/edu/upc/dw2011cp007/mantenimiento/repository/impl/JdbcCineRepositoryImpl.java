@@ -56,11 +56,72 @@ public class JdbcCineRepositoryImpl implements CineRepository {
 	}
 
 	public boolean modificarCine(CineModel cineModel) {
-		return false;
+		String sql = "update cp_tb_cine set no_cine = ? where id_cine = ?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		boolean res = false;
+		try {
+			conn = dataSource.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setString(1, cineModel.getNombrecine());
+			ps.setInt(2, cineModel.getIdCine());
+			if (ps.executeUpdate() > 0) {
+				res = true;
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("SQL exception occured inserting reward record", e);
+		} finally {
+			if (ps != null) {
+				try {
+					// Close to prevent database cursor exhaustion
+					ps.close();
+				} catch (SQLException ex) {
+				}
+			}
+			if (conn != null) {
+				try {
+					// Close to prevent database connection exhaustion
+					conn.close();
+				} catch (SQLException ex) {
+				}
+			}
+		}
+
+		return res;
 	}
 
 	public boolean eliminarCine(CineModel cineModel) {
-		return false;
+		String sql = "delete from cp_tb_cine where id_cine = ?";
+		Connection conn = null;
+		PreparedStatement ps = null;
+		boolean res = false;
+		try {
+			conn = dataSource.getConnection();
+			ps = conn.prepareStatement(sql);
+			ps.setInt(1, cineModel.getIdCine());
+			if (ps.executeUpdate() > 0) {
+				res = true;
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("SQL exception occured inserting reward record", e);
+		} finally {
+			if (ps != null) {
+				try {
+					// Close to prevent database cursor exhaustion
+					ps.close();
+				} catch (SQLException ex) {
+				}
+			}
+			if (conn != null) {
+				try {
+					// Close to prevent database connection exhaustion
+					conn.close();
+				} catch (SQLException ex) {
+				}
+			}
+		}
+
+		return res;
 	}
 
 	public ArrayList<CineModel> buscarListaCine() {

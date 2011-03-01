@@ -6,6 +6,10 @@ public interface MantenimientoService {
 
 	boolean registrarCine(CineModel cineModel);
 
+	boolean actualizarCine(CineModel cineModel);
+
+	boolean eliminarCine(CineModel cineModel);
+
 	CineModel buscarCinePorId(int i);
 
 }

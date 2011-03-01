@@ -23,6 +23,14 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 		return cineRepository.registrarCine(cineModel);
 	}
 
+	public boolean actualizarCine(CineModel cineModel) {
+		return cineRepository.modificarCine(cineModel);
+	}
+
+	public boolean eliminarCine(CineModel cineModel) {
+		return cineRepository.eliminarCine(cineModel);
+	}
+
 	public CineModel buscarCinePorId(int idCine) {
 		ArrayList<CineModel> listaCineModel = cineRepository.buscarListaCine();
 		for (CineModel cineModel : listaCineModel) {
