@@ -12,11 +12,20 @@
 	
 	
 
-	<!-- Embedded H2 Database -->		
+	<!-- Embedded H2 Database
 	<jdbc:embedded-database id="dataSource" type="H2">
 		<jdbc:script location="classpath:pe/edu/upc/dw2011cp007/testdb/schema.sql"/>
 		<jdbc:script location="classpath:pe/edu/upc/dw2011cp007/testdb/test-data.sql"/>
 	</jdbc:embedded-database>
+	-->
 
+	<bean id="dataSourceMysql" class="org.apache.tomcat.dbcp.dbcp.BasicDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost/dw2011cp007"/>
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>
+		<property name="initialSize" value="5"/>
+		<property name="maxActive" value="10"/>
+	</bean>
 
 </beans>
