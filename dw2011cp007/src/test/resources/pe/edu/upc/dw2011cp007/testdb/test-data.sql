@@ -56,19 +56,19 @@ insert into cp_tb_peliculacine values (2, 2, '2011-01-01', '2011-01-31');
 insert into cp_tb_peliculacine values (2, 3, '2011-01-01', '2011-01-31');
 insert into cp_tb_peliculacine values (2, 4, '2011-01-01', '2011-01-31');
 insert into cp_tb_peliculacine values (2, 5, '2011-01-01', '2011-01-31');
-insert into cp_tb_peliculacine values (3, 1, '2011-02-01', '2011-02-15');--
-insert into cp_tb_peliculacine values (3, 2, '2011-02-01', '2011-02-15');--
-insert into cp_tb_peliculacine values (3, 3, '2011-02-01', '2011-02-15');--
-insert into cp_tb_peliculacine values (3, 4, '2011-02-01', '2011-02-15');--
-insert into cp_tb_peliculacine values (3, 5, '2011-02-01', SYSDATE);--
-insert into cp_tb_peliculacine values (4, 1, '2011-02-01', SYSDATE);--
-insert into cp_tb_peliculacine values (4, 2, '2011-02-01', SYSDATE);--
-insert into cp_tb_peliculacine values (5, 3, '2011-02-01', SYSDATE);--
-insert into cp_tb_peliculacine values (5, 4, '2011-02-15', SYSDATE);--
-insert into cp_tb_peliculacine values (5, 5, '2011-02-15', SYSDATE);--
-insert into cp_tb_peliculacine values (6, 1, '2011-02-15', SYSDATE);--
-insert into cp_tb_peliculacine values (6, 3, '2011-02-15', SYSDATE);--
-insert into cp_tb_peliculacine values (6, 5, '2011-02-15', SYSDATE);--
+insert into cp_tb_peliculacine values (3, 1, '2011-02-01', '2011-02-15');
+insert into cp_tb_peliculacine values (3, 2, '2011-02-01', '2011-02-15');
+insert into cp_tb_peliculacine values (3, 3, '2011-02-01', '2011-02-15');
+insert into cp_tb_peliculacine values (3, 4, '2011-02-01', '2011-02-15');
+insert into cp_tb_peliculacine values (3, 5, '2011-02-01', SYSDATE());
+insert into cp_tb_peliculacine values (4, 1, '2011-02-01', SYSDATE());
+insert into cp_tb_peliculacine values (4, 2, '2011-02-01', SYSDATE());
+insert into cp_tb_peliculacine values (5, 3, '2011-02-01', SYSDATE());
+insert into cp_tb_peliculacine values (5, 4, '2011-02-15', SYSDATE());
+insert into cp_tb_peliculacine values (5, 5, '2011-02-15', SYSDATE());
+insert into cp_tb_peliculacine values (6, 1, '2011-02-15', SYSDATE());
+insert into cp_tb_peliculacine values (6, 3, '2011-02-15', SYSDATE());
+insert into cp_tb_peliculacine values (6, 5, '2011-02-15', SYSDATE());
 insert into cp_tb_peliculacine values (7, 1, '2011-03-01', null);
 insert into cp_tb_peliculacine values (7, 2, '2011-03-01', null);
 insert into cp_tb_peliculacine values (8, 1, '2011-03-01', null);
@@ -79,15 +79,15 @@ insert into cp_tb_horario values (11,3, 1, '2011-02-12','12-18',1,1);
 insert into cp_tb_horario values (12,3, 2, '2011-02-13','16-22',0,1);
 insert into cp_tb_horario values (13,3, 3, '2011-02-14','12-18',1,0);
 insert into cp_tb_horario values (14,3, 4, '2011-02-15','16-22',0,0);
-insert into cp_tb_horario values (15,3, 5, SYSDATE,'16-22',0,0);
-insert into cp_tb_horario values (16,4, 1, SYSDATE,'12-18',0,1);
-insert into cp_tb_horario values (17,4, 2, SYSDATE,'16-22',0,1);
-insert into cp_tb_horario values (18,5, 3, SYSDATE,'12-18',0,0);
-insert into cp_tb_horario values (19,5, 4, SYSDATE,'16-22',0,0);
-insert into cp_tb_horario values (20,5, 5, SYSDATE,'12-18',0,0);
-insert into cp_tb_horario values (21,6, 1, SYSDATE,'16-22',0,0);
-insert into cp_tb_horario values (22,6, 3, SYSDATE,'12-18',0,0);
-insert into cp_tb_horario values (23,6, 5, SYSDATE,'16-22',0,0);
+insert into cp_tb_horario values (15,3, 5, SYSDATE(),'16-22',0,0);
+insert into cp_tb_horario values (16,4, 1, SYSDATE(),'12-18',0,1);
+insert into cp_tb_horario values (17,4, 2, SYSDATE(),'16-22',0,1);
+insert into cp_tb_horario values (18,5, 3, SYSDATE(),'12-18',0,0);
+insert into cp_tb_horario values (19,5, 4, SYSDATE(),'16-22',0,0);
+insert into cp_tb_horario values (20,5, 5, SYSDATE(),'12-18',0,0);
+insert into cp_tb_horario values (21,6, 1, SYSDATE(),'16-22',0,0);
+insert into cp_tb_horario values (22,6, 3, SYSDATE(),'12-18',0,0);
+insert into cp_tb_horario values (23,6, 5, SYSDATE(),'16-22',0,0);
 
 insert into cp_tb_userinterno values ('MCOSIOESPI','COSIO','ESPINO','MIGUEL','SISTEMAS','ADM. SISTEMAS','2153000','1512','DM_MCOSIO@EQUIFAX.COM.PE','','1','42587813','1234567891','1');
 

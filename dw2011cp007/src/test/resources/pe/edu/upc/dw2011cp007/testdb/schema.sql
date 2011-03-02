@@ -1,18 +1,18 @@
---create database dw2011cp007;
+/*create database dw2011cp007;*/
 
---use dw2011cp007;
+/*use dw2011cp007;*/
 
-drop table cp_tb_pais if exists;
-drop table cp_tb_cine if exists;
-drop table cp_tb_artista if exists;
-drop table cp_tb_tipopelicula if exists;
-drop table cp_tb_pelicula if exists;
-drop table cp_tb_peliculaartista if exists;
-drop table cp_tb_peliculacine if exists;
-drop table cp_tb_horario if exists;
---prueba usuario
-drop table cp_tb_userinterno if exists;
-drop table cp_tb_perfil if exists;
+drop table if exists cp_tb_pais;
+drop table if exists cp_tb_cine;
+drop table if exists cp_tb_artista;
+drop table if exists cp_tb_tipopelicula;
+drop table if exists cp_tb_pelicula;
+drop table if exists cp_tb_peliculaartista;
+drop table if exists cp_tb_peliculacine;
+drop table if exists cp_tb_horario;
+/*prueba usuario*/
+drop table if exists cp_tb_userinterno;
+drop table if exists cp_tb_perfil;
 
 
 create table cp_tb_pais (
@@ -96,7 +96,7 @@ create table cp_tb_userinterno (
 	no_tipodoc varchar(1),
 	no_numdoc varchar(11),
 	no_password varchar(10),
-	no_estadousuario varchar(1),
+	no_estadousuario varchar(1)
 );
 alter table cp_tb_userinterno add constraint cp_pk_userinterno primary key (id_usuario);
 
@@ -106,6 +106,6 @@ create table cp_tb_perfil (
   no_nombreperfil       varchar(30),
   tx_descripcion        varchar(100),
   nu_diasvigencia       int,
-  co_estado             int,
+  co_estado             int
 );
 alter table cp_tb_perfil add constraint cp_pk_perfil primary key (id_perfil);
