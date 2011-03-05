@@ -1,5 +1,6 @@
---create database dw2011cp007;
---use dw2011cp007;
+drop database dw2011cp007;
+create database dw2011cp007;
+use dw2011cp007;
 
 drop table if exists cp_tb_pais;
 drop table if exists cp_tb_cine;
@@ -42,9 +43,11 @@ create table cp_tb_pelicula (
   no_pelicula                 varchar(50),
   id_pais                     int,
   id_tipopelicula             int,
-  id_clasificacionpelicula    int,
-  fl_tienesubtitulopelicula   int,
-  fl_tiene3dpelicula          int
+  co_clasificacionpelicula    char(3),/*INF, TOD, +14, +18*/
+  fl_tienesubtitulopelicula   boolean,
+  fl_tiene3dpelicula          boolean,
+  fl_esestreno                boolean,
+  fl_escartelera              boolean
 );
 alter table cp_tb_pelicula add constraint cp_pk_pelicula primary key (id_pelicula);
 alter table cp_tb_pelicula add constraint cp_fk_pelpai foreign key (id_pais) references cp_tb_pais (id_pais);
@@ -60,9 +63,7 @@ alter table cp_tb_peliculaartista add constraint cp_fk_pelart_art foreign key (i
 
 create table cp_tb_peliculacine (
   id_pelicula int not null,
-  id_cine int not null,
-  fe_inicioproyecion date,
-  fe_finproyecion date
+  id_cine int not null
 );
 alter table cp_tb_peliculacine add constraint cp_pk_pelcin primary key (id_pelicula,id_cine);
 alter table cp_tb_peliculacine add constraint cp_fk_pelcin_pel foreign key (id_pelicula) references cp_tb_pelicula (id_pelicula);
