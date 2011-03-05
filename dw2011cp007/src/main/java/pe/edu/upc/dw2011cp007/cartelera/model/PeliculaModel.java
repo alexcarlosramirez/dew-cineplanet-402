@@ -13,30 +13,33 @@ public class PeliculaModel {
 
 	/**
 	 * <ul style="list-style: decimal;">
-	 * <li>solo subtitulada</li>
-	 * <li>solo doblada</li>
-	 * <li>subtitulada/doblada</li>
+	 * <li>INF: Infantil</li>
+	 * <li>TOD: P&uacute;blico en general</li>
+	 * <li>+14: mayores de 14</li>
+	 * <li>+18: Mayores de 18</li>
 	 * </ul>
 	 */
-	private int subtitulopelicula;
+	private String clasificacionPelicula;
 
 	/**
 	 * <ul style="list-style: decimal;">
-	 * <li>2D</li>
-	 * <li>3D</li>
+	 * <li>True: subtitulada/doblada</li>
+	 * <li>Flase: solo subtitulada</li>
 	 * </ul>
 	 */
-	private int tipoemisionpelicula;
+	private boolean subtitulopelicula;
 
 	/**
 	 * <ul style="list-style: decimal;">
-	 * <li>Infantil</li>
-	 * <li>P&uacute;blico en general</li>
-	 * <li>+14</li>
-	 * <li>+18</li>
+	 * <li>True: Con 3D</li>
+	 * <li>Flase: Sin 3D</li>
 	 * </ul>
 	 */
-	private int clasificacionPelicula;
+	private boolean tipoemisionpelicula;
+
+	private boolean enestreno;
+
+	private boolean encartelera;
 
 	public int getIdPelicula() {
 		return idPelicula;
@@ -70,28 +73,44 @@ public class PeliculaModel {
 		this.paisModel = paisModel;
 	}
 
-	public int getSubtitulopelicula() {
-		return subtitulopelicula;
-	}
-
-	public void setSubtitulopelicula(int subtitulopelicula) {
-		this.subtitulopelicula = subtitulopelicula;
-	}
-
-	public int getTipoemisionpelicula() {
-		return tipoemisionpelicula;
-	}
-
-	public void setTipoemisionpelicula(int tipoemisionpelicula) {
-		this.tipoemisionpelicula = tipoemisionpelicula;
-	}
-
-	public int getClasificacionPelicula() {
+	public String getClasificacionPelicula() {
 		return clasificacionPelicula;
 	}
 
-	public void setClasificacionPelicula(int clasificacionPelicula) {
+	public void setClasificacionPelicula(String clasificacionPelicula) {
 		this.clasificacionPelicula = clasificacionPelicula;
+	}
+
+	public boolean isSubtitulopelicula() {
+		return subtitulopelicula;
+	}
+
+	public void setSubtitulopelicula(boolean subtitulopelicula) {
+		this.subtitulopelicula = subtitulopelicula;
+	}
+
+	public boolean isTipoemisionpelicula() {
+		return tipoemisionpelicula;
+	}
+
+	public void setTipoemisionpelicula(boolean tipoemisionpelicula) {
+		this.tipoemisionpelicula = tipoemisionpelicula;
+	}
+
+	public boolean isEnestreno() {
+		return enestreno;
+	}
+
+	public void setEnestreno(boolean enestreno) {
+		this.enestreno = enestreno;
+	}
+
+	public boolean isEncartelera() {
+		return encartelera;
+	}
+
+	public void setEncartelera(boolean encartelera) {
+		this.encartelera = encartelera;
 	}
 
 	@Override
