@@ -43,4 +43,9 @@ public class StubArtistaImpl implements ArtistaRepository {
 	public ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaModel) {
 		return null;
 	}
+
+	public boolean modificarArtista(ArtistaModel artistaModel) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }

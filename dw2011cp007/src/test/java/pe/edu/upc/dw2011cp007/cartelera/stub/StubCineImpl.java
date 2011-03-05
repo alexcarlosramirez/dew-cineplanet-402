@@ -46,4 +46,9 @@ public class StubCineImpl implements CineRepository {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	public boolean modificarCine(CineModel cineModel) {
+		// TODO Auto-generated method stub
+		return false;
+	}
 }
