@@ -12,10 +12,7 @@ import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-		locations={
-				"classpath:pe/edu/upc/dw2011cp007/config/test-infrastructure-config.xml",
-				"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
+@ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class CineTest {
 
 	@Autowired
