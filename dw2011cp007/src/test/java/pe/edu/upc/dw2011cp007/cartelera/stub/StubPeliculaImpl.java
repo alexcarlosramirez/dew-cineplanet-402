@@ -126,4 +126,9 @@ public class StubPeliculaImpl implements PeliculaRepository {
 		// TODO Auto-generated method stub
 		return false;
 	}
+
+	public PeliculaModel peliculaRepository(int idPeliculaSel) {
+		// TODO Auto-generated method stub
+		return null;
+	}
 }

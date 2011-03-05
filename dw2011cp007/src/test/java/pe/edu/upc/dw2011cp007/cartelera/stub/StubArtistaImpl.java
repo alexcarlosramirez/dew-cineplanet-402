@@ -2,6 +2,7 @@ package pe.edu.upc.dw2011cp007.cartelera.stub;
 
 import java.util.ArrayList;
 
+import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.ArtistaRepository;
 
@@ -31,11 +32,15 @@ public class StubArtistaImpl implements ArtistaRepository {
 		return false;
 	}
 
-	public boolean modificarArtista(ArtistaModel artistaModel) {
+	public boolean actualizarArtista(ArtistaModel artistaModel) {
 		return false;
 	}
 
 	public boolean eliminarArtista(ArtistaModel artistaModel) {
 		return false;
+	}
+
+	public ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaModel) {
+		return null;
 	}
 }
