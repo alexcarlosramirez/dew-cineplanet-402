@@ -1,6 +1,5 @@
-/*create database dw2011cp007;*/
-
-/*use dw2011cp007;*/
+--create database dw2011cp007;
+--use dw2011cp007;
 
 drop table if exists cp_tb_pais;
 drop table if exists cp_tb_cine;
@@ -10,7 +9,6 @@ drop table if exists cp_tb_pelicula;
 drop table if exists cp_tb_peliculaartista;
 drop table if exists cp_tb_peliculacine;
 drop table if exists cp_tb_horario;
-/*prueba usuario*/
 drop table if exists cp_tb_userinterno;
 drop table if exists cp_tb_perfil;
 

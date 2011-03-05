@@ -39,12 +39,12 @@ insert into cp_tb_peliculaartista values (2, 2);
 insert into cp_tb_peliculaartista values (2, 5);
 insert into cp_tb_peliculaartista values (3, 4);
 insert into cp_tb_peliculaartista values (3, 5);
-insert into cp_tb_peliculaartista values (6, 1);
-insert into cp_tb_peliculaartista values (6, 3);
-insert into cp_tb_peliculaartista values (6, 5);
-insert into cp_tb_peliculaartista values (7, 2);
+insert into cp_tb_peliculaartista values (5, 1);
+insert into cp_tb_peliculaartista values (5, 3);
+insert into cp_tb_peliculaartista values (5, 5);
+insert into cp_tb_peliculaartista values (6, 2);
+insert into cp_tb_peliculaartista values (6, 4);
 insert into cp_tb_peliculaartista values (7, 4);
-insert into cp_tb_peliculaartista values (8, 4);
 
 insert into cp_tb_peliculacine values (1, 1, '2011-01-01', '2011-01-30');
 insert into cp_tb_peliculacine values (1, 2, '2011-01-01', '2011-01-30');
