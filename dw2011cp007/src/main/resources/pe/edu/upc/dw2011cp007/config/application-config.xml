@@ -16,4 +16,18 @@
 	<bean id="perfildao" class="pe.edu.upc.dw2011cp007.dao.Perfildao">
 		<property name="jdbcTemplate" ref="jdbcTemplate" />
 	</bean>
+
+	<!-- Embedded H2 Database
+	<jdbc:embedded-database id="dataSource" type="H2">
+		<jdbc:script location="classpath:pe/edu/upc/dw2011cp007/testdb/schema.sql"/>
+		<jdbc:script location="classpath:pe/edu/upc/dw2011cp007/testdb/test-data.sql"/>
+	</jdbc:embedded-database>
+	-->
+
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+		<property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+		<property name="url" value="jdbc:mysql://localhost/dw2011cp007"/>
+		<property name="username" value="root"/>
+		<property name="password" value="root"/>
+	</bean>
 </beans>
