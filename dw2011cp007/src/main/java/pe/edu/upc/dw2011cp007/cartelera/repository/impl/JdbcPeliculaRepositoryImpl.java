@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 import javax.sql.DataSource;
 
@@ -33,6 +34,7 @@ public class JdbcPeliculaRepositoryImpl implements PeliculaRepository {
 
 	public PeliculaModel buscarPelicula(PeliculaModel peliculamodel) {
 		String sql = "SELECT p.* FROM cp_tb_pelicula p WHERE p.id_pelicula = ?";
+
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -53,19 +55,97 @@ public class JdbcPeliculaRepositoryImpl implements PeliculaRepository {
 		} finally {
 			if (ps != null) {
 				try {
-					// Close to prevent database cursor exhaustion
 					ps.close();
 				} catch (SQLException ex) {
 				}
 			}
 			if (conn != null) {
 				try {
-					// Close to prevent database connection exhaustion
 					conn.close();
 				} catch (SQLException ex) {
 				}
 			}
 		}
 		return peliculaModel;
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
+		String sql = 
+			"SELECT p.* " +
+			"FROM cp_tb_pelicula p " +
+			"WHERE p.fl_escartelera = true";
+
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<PeliculaModel> listaPeliculaModel = new ArrayList<PeliculaModel>();
+		try {
+			conn = dataSource.getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+
+			while (rs.next()) {
+				PeliculaModel peliculaModel = new PeliculaModel();
+				peliculaModel.setIdPelicula(rs.getInt("id_pelicula"));
+				peliculaModel.setNombrepelicula(rs.getString("no_pelicula"));
+				listaPeliculaModel.add(peliculaModel);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("SQL exception occured inserting reward record", e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException ex) {
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+			}
+		}
+		return listaPeliculaModel;
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPeliculaEnEstreno() {
+		String sql = 
+			"SELECT p.* " +
+			"FROM cp_tb_pelicula p " +
+			"WHERE p.fl_esestreno = true";
+
+		Connection conn = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+		ArrayList<PeliculaModel> listaPeliculaModel = new ArrayList<PeliculaModel>();
+		try {
+			conn = dataSource.getConnection();
+			ps = conn.prepareStatement(sql);
+			rs = ps.executeQuery();
+	
+			while (rs.next()) {
+				PeliculaModel peliculaModel = new PeliculaModel();
+				peliculaModel.setIdPelicula(rs.getInt("id_pelicula"));
+				peliculaModel.setNombrepelicula(rs.getString("no_pelicula"));
+				listaPeliculaModel.add(peliculaModel);
+			}
+		} catch (SQLException e) {
+			throw new RuntimeException("SQL exception occured inserting reward record", e);
+		} finally {
+			if (ps != null) {
+				try {
+					ps.close();
+				} catch (SQLException ex) {
+				}
+			}
+			if (conn != null) {
+				try {
+					conn.close();
+				} catch (SQLException ex) {
+				}
+			}
+		}
+		return listaPeliculaModel;
 	}
 }
