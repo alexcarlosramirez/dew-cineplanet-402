@@ -24,8 +24,11 @@ public class JdbcHorarioRepositoryImpl implements HorarioRepository {
 	@Autowired
 	private DataSource dataSource;
 
-	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
-		String sql = "SELECT distinct p.* FROM cp_tb_horario h, cp_tb_pelicula p WHERE fe_diahorario BETWEEN ? and ? and p.id_pelicula = h.id_pelicula";
+	public ArrayList<PeliculaModel> buscarListaPeliculaProyectarHoy() {
+		String sql = 
+			"SELECT distinct p.* FROM cp_tb_horario h, cp_tb_pelicula p " +
+			"WHERE fe_diahorario BETWEEN ? and ? " +
+			"AND p.id_pelicula = h.id_pelicula";
 		Connection conn = null;
 		PreparedStatement ps = null;
 		ResultSet rs = null;
@@ -48,14 +51,12 @@ public class JdbcHorarioRepositoryImpl implements HorarioRepository {
 		} finally {
 			if (ps != null) {
 				try {
-					// Close to prevent database cursor exhaustion
 					ps.close();
 				} catch (SQLException ex) {
 				}
 			}
 			if (conn != null) {
 				try {
-					// Close to prevent database connection exhaustion
 					conn.close();
 				} catch (SQLException ex) {
 				}
@@ -106,14 +107,12 @@ public class JdbcHorarioRepositoryImpl implements HorarioRepository {
 		} finally {
 			if (ps != null) {
 				try {
-					// Close to prevent database cursor exhaustion
 					ps.close();
 				} catch (SQLException ex) {
 				}
 			}
 			if (conn != null) {
 				try {
-					// Close to prevent database connection exhaustion
 					conn.close();
 				} catch (SQLException ex) {
 				}
