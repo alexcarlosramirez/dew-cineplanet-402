@@ -20,20 +20,28 @@ public class CarteleraServiceImpl implements CarteleraService {
 	private PeliculaArtistaRepository peliculaArtistaRepository;
 
 	@Autowired
-	public CarteleraServiceImpl(HorarioRepository horarioRepository, PeliculaRepository peliculaRepository, PeliculaArtistaRepository peliculaArtistaRepository) {
-		this.horarioRepository = horarioRepository;
+	public CarteleraServiceImpl(PeliculaRepository peliculaRepository, HorarioRepository horarioRepository, PeliculaArtistaRepository peliculaArtistaRepository) {
 		this.peliculaRepository = peliculaRepository;
+		this.horarioRepository = horarioRepository;
 		this.peliculaArtistaRepository = peliculaArtistaRepository;
-	}
-
-	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
-		return horarioRepository.buscarListaPeliculaEnCartelera();
 	}
 
 	public PeliculaModel buscarPeliculaPorId(int idPelicula) {
 		PeliculaModel peliculaModel = new PeliculaModel();
 		peliculaModel.setIdPelicula(idPelicula);
 		return peliculaRepository.buscarPelicula(peliculaModel);
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
+		return peliculaRepository.buscarListaPeliculaEnCartelera();
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPeliculaEnEstreno() {
+		return peliculaRepository.buscarListaPeliculaEnEstreno();
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPeliculaProyectarHoy() {
+		return horarioRepository.buscarListaPeliculaProyectarHoy();
 	}
 
 	public ArrayList<HorarioModel> buscarHorarioPorPelicula(PeliculaModel peliculaModel) {
