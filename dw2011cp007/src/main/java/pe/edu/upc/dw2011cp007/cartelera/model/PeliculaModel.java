@@ -27,7 +27,7 @@ public class PeliculaModel {
 	 * <li>Flase: solo subtitulada</li>
 	 * </ul>
 	 */
-	private boolean subtitulopelicula;
+	private boolean doblada;
 
 	/**
 	 * <ul style="list-style: decimal;">
@@ -35,7 +35,7 @@ public class PeliculaModel {
 	 * <li>Flase: Sin 3D</li>
 	 * </ul>
 	 */
-	private boolean tipoemisionpelicula;
+	private boolean en3d;
 
 	private boolean enestreno;
 
@@ -81,20 +81,20 @@ public class PeliculaModel {
 		this.clasificacionPelicula = clasificacionPelicula;
 	}
 
-	public boolean isSubtitulopelicula() {
-		return subtitulopelicula;
+	public boolean isDoblada() {
+		return doblada;
 	}
 
-	public void setSubtitulopelicula(boolean subtitulopelicula) {
-		this.subtitulopelicula = subtitulopelicula;
+	public void setDoblada(boolean doblada) {
+		this.doblada = doblada;
 	}
 
-	public boolean isTipoemisionpelicula() {
-		return tipoemisionpelicula;
+	public boolean isEn3d() {
+		return en3d;
 	}
 
-	public void setTipoemisionpelicula(boolean tipoemisionpelicula) {
-		this.tipoemisionpelicula = tipoemisionpelicula;
+	public void setEn3d(boolean en3d) {
+		this.en3d = en3d;
 	}
 
 	public boolean isEnestreno() {
@@ -115,6 +115,15 @@ public class PeliculaModel {
 
 	@Override
 	public String toString() {
-		return idPelicula + " - " + nombrepelicula;
+		return 
+		"PELICULA - idPelicula: " + idPelicula
+		+ "\t\n - clasificacionPelicula: " + clasificacionPelicula
+		+ "\t\n - doblada: " + doblada
+		+ "\t\n - en3d: " + en3d
+		+ "\t\n - encartelera: " + encartelera
+		+ "\t\n - enestreno: " + enestreno
+		+ "\t\n - nombrepelicula: " + nombrepelicula
+		+ "\t\n - paisModel: " + (paisModel==null?"null":paisModel.getIdPais())
+		+ "\t\n - tipopeliculaModel: " + (tipopeliculaModel==null?"null":tipopeliculaModel.getIdTipopelicula());
 	}
 }

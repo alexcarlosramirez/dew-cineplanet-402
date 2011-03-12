@@ -6,7 +6,7 @@ import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 
 public interface HorarioRepository {
-	ArrayList<PeliculaModel> buscarListaPeliculaProyectarHoy();
+	ArrayList<HorarioModel> buscarListaPeliculaProyectarHoy();
 
 	ArrayList<HorarioModel> buscarHorarioPorPelicula(PeliculaModel peliculaSel);
 }

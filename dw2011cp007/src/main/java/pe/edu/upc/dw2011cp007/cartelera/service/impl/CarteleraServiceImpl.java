@@ -26,10 +26,22 @@ public class CarteleraServiceImpl implements CarteleraService {
 		this.peliculaArtistaRepository = peliculaArtistaRepository;
 	}
 
-	public PeliculaModel buscarPeliculaPorId(int idPelicula) {
-		PeliculaModel peliculaModel = new PeliculaModel();
-		peliculaModel.setIdPelicula(idPelicula);
-		return peliculaRepository.buscarPelicula(peliculaModel);
+	//peliculaRepository=============================================================
+
+	public boolean registrarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.registrarPelicula(peliculaModel);
+	}
+
+	public boolean modificarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.modificarPelicula(peliculaModel);
+	}
+
+	public boolean eliminarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.eliminarPelicula(peliculaModel);
+	}
+
+	public PeliculaModel buscarPelicula(PeliculaModel peliculaSel) {
+		return peliculaRepository.buscarPelicula(peliculaSel);
 	}
 
 	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
@@ -40,7 +52,9 @@ public class CarteleraServiceImpl implements CarteleraService {
 		return peliculaRepository.buscarListaPeliculaEnEstreno();
 	}
 
-	public ArrayList<PeliculaModel> buscarListaPeliculaProyectarHoy() {
+	//horarioRepository=============================================================
+
+	public ArrayList<HorarioModel> buscarListaPeliculaProyectarHoy() {
 		return horarioRepository.buscarListaPeliculaProyectarHoy();
 	}
 
@@ -48,8 +62,9 @@ public class CarteleraServiceImpl implements CarteleraService {
 		return horarioRepository.buscarHorarioPorPelicula(peliculaModel);
 	}
 
+	//peliculaArtistaRepository=============================================================
+
 	public ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaModel) {
 		return peliculaArtistaRepository.buscarListaArtistaPorPelicula(peliculaModel);
 	}
-
 }

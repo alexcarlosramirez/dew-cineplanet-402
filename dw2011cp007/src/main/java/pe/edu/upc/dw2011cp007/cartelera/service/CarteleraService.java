@@ -8,13 +8,19 @@ import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 
 public interface CarteleraService {
 
-	PeliculaModel buscarPeliculaPorId(int idPelicula);
+	PeliculaModel buscarPelicula(PeliculaModel peliculaSel);
+
+	boolean registrarPelicula(PeliculaModel peliculaModel);
+
+	boolean modificarPelicula(PeliculaModel peliculaModel);
+
+	boolean eliminarPelicula(PeliculaModel peliculaModel);
 
 	ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera();
 
 	ArrayList<PeliculaModel> buscarListaPeliculaEnEstreno();
 
-	ArrayList<PeliculaModel> buscarListaPeliculaProyectarHoy();
+	ArrayList<HorarioModel> buscarListaPeliculaProyectarHoy();
 
 	ArrayList<HorarioModel> buscarHorarioPorPelicula(PeliculaModel peliculaSel);
 

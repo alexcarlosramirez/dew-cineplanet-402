@@ -3,14 +3,14 @@ package pe.edu.upc.dw2011cp007.mantenimiento.model;
 
 public class PaisModel {
 
-	private int idPelicula;
+	private int idPais;
 	private String nombrepais;
 
-	public int getIdPelicula() {
-		return idPelicula;
+	public int getIdPais() {
+		return idPais;
 	}
-	public void setIdPelicula(int idPelicula) {
-		this.idPelicula = idPelicula;
+	public void setIdPais(int idPais) {
+		this.idPais = idPais;
 	}
 	public String getNombrepais() {
 		return nombrepais;
