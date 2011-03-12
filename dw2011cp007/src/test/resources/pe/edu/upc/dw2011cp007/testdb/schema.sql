@@ -13,30 +13,33 @@ drop table if exists cp_tb_horario;
 drop table if exists cp_tb_userinterno;
 drop table if exists cp_tb_perfil;
 
-
 create table cp_tb_pais (
   id_pais int not null,
   no_pais varchar(50)
 );
 alter table cp_tb_pais add constraint cp_pk_pais primary key (id_pais);
+alter table cp_tb_pais modify id_pais int not null auto_increment;
 
 create table cp_tb_cine (
   id_cine int not null,
   no_cine varchar(50)
 );
 alter table cp_tb_cine add constraint cp_pk_cine primary key (id_cine);
+alter table cp_tb_cine modify id_cine int not null auto_increment;
 
 create table cp_tb_artista (
   id_artista int not null,
   no_artista varchar(50)
 );
 alter table cp_tb_artista add constraint cp_pk_artista primary key (id_artista);
+alter table cp_tb_artista modify id_artista int not null auto_increment;
 
 create table cp_tb_tipopelicula (
   id_tipopelicula int not null,
   no_tipopelicula varchar(50)
 );
 alter table cp_tb_tipopelicula add constraint cp_pk_tipopelicula primary key (id_tipopelicula);
+alter table cp_tb_tipopelicula modify id_tipopelicula int not null auto_increment;
 
 create table cp_tb_pelicula (
   id_pelicula                 int not null,
@@ -44,14 +47,15 @@ create table cp_tb_pelicula (
   id_pais                     int,
   id_tipopelicula             int,
   co_clasificacionpelicula    char(3),/*INF, TOD, +14, +18*/
-  fl_tienesubtitulopelicula   boolean,
-  fl_tiene3dpelicula          boolean,
-  fl_esestreno                boolean,
-  fl_escartelera              boolean
+  fl_doblada                  boolean,
+  fl_en3d                     boolean,
+  fl_enestreno                boolean,
+  fl_encartelera              boolean
 );
 alter table cp_tb_pelicula add constraint cp_pk_pelicula primary key (id_pelicula);
 alter table cp_tb_pelicula add constraint cp_fk_pelpai foreign key (id_pais) references cp_tb_pais (id_pais);
 alter table cp_tb_pelicula add constraint cp_fk_peltippel foreign key (id_tipopelicula) references cp_tb_tipopelicula (id_tipopelicula);
+alter table cp_tb_pelicula modify id_pelicula int not null auto_increment;
 
 create table cp_tb_peliculaartista (
   id_pelicula int not null,
@@ -75,11 +79,12 @@ create table cp_tb_horario (
   id_cine                     int not null,
   fe_diahorario               date,
   no_horashorario             varchar(100),
-  fl_essubtitulado            int,
-  fl_esen3d                   int
+  fl_doblada                  boolean,
+  fl_en3d                     boolean
 );
 alter table cp_tb_horario add constraint cp_pk_horario primary key (id_horario,id_pelicula,id_cine);
 alter table cp_tb_horario add constraint cp_fk_hor_pelcin foreign key (id_pelicula,id_cine) references cp_tb_peliculacine (id_pelicula, id_cine);
+alter table cp_tb_horario modify id_horario int not null auto_increment;
 
 create table cp_tb_userinterno (
 	id_usuario varchar(10) not null,
