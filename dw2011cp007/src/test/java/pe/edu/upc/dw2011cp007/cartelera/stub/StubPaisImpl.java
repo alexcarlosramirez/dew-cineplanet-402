@@ -14,17 +14,17 @@ public class StubPaisImpl implements PaisRepository {
 		listaPaisModel = new ArrayList<PaisModel>();
 
 		PaisModel paisModel = new PaisModel();
-		paisModel.setIdPelicula(1);
+		paisModel.setIdPais(1);
 		paisModel.setNombrepais("PERU");
 		listaPaisModel.add(paisModel);
 
 		paisModel = new PaisModel();
-		paisModel.setIdPelicula(1);
+		paisModel.setIdPais(2);
 		paisModel.setNombrepais("ARGENTINA");
 		listaPaisModel.add(paisModel);
 
 		paisModel = new PaisModel();
-		paisModel.setIdPelicula(1);
+		paisModel.setIdPais(3);
 		paisModel.setNombrepais("ECUADOR");
 		listaPaisModel.add(paisModel);
 	}
