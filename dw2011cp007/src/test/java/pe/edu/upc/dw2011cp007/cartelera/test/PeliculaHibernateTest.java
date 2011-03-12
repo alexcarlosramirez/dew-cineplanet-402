@@ -18,7 +18,7 @@ import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
-public class PeliculaJdbcTest {
+public class PeliculaHibernateTest {
 
 	@Autowired
 	private CarteleraService carteleraService;
