@@ -1,5 +1,6 @@
 package pe.edu.upc.dw2011cp007.mantenimiento.service;
 
+import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 
 public interface MantenimientoService {
@@ -14,4 +15,13 @@ public interface MantenimientoService {
 
 	CineModel buscarCinePorNombre(String string);
 
+	boolean registrarArtista(ArtistaModel artistaModel);
+
+	ArtistaModel buscarartistaPorId(int i);
+
+	boolean actualizarArtista(ArtistaModel artistaModel);
+
+	boolean eliminarCine(ArtistaModel artistaModel);
+
+	
 }
