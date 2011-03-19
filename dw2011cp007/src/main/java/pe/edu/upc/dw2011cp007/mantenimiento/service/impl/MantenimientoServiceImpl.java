@@ -39,4 +39,13 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 		}
 		return null;
 	}
+
+	public CineModel buscarCinePorNombre(String string) {
+		ArrayList<CineModel> listaCineModel = cineRepository.buscarListaCine();
+		for (CineModel cineModel : listaCineModel) {
+			if (cineModel.getNombrecine().equals(string))
+				return cineModel;
+		}
+		return null;
+	}
 }

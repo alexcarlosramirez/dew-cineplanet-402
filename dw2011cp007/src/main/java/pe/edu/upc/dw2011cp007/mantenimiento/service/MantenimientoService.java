@@ -12,4 +12,6 @@ public interface MantenimientoService {
 
 	CineModel buscarCinePorId(int i);
 
+	CineModel buscarCinePorNombre(String string);
+
 }
