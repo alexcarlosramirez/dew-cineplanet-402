@@ -6,31 +6,28 @@ import java.util.HashMap;
 
 import org.junit.*;
 
-import pe.edu.upc.dw2011cp007.model.PerfilModel;
-import pe.edu.upc.dw2011cp007.repository.PerfilRepository;
-
+import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
+import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
 
 public class PerfilesTest {
-	
+
 	PerfilRepository repository= new PerfilRepository();
-	
-	
+
 	@Test
 	public void cambiarvigencia(){
 		int retorno=0;
 		grabarperfil();
 		retorno=repository.actualizarvigencia("Administrador",50);
 		assertTrue("Vigencia no fue alterada", retorno==0);
-		
 	}
-	
+
 	@Test
 	public void grabarperfil(){
 		//PerfilRepository repository= new PerfilRepository();
 		int valnombre=0;
 		int retorno=0;
 		//HashMap<Integer, String> listadofuncion= new HashMap<Integer, String>();
-		
+
 		//SIMULACION CREACION DEL PRIMER PERFIL
 		PerfilModel perfilmodel= new PerfilModel();
 		valnombre=perfilmodel.setNombrePerfil("Administrador");
@@ -43,7 +40,7 @@ public class PerfilesTest {
 		assertTrue("Error en longitud Nombre de Perfil", valnombre==0);
 		retorno=repository.grabarperfil(perfilmodel);
 		assertTrue("No se grabo el perfil error: "+ retorno,retorno==0);
-		
+
 		//=============================================================
 		//SIMULACION CREACION DEL SEGUNDO PERFIL
 		PerfilModel perfilmodel2= new PerfilModel();
@@ -52,14 +49,14 @@ public class PerfilesTest {
 		perfilmodel2.setVigenciaPerfil(30);
 		perfilmodel2.setEstadoPerfil(1);
 		perfilmodel2.setListadofuncion(new HashMap<Integer, String>());
-		
+
 		//Se espera que la longitud de nom. perfil sea de 5 a 30 caracteres 
 		assertTrue("Error en longitud Nombre de Perfil", valnombre==0);
 		retorno=repository.grabarperfil(perfilmodel2);
 		//Verifica que el nombre del Perfil no se duplique
 		assertTrue("No se grabo el perfil error: "+ retorno,retorno==0);
 	}
-	
+
 	@Test
 	public void asignarfunciones(){
 		int val=0;
@@ -92,15 +89,14 @@ public class PerfilesTest {
 		val=repository.asignarfuncion("Administrador","agregar_usuarios22");
 		val=repository.asignarfuncion("Administrador","agregar_usuarios23");
 		val=repository.asignarfuncion("Administrador","agregar_usuarios24");
-		
+
 		/*val=repository.asignarfuncion("Operador","agregar_usuarios3");
 		assertTrue("Funcion ya asignada al Perfil",val==0);
 		val=repository.asignarfuncion("Operador","agregar_usuarios4");
 		assertTrue("Funcion ya asignada al Perfil",val==0);
 		System.out.println("Funcion Asignada");*/
-
 	}
-	
+
 	@Test
 	public void ver_informacion(){
 		PerfilModel perfil_buscado;//=new PerfilModel();

@@ -1,10 +1,10 @@
-package pe.edu.upc.dw2011cp007.repository;
+package pe.edu.upc.dw2011cp007.seguridad.repository;
 
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
 
-import pe.edu.upc.dw2011cp007.model.PerfilModel;
+import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
 
 public class PerfilRepository {
 

@@ -1,8 +1,8 @@
-package pe.edu.upc.dw2011cp007.model;
+package pe.edu.upc.dw2011cp007.seguridad.model;
 
 import java.util.HashMap;
 
-import pe.edu.upc.dw2011cp007.repository.PerfilRepository;
+import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
 
 public class UsuarioModel {
 

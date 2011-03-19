@@ -5,10 +5,10 @@ import java.util.HashMap;
 import org.junit.BeforeClass;
 import org.junit.Test;
 
-import pe.edu.upc.dw2011cp007.model.PerfilModel;
-import pe.edu.upc.dw2011cp007.model.UsuarioModel;
-import pe.edu.upc.dw2011cp007.repository.PerfilRepository;
-import pe.edu.upc.dw2011cp007.repository.UsuarioRepository;
+import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
+import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioModel;
+import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
+import pe.edu.upc.dw2011cp007.seguridad.repository.UsuarioRepository;
 
 public class AsignaPerfilTest {
 	

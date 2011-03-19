@@ -1,16 +1,11 @@
-package pe.edu.upc.dw2011cp007.repository;
+package pe.edu.upc.dw2011cp007.seguridad.repository.impl;
 
-import java.sql.SQLException;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-
-import org.springframework.dao.DataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
-import pe.edu.upc.dw2011cp007.model.PerfilModel;
+import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
+import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilDbRepository;
 
-public class JdbcPerfilRepository implements PerfilDbRepository{
+public class JdbcPerfilRepositoryImpl implements PerfilDbRepository {
 
 	JdbcTemplate jdbcTemplate;
 	public PerfilModel buscarperfil(String perfil) {

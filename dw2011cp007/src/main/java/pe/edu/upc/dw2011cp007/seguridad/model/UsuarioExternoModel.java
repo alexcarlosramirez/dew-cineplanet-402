@@ -1,4 +1,4 @@
-package pe.edu.upc.dw2011cp007.model;
+package pe.edu.upc.dw2011cp007.seguridad.model;
 
 import java.util.HashMap;
 

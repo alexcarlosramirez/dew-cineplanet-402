@@ -1,24 +1,18 @@
 package pe.edu.upc.dw2011cp007;
 
-import java.util.Iterator;
-import java.util.Map;
+import static org.junit.Assert.assertTrue;
 
-import org.junit.*;
+import org.junit.Test;
 
-import pe.edu.upc.dw2011cp007.model.PerfilModel;
-import pe.edu.upc.dw2011cp007.model.UsuarioModel;
-import pe.edu.upc.dw2011cp007.repository.UsuarioRepository;
-import static org.junit.Assert.*;//importar todos los metodos estaticos
-  
+import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioModel;
+import pe.edu.upc.dw2011cp007.seguridad.repository.UsuarioRepository;
+
 public class UsuarioTest {
 
 	UsuarioRepository repository = new UsuarioRepository();
-	
+
 	@Test //recordar que esto identifica que es un metodo de prueba
 	public void grabarUsuario() {
-		
-		 
-		
 		//DATOS A ENVIAR PARA EL INGRESO DE USUARIO
 		UsuarioModel usuario = new UsuarioModel();
 		usuario.setApellidoPaternoUsuario("Lopez");
@@ -39,7 +33,7 @@ public class UsuarioTest {
 		int retorno=0;
 		retorno=repository.grabarUsuario(1,usuario);
 		assertTrue("No se grabo el Usuario error: "+ retorno,retorno==0);
-		
+
 		//////INGRESO DE USUARIO 2 //////////
 		//DATOS A ENVIAR PARA EL INGRESO DE USUARIO
 		UsuarioModel usuario2 = new UsuarioModel();
@@ -61,10 +55,8 @@ public class UsuarioTest {
 		retorno=0;
 		retorno=repository.grabarUsuario(2,usuario2);
 		assertTrue("No se grabo el Usuario error: "+ retorno,retorno==0);
-			
-		
 	}
-	
+
 	@Test
 	public void loguearusuario(){
 	/////LOGUEAR UDUARIO
@@ -75,16 +67,14 @@ public class UsuarioTest {
 		String idUsuarioant="";
 		int i=0;
 		int numIntentos=0;
-		
 			while ( i<4 ) {
-		
 			i++;
 			String idUsuario="YLopezVito";
 			String password="YLopezVito";
 			if (numIntentos > 0 && idUsuario==idUsuarioant){
 				numIntentos++;
 			}
-			else	{
+			else {
 				numIntentos=1;
 			}
 			retorno=repository.loguearUsuario(numIntentos,idUsuario,password);
@@ -96,12 +86,11 @@ public class UsuarioTest {
 				retorno=0;
 			}
 			assertTrue("Fin Logueo: "+ retorno,retorno==0);
-
 		} 
 	}
-	
+
 	public void validacorreo(){
 		String correo="probando@loquesea.com";
-		
+		System.out.println(correo);
 	}
 }

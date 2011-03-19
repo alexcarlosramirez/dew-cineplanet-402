@@ -1,4 +1,4 @@
-package pe.edu.upc.dw2011cp007.dao;
+package pe.edu.upc.dw2011cp007.seguridad.dao;
 
 import org.springframework.jdbc.core.JdbcTemplate;
 

@@ -1,9 +1,9 @@
-package pe.edu.upc.dw2011cp007.repository;
+package pe.edu.upc.dw2011cp007.seguridad.repository;
 
 import java.util.HashMap;
 
-import pe.edu.upc.dw2011cp007.model.UsuarioExternoModel;
-import pe.edu.upc.dw2011cp007.model.UsuarioModel;
+import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioExternoModel;
+import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioModel;
 
 
 
