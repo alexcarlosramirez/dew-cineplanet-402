@@ -21,32 +21,31 @@ public class CineTest {
 	@Test
 	public void mantenimientoCine() {
 		CineModel cineModel = new CineModel();
-		cineModel.setIdCine(6);
 		cineModel.setNombrecine("AZANGARO 3D");
 
 		//inserta
 		boolean resInserta = mantenimientoService.registrarCine(cineModel);
 		assertTrue(resInserta);
 
-		CineModel cineModelBuscar = mantenimientoService.buscarCinePorId(6);
-		assertNotNull(cineModelBuscar);
-		System.out.println("inserta + " + cineModelBuscar);
+		cineModel = mantenimientoService.buscarCinePorNombre("AZANGARO 3D");
+		assertNotNull(cineModel);
+		System.out.println("inserta -> " + cineModel);
 
 		//actualiza
 		cineModel.setNombrecine("MALVINAS 4D");
 		boolean resUpdate = mantenimientoService.actualizarCine(cineModel);
 		assertTrue(resUpdate);
 
-		cineModelBuscar = mantenimientoService.buscarCinePorId(6);
-		assertNotNull(cineModelBuscar);
-		System.out.println("actualiza + " + cineModelBuscar);
+		cineModel = mantenimientoService.buscarCinePorNombre("MALVINAS 4D");
+		assertNotNull(cineModel);
+		System.out.println("actualiza -> " + cineModel);
 
 		//elimina
 		boolean resDelete = mantenimientoService.eliminarCine(cineModel);
 		assertTrue(resDelete);
 
-		cineModelBuscar = mantenimientoService.buscarCinePorId(6);
-		assertNull(cineModelBuscar);
-		System.out.println("elimina + " + cineModelBuscar);
+		cineModel = mantenimientoService.buscarCinePorNombre("CINEPLANET AREQUIPA");
+		assertNotNull(cineModel);
+		System.out.println("elimina -> " + cineModel);
 	}
 }
