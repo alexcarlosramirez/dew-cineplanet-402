@@ -9,5 +9,7 @@ public interface UsuarioRepository {
 	boolean registrarUsuario(UsuarioModel usuarioModel);
 	boolean modificarUsuario(UsuarioModel usuarioModel);
 	boolean eliminarUsuario(UsuarioModel usuarioModel);
+	boolean generaCodigoUsuario(UsuarioModel usuarioModel);
 	ArrayList<UsuarioModel> buscarListaUsuario();
+	
 }

@@ -10,7 +10,9 @@ public interface SeguridadService {
 	boolean actualizarUsuario(UsuarioModel usuarioModel);
 
 	boolean eliminarUsuario(UsuarioModel usuarioModel);
-
+	
+	boolean generaCodigoUsuario(UsuarioModel usuarioModel);
+	
 	UsuarioModel buscarUsuarioPorId(String idUsuario);
 
 	UsuarioModel buscarUsuarioPorNombre(String Nombre);

@@ -23,7 +23,21 @@ public class UsuarioModel {
 	private String EstadoUsuario;
 	private int NroVecesLoguedo;
 	private PerfilRepository perfiles_asignados;
+	private String puestoLaboral;
+	private String nroAnexo;
 	
+	public String getPuestoLaboral() {
+		return puestoLaboral;
+	}
+	public void setPuestoLaboral(String puestoLaboral) {
+		this.puestoLaboral = puestoLaboral;
+	}
+	public String getNroAnexo() {
+		return nroAnexo;
+	}
+	public void setNroAnexo(String nroAnexo) {
+		this.nroAnexo = nroAnexo;
+	}
 	public String getIdUsuario() {
 		return idUsuario;
 	}
