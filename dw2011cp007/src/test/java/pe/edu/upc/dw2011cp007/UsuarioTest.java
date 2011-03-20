@@ -8,9 +8,6 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-
-import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
-import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioModel;
 import pe.edu.upc.dw2011cp007.seguridad.service.SeguridadService;
 
@@ -19,14 +16,16 @@ import pe.edu.upc.dw2011cp007.seguridad.service.SeguridadService;
 public class UsuarioTest {
 	@Autowired
 	SeguridadService seguridadService;
-
+	
+	UsuarioModel usuario = new UsuarioModel();
+	UsuarioModel usuario2 = new UsuarioModel();
 	@Test
 	
-	
-	public void mantenimientoUsuario() {
+
+	public void GenerarCodigo() {
 			//DATOS A ENVIAR PARA EL INGRESO DE USUARIO
 		
-			UsuarioModel usuario = new UsuarioModel();
+			
 			usuario.setApellidoPaternoUsuario("Lopez");
 			usuario.setApellidoMaternoUsuario("Vitor")	;	
 			usuario.setNombreUsuario("Yonni");
@@ -42,26 +41,42 @@ public class UsuarioTest {
 			usuario.setEstadoPassword("Vencida");
 			usuario.setEstadoUsuario("Activo");  //Activo, Suspendido o Bloqueado. 
 			usuario.setNroVecesLoguedo(0);//numero de veces logueado
-			
-			/*
-			UsuarioModel usuario2 = new UsuarioModel();
 			//generamos codigo
 			boolean resGenera = seguridadService.generaCodigoUsuario(usuario);
 			assertTrue(resGenera);
-			*/
+	
+	}
+			
+	@Test
+	public void VerificarDuplicidad() {
+				
+		GenerarCodigo();
 			
 			//busca por codigo codigo
-			usuario = seguridadService.buscarUsuarioPorId("YLopezVito");
-			assertNull(usuario);
-			//System.out.println("mirar -> " + usuario2);
+			usuario2 = seguridadService.buscarUsuarioPorId(usuario.getIdUsuario());
+			assertNull("ya existe codigo",usuario2);
 			
-			/*
-			assertTrue(resGenera);			
-			//se llama al metodo Insertar usuario
-			boolean resInserta = seguridadService.registrarUsuario(usuario);
-			assertTrue(resInserta);
-			*/
-			
+	}	
+	
+	@Test		
+	public void InsertarUsuario() {
+	
+		GenerarCodigo();	
+		
+		//se llama al metodo Insertar usuario
+		boolean resInserta = seguridadService.registrarUsuario(usuario);
+		assertTrue(resInserta);
 	}
+
+	@Test		
+	public void EliminaUsuario() {	
+	GenerarCodigo();
+	//elimina
+		boolean resDelete = seguridadService.eliminarUsuario(usuario);
+		assertTrue(resDelete);
+			
+}
+	
+	
 	
 }

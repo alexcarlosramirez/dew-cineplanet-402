@@ -130,6 +130,9 @@ public class UsuarioModel {
 	}
 
 
-	
+	@Override
+	public String toString() {
+		return idUsuario + " = " + nombreUsuario;
+	}
 	
 }

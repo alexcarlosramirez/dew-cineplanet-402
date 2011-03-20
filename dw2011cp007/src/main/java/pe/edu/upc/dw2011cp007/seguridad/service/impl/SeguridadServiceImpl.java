@@ -42,7 +42,9 @@ public class SeguridadServiceImpl implements SeguridadService {
 	public UsuarioModel buscarUsuarioPorId(String idUsuario) {
 		ArrayList<UsuarioModel> listaUsuarioModel = usuarioRepository.buscarListaUsuario();
 		for (UsuarioModel usuarioModel : listaUsuarioModel) {
-			if (usuarioModel.getIdUsuario() == idUsuario)
+
+			if (usuarioModel.getIdUsuario().equals(idUsuario))
+				
 				return usuarioModel;
 		}
 		return null;
