@@ -4,6 +4,8 @@ import java.util.HashMap;
 
 import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
 
+
+
 public class UsuarioModel {
 
 	private String idUsuario;	
