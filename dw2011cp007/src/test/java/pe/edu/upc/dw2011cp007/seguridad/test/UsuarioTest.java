@@ -1,5 +1,4 @@
-package pe.edu.upc.dw2011cp007;
-
+package pe.edu.upc.dw2011cp007.seguridad.test;
 
 import static org.junit.Assert.*;
 

@@ -97,11 +97,12 @@ create table cp_tb_userinterno (
 	nu_anexo varchar(4),
 	no_email varchar(40),
 	id_jefeinmediato varchar(10),
-	no_tipodoc varchar(1),
+	no_tipodoc varchar(5),
 	no_numdoc varchar(11),
 	no_password varchar(10),
-	no_estadousuario varchar(1)
+	no_estadousuario varchar(10)
 );
+
 alter table cp_tb_userinterno add constraint cp_pk_userinterno primary key (id_usuario);
 
 
