@@ -1,37 +1,39 @@
 package pe.edu.upc.dw2011cp007;
 
-import java.util.HashMap;
-
 import org.junit.BeforeClass;
-import org.junit.Test;
+
+import org.junit.runner.RunWith;
+
+import org.springframework.test.context.ContextConfiguration;
+import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
-import pe.edu.upc.dw2011cp007.seguridad.model.UsuarioModel;
-import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
-import pe.edu.upc.dw2011cp007.seguridad.repository.UsuarioRepository;
 
+import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
+
+@RunWith(SpringJUnit4ClassRunner.class)
+@ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class AsignaPerfilTest {
 	
-	static PerfilRepository lista_perfiles= new PerfilRepository();
-	static UsuarioRepository lista_usuarios= new UsuarioRepository();
+	static PerfilRepository lista_perfiles;
+//	static UsuarioInternoRepository lista_usuarios= new UsuarioInternoRepository();
 	
 	@BeforeClass
 	public static void crear_perfil(){
 		PerfilModel perfil1 = new PerfilModel();
 		perfil1.setNombrePerfil("Super Usuario");
 		perfil1.setDescripcionPerfil("Pruebas de asignacion");
-		perfil1.setEstadoPerfil(1);
+		perfil1.setEstadoPerfil("1");
 		perfil1.setVigenciaPerfil(45);
-		perfil1.setListadofuncion(new HashMap<Integer, String>());
-		
+			
 		PerfilModel perfil2=new PerfilModel();
 		perfil2.setNombrePerfil("Administrador");
 		perfil2.setDescripcionPerfil("Pruebas de asignacion2");
-		perfil2.setEstadoPerfil(1);
+		perfil2.setEstadoPerfil("1");
 		perfil2.setVigenciaPerfil(25);
-		perfil2.setListadofuncion(new HashMap<Integer, String>());
 		
-		UsuarioModel usuario1 = new UsuarioModel();
+		
+/*		UsuarioInterno_back usuario1 = new UsuarioInterno_back();
 		usuario1.setApellidoPaternoUsuario("Cuser01");
 		usuario1.setApellidoMaternoUsuario("Muser01")	;	
 		usuario1.setNombreUsuario("User01");
@@ -46,7 +48,7 @@ public class AsignaPerfilTest {
 		usuario1.setEstadoUsuario("Activo");  //Activo, Suspendido o Bloqueado. 
 		usuario1.setNroVecesLoguedo(0);//numero de veces logueado
 		
-		UsuarioModel usuario2 = new UsuarioModel();
+		UsuarioInterno_back usuario2 = new UsuarioInterno_back();
 		usuario2.setApellidoPaternoUsuario("Cuser02");
 		usuario2.setApellidoMaternoUsuario("Muser02")	;	
 		usuario2.setNombreUsuario("User02");
@@ -63,14 +65,14 @@ public class AsignaPerfilTest {
 		
 		lista_perfiles.grabarperfil(perfil1);
 		lista_perfiles.grabarperfil(perfil2);
-		lista_usuarios.grabarUsuario(1, usuario1);
-		lista_usuarios.grabarUsuario(2, usuario2);
+//		lista_usuarios.grabarUsuario(1, usuario1);
+//		lista_usuarios.grabarUsuario(2, usuario2);*/
 	}
 	
-	@Test
+	//@Test
 	public void asignaperfil(){
-		System.out.println(lista_perfiles.getCtrlPerfil().size()+"");
-		System.out.println(lista_usuarios.getCtrlUsuario().size()+"");
+		
+//		System.out.println(lista_usuarios.getCtrlUsuario().size()+"");
 		
 	}
 }
