@@ -10,8 +10,7 @@ drop table if exists cp_tb_pelicula;
 drop table if exists cp_tb_peliculaartista;
 drop table if exists cp_tb_peliculacine;
 drop table if exists cp_tb_horario;
-drop table if exists cp_tb_userinterno;
-drop table if exists cp_tb_perfil;
+
 
 create table cp_tb_pais (
   id_pais int not null,
