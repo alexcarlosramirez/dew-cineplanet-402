@@ -12,7 +12,6 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upc.dw2011cp007.mantenimiento.model.UsuarioExternoModel;
-import pe.edu.upc.dw2011cp007.mantenimiento.model.UsuarioInternoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.UsuarioExternoRepository;
 
 @Repository
