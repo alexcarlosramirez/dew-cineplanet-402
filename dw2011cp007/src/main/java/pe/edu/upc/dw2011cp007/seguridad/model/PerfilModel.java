@@ -1,43 +1,15 @@
 package pe.edu.upc.dw2011cp007.seguridad.model;
 
-import java.util.HashMap;
+import java.util.List;
 
 public class PerfilModel {
 
-	/**
-	 * Identificador del perfil en la BD
-	 */
 	private int idPerfil;
-
-	/**
-	 * Nombre código del perfil en el sistema.
-	 */
 	private String nombrePerfil;
-
-	/**
-	 * Explicación general del perfil
-	 */
 	private String descripcionPerfil;
-
-	/**
-	 * Se estimará en días.
-	 */
 	private int vigenciaPerfil;
-	
-	/**
-	 * Almacenará las funciones asignadas al perfil
-	 */
-	private HashMap<Integer, String> listadofuncion; 
-
-	/**
-	 * Estado:
-	 * <ul>
-	 * <li>0: Cancelado</li>
-	 * <li>1: Activo</li>
-	 * <li>2: Bloqueado</li>
-	 * </ul>
-	 */
-	private int estadoPerfil;
+	private List<FuncionModel> funciones;
+	private String estadoPerfil;
 	
 	private int retorno;
 	
@@ -57,7 +29,7 @@ public class PerfilModel {
 			this.nombrePerfil = nombrePerfil;
 			
 		}else{
-			retorno=1;
+			retorno=-1;
 		}
 		return retorno;
 	}
@@ -73,22 +45,26 @@ public class PerfilModel {
 	public void setVigenciaPerfil(int vigenciaPerfil) {
 		this.vigenciaPerfil = vigenciaPerfil;
 	}
-	public int getEstadoPerfil() {
+	public String getEstadoPerfil() {
 		return estadoPerfil;
 	}
-	public void setEstadoPerfil(int estadoPerfil) {
+	
+	/**
+	 * Estado:
+	 * <ul>
+	 * <li>0: Cancelado</li>
+	 * <li>1: Activo</li>
+	 * <li>2: Bloqueado</li>
+	 * </ul>
+	 */
+	public void setEstadoPerfil(String estadoPerfil) {
 		this.estadoPerfil = estadoPerfil;
 	}
-	/**
-	 * @param listadofuncion the listadofuncion to set
-	 */
-	public void setListadofuncion(HashMap<Integer, String> listadofuncion) {		
-		this.listadofuncion = listadofuncion;
+	public List<FuncionModel> getFunciones() {
+		return funciones;
 	}
-	/**
-	 * @return the listadofuncion
-	 */
-	public HashMap<Integer, String> getListadofuncion() {
-		return listadofuncion;
+	public void setFunciones(List<FuncionModel> funciones) {
+		this.funciones = funciones;
 	}
+	
 }
