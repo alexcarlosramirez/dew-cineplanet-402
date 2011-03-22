@@ -6,8 +6,8 @@ truncate table cp_tb_pais;
 truncate table cp_tb_cine;
 truncate table cp_tb_artista;
 truncate table cp_tb_tipopelicula;
-truncate table cp_tb_userinterno;
-truncate table cp_tb_perfil;
+truncate table cp_tb_empleado;
+truncate table cp_tb_Perfil;
 
 insert into cp_tb_pais (no_pais) values ('PERU');
 insert into cp_tb_pais (no_pais) values ('COLOMBIA');
@@ -100,7 +100,14 @@ insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario,
 insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario, fl_doblada, fl_en3d) values (6, 3, SYSDATE(),'12-18', false, false);
 insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario, fl_doblada, fl_en3d) values (6, 5, SYSDATE(),'16-22', false,true);
 
-insert into cp_tb_userinterno values ('MCOSIOESPI','COSIO','ESPINO','MIGUEL','SISTEMAS','ADM. SISTEMAS','2153000','1512','DM_MCOSIO@EQUIFAX.COM.PE','','1','42587813','1234567891','1');
+INSERT into cp_tb_empleado (`coCodigo`, `noApePaterno`, `noApeMaterno`, `noNombre`, `cotipodoc`, `nudocumento`, `txtemail`, `noUnidadTrabajo`, `noPuestoTrabajo`, `noTelefono`, `noAnexo`, `coJefeInmediato`, `noContrasena`, `coEstadoEmpleado`, `coEstadoPassword`, `feRegistro`) VALUES ('MCOSIOESPI', 'COSIO', 'ESPINO', 'MIGUEL', '1', '42587813', 'MIGUELMAC20@GMAIL.COM', 'TECNOLOGIA', 'ANALISTA QA', '2222222', '1512', NULL, '123456789', '1', '1', SYSDATE());
 
-insert into cp_tb_perfil values (1,'ADMINISTRATOR','SUPER USUARIO DEL SISTEMA',100,1);
-insert into cp_tb_perfil values (2,'OPERADOR','PERFIL DE OPERACIONES',100,1);
+INSERT into cp_tb_Perfil (noPerfil,txtDescripcion,nuvigencia,coestadoPerfil) values('ADMINISTRADOR','ADMINISTRADOR DEL SISTEMA',1000,'1');
+INSERT into cp_tb_Perfil (noPerfil,txtDescripcion,nuvigencia,coestadoPerfil) values('OPERADOR','PERFIL OPERATIVO',30,'1');
+INSERT into cp_tb_Perfil (noPerfil,txtDescripcion,nuvigencia,coestadoPerfil) values('ACTUALIZADOR','ACTUALIZA EL CONTENIDO',45,'2');
+
+INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('ROOT','CONTROL TOTAL');
+INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('MANTENIMIENTO','MANTENIMIENTO DE TABLAS PRINCIPALES');
+INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('INVITADO','ACCESO LIMITADO');
+INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('PREMIUM','USUARIO PREMIO');
+

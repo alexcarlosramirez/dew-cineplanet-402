@@ -86,31 +86,107 @@ alter table cp_tb_horario add constraint cp_pk_horario primary key (id_horario,i
 alter table cp_tb_horario add constraint cp_fk_hor_pelcin foreign key (id_pelicula,id_cine) references cp_tb_peliculacine (id_pelicula, id_cine);
 alter table cp_tb_horario modify id_horario int not null auto_increment;
 
-create table cp_tb_userinterno (
-	id_usuario varchar(10) not null,
-	no_apepaterno varchar(30),
-	no_apematerno varchar(30),
-	no_nombreusuario varchar(30),
-	no_unidadtrabajo varchar(20),
-	no_puestolaboral varchar(20),
-	nu_telefono varchar(10),
-	nu_anexo varchar(4),
-	no_email varchar(40),
-	id_jefeinmediato varchar(10),
-	no_tipodoc varchar(5),
-	no_numdoc varchar(11),
-	no_password varchar(10),
-	no_estadousuario varchar(10)
-);
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.`cp_tb_empleado`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_empleado` ;
 
-alter table cp_tb_userinterno add constraint cp_pk_userinterno primary key (id_usuario);
+CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`cp_tb_empleado` (
+  `coCodigo` VARCHAR(20) NOT NULL ,
+  `noApePaterno` VARCHAR(45) NULL DEFAULT NULL ,
+  `noApeMaterno` VARCHAR(45) NULL DEFAULT NULL ,
+  `noNombre` VARCHAR(45) NULL DEFAULT NULL ,
+  `cotipodoc` CHAR(2) NULL DEFAULT NULL ,
+  `nudocumento` CHAR(11) NULL DEFAULT NULL ,
+  `txtemail` VARCHAR(45) NULL DEFAULT NULL ,
+  `noUnidadTrabajo` VARCHAR(45) NULL DEFAULT NULL ,
+  `noPuestoTrabajo` VARCHAR(45) NULL DEFAULT NULL ,
+  `noTelefono` VARCHAR(10) NULL DEFAULT NULL ,
+  `noAnexo` VARCHAR(4) NULL DEFAULT NULL ,
+  `coJefeInmediato` VARCHAR(20) NULL DEFAULT NULL ,
+  `noContrasena` VARCHAR(20) NOT NULL ,
+  `coEstadoEmpleado` CHAR(1) NULL DEFAULT NULL ,
+  `coEstadoPassword` CHAR(1) NULL DEFAULT NULL ,
+  `feRegistro` DATETIME NOT NULL ,
+  PRIMARY KEY (`coCodigo`) ,
+  INDEX `JefeInmediato` (`coJefeInmediato` ASC) ,
+  INDEX `fk_jefeInmediato` (`coJefeInmediato` ASC) ,
+  CONSTRAINT `fk_jefeInmediato`
+    FOREIGN KEY (`coJefeInmediato` )
+    REFERENCES `dw2011cp007`.`cp_tb_empleado` (`coCodigo` )
+    ON DELETE SET NULL
+    ON UPDATE NO ACTION);    
+    
+  
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.`cp_tb_Cliente`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_Cliente` ;
+
+CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`cp_tb_Cliente` (
+  `coCliente` INT NOT NULL AUTO_INCREMENT ,
+  `nologin` VARCHAR(45) NOT NULL ,
+  `noApePaterno` VARCHAR(45) NULL DEFAULT NULL ,
+  `noApeMaterno` VARCHAR(45) NULL DEFAULT NULL ,
+  `noNombre` VARCHAR(45) NULL DEFAULT NULL ,
+  `flPremium` TINYINT(1) NULL DEFAULT NULL ,
+  `txtemail` VARCHAR(45) NULL DEFAULT NULL ,
+  `cotipodoc` VARCHAR(45) NULL DEFAULT NULL ,
+  `nudocumento` CHAR(11) NULL DEFAULT NULL ,
+  `noTelefono` VARCHAR(10) NULL DEFAULT NULL ,
+  `txtDireccion` VARCHAR(60) NULL DEFAULT NULL ,
+  `noContrasena` VARCHAR(20) NULL DEFAULT NULL ,
+  `coEstadoUsuario` CHAR(1) NULL DEFAULT NULL ,
+  `coEstadoPassword` CHAR(1) NULL DEFAULT NULL ,
+  `feRegistro` DATETIME NOT NULL ,
+  PRIMARY KEY (`coCliente`) ,
+  UNIQUE INDEX `nologin_UNIQUE` (`nologin` ASC) );
 
 
-create table cp_tb_perfil (
-  id_perfil             int not null,
-  no_nombreperfil       varchar(30),
-  tx_descripcion        varchar(100),
-  nu_diasvigencia       int,
-  co_estado             int
-);
-alter table cp_tb_perfil add constraint cp_pk_perfil primary key (id_perfil);
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.`cp_tb_Perfil`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_Perfil` ;
+
+CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`cp_tb_Perfil` (
+  `idPerfil` INT NOT NULL AUTO_INCREMENT ,
+  `noPerfil` VARCHAR(30) NOT NULL ,
+  `txtDescripcion` VARCHAR(60) NULL ,
+  `nuvigencia` INT NULL ,
+  `coestadoPerfil` CHAR(1) NULL ,
+  PRIMARY KEY (`idPerfil`) );
+
+
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.`cp_tb_funcion`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_funcion` ;
+
+CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`cp_tb_funcion` (
+  `idfuncion` INT NOT NULL AUTO_INCREMENT ,
+  `nofuncion` VARCHAR(30) NOT NULL ,
+  `txtdescripcion` VARCHAR(60) NULL ,
+  PRIMARY KEY (`idfuncion`) );
+
+
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.`Perfil_has_cp_tb_funcion`
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`Perfil_has_cp_tb_funcion` ;
+
+CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`Perfil_has_cp_tb_funcion` (
+  `Perfil_idPerfil` INT NOT NULL ,
+  `cp_tb_funcion_idfuncion` INT NOT NULL ,
+  PRIMARY KEY (`Perfil_idPerfil`, `cp_tb_funcion_idfuncion`) ,
+  INDEX `fk_Perfil_has_cp_tb_funcion_cp_tb_funcion1` (`cp_tb_funcion_idfuncion` ASC) ,
+  INDEX `fk_Perfil_has_cp_tb_funcion_Perfil1` (`Perfil_idPerfil` ASC) ,
+  CONSTRAINT `fk_Perfil_has_cp_tb_funcion_Perfil1`
+    FOREIGN KEY (`Perfil_idPerfil` )
+    REFERENCES `dw2011cp007`.`cp_tb_Perfil` (`idPerfil` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_Perfil_has_cp_tb_funcion_cp_tb_funcion1`
+    FOREIGN KEY (`cp_tb_funcion_idfuncion` )
+    REFERENCES `dw2011cp007`.`cp_tb_funcion` (`idfuncion` )
+    ON DELETE NO ACTION
+    ON UPDATE NO ACTION);
