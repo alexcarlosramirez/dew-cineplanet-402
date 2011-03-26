@@ -66,5 +66,22 @@ public class PerfilesTest {
 	public void asignarfunciones(){
 		
 	}
+	@Test
+	public void grabar_perfil_dos_veces(){
+		PerfilModel perfilModel=new PerfilModel();
+		perfilModel.setNombrePerfil("INVITADO");
+		perfilModel.setDescripcionPerfil("USUARIO INVITADO AL SISTEMA");
+		perfilModel.setVigenciaPerfil(30);
+		perfilModel.setEstadoPerfil("1");
+		perfilRepository.grabarperfil(perfilModel);
+		
+		perfilModel.setNombrePerfil("INVITADO");
+		perfilModel.setDescripcionPerfil("USUARIO INVITADO AL SISTEMA2");
+		perfilModel.setVigenciaPerfil(45);
+		perfilModel.setEstadoPerfil("0");
+		assertNotNull(perfilRepository.buscarperfil(perfilModel.getNombrePerfil()));
+		System.out.println("Perfil "+perfilModel.getNombrePerfil()+" ya se encuentra registrado");
+		perfilRepository.eliminarPerfil("INVITADO");
+	}
 
 }

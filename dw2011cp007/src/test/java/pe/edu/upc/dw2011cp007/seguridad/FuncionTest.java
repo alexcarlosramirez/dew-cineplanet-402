@@ -2,6 +2,7 @@ package pe.edu.upc.dw2011cp007.seguridad;
 
 import static org.junit.Assert.*;
 
+import java.util.Iterator;
 import java.util.List;
 
 import org.junit.Test;
@@ -25,6 +26,11 @@ public class FuncionTest {
 		List<FuncionModel> listafunciones;
 		listafunciones=funcionRepository.obtenerListaFunciones();
 		assertNotNull(listafunciones);
-		System.out.println(listafunciones.size()+"");
+		//System.out.println(listafunciones.size()+"");
+		Iterator<FuncionModel> it=listafunciones.iterator();
+		while (it.hasNext()){
+			FuncionModel funcion=(FuncionModel)it.next();
+			System.out.println(funcion.getIdFuncion()+" - "+funcion.getNombreFuncion());
+		}
 	}
 }
