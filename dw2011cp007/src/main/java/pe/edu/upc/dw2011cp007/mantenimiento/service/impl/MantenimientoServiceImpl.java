@@ -7,21 +7,24 @@ import org.springframework.stereotype.Service;
 
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.CombosModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.ArtistaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.CineRepository;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.CombosRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
 @Service
 public class MantenimientoServiceImpl implements MantenimientoService {
 
 	private CineRepository cineRepository;
-
+	private CombosRepository combosRepository;
 	@Autowired
-	public MantenimientoServiceImpl(CineRepository cineRepository,ArtistaRepository artistaRepository) {
+	public MantenimientoServiceImpl(CineRepository cineRepository,ArtistaRepository artistaRepository,CombosRepository combosRepository) {
 		this.cineRepository = cineRepository;
 		this.artistaRepository = artistaRepository;
+		this.combosRepository = combosRepository;
 	}
-
+	
 	public boolean registrarCine(CineModel cineModel) {
 		return cineRepository.registrarCine(cineModel);
 	}
@@ -76,6 +79,31 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 				return cineModel;
 		}
 		return null;
+	}
+	
+	
+	
+	public boolean registrarCombo(CombosModel combosModel) {
+		return combosRepository.registrarCombo(combosModel);
+		
+	}
+
+	public CombosModel buscarComboPorNombre(String string) {
+		ArrayList<CombosModel> listaCombosModel = combosRepository.buscarListaCombo();
+		for (CombosModel combosModel : listaCombosModel) {
+			if (combosModel.getNombreCombo().equals(string))
+				return combosModel;
+		}
+		return null;
+	}
+
+	public boolean actualizarCombo(CombosModel combosModel) {
+		return combosRepository.modificarCombo(combosModel);
+
+	}
+
+	public boolean eliminarCombo(CombosModel combosModel) {
+		return combosRepository.eliminarCombo(combosModel);
 	}
 
 }

@@ -189,3 +189,17 @@ CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`Perfil_has_cp_tb_funcion` (
     REFERENCES `dw2011cp007`.`cp_tb_funcion` (`idfuncion` )
     ON DELETE NO ACTION
     ON UPDATE NO ACTION);
+    
+    
+-----------------------------------------------------
+
+    --tabla de combos de dulceria
+-----------------------------------------------------
+
+DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_combos`;
+CREATE TABLE  `dw2011cp007`.`cp_tb_combos` (
+  `id_combo` int(10) unsigned NOT NULL AUTO_INCREMENT,
+  `no_combo` varchar(100) NOT NULL,
+  PRIMARY KEY (`id_combo`)
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+ 
