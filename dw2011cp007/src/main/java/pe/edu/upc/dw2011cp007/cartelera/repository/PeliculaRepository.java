@@ -3,6 +3,7 @@ package pe.edu.upc.dw2011cp007.cartelera.repository;
 import java.util.ArrayList;
 
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 
 public interface PeliculaRepository {
 
@@ -12,4 +13,5 @@ public interface PeliculaRepository {
 	PeliculaModel buscarPelicula(PeliculaModel peliculamodel);
 	ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera();
 	ArrayList<PeliculaModel> buscarListaPeliculaEnEstreno();
+	ArrayList<PeliculaModel> buscarListaPelicula(PeliculaModel peliculaBuscar, CineModel cineModel);
 }

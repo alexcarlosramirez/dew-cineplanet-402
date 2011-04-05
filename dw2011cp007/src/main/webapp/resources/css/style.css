@@ -67,23 +67,23 @@ margin:auto;
 padding:0px;
 }
 #header{
-width:970px;
+/*width:970px;*/
 height:110px;
 background-color:#05619b;
 margin:auto;
 }
 #logo{
-position:relative;
+/*position:relative;
+float:left;*/
 width:175px;
 height:109px;
-float:left;
 padding:0 0 0 0;
 margin:10px auto;
 }
 .banner_adds{
-width:750px;
+/*width:750px;
 height:82px;
-float:left;
+float:left;*/
 }
 /*---------------- menu tab----------------------*/
 /* ================================================================ 
@@ -96,7 +96,7 @@ This stylesheet and the associated (x)html may be modified in any
 way to fit your requirements.
 =================================================================== */
 /* style the outer div to give it width */
-.menu {font-size:11px;padding:0px; float:right; width:700px;}
+.menu {font-size:11px;padding:0px; margin:0px; float:right; width:700px;}
 
 /* remove all the bullets, borders and padding from the default list styling */
 .menu ul {padding:0;margin:0;list-style-type:none; height:28px; background:#267cb2}
@@ -179,8 +179,8 @@ background-color:#FFFFFF;
 }
 /*------------------------middle_content-----------*/
 .column1{
-width:257px;
-float:left;
+width:250px;
+/*float:left;*/
 margin:0px;
 padding:10px 10px 10px 5px;
 }
@@ -192,13 +192,13 @@ padding:10px 5px 10px 5px;
 }
 .column3{
 width:320px;
-float:left;
+/*float:left;*/
 margin:0px;
 padding:10px 10px 10px 5px;
 }
 .column4{
-width:690px;
-float:left;
+/*width:690px;
+float:left;*/
 margin:0px;
 padding:10px 0px 10px 5px;
 }
@@ -362,7 +362,6 @@ padding-left:40px;
 }
 /*------------------table style---------------*/
 td{
-text-align:center;
 padding:5px;
 border-bottom:2px #fff solid;
 }
@@ -401,13 +400,12 @@ width:90px;
 padding-top:3px;
 text-align:right;
 }
-input.form_input{
+input[type="text"]{
 border: 1px solid #C8D2D9;
 background-color:#FFFFFF;
 margin:0px;
 width:150px;
 float:left;
-margin-left:10px;
 }
 .contact_information{
 font-size:10px;
@@ -523,8 +521,8 @@ background-color:#f2efef;
 border-top:1px #eeabbd dashed;
 }
 ul.footer_menu {
-list-style:none; float:right; display:block; width:650px;
-margin:0px; padding:9px 20px 0 0px;
+list-style:none; float:left; display:block; width:600px;
+margin:0px; padding:0px 0px 0 0px;
 }
 
 ul.footer_menu li {
@@ -542,12 +540,7 @@ a.nav_footer:active {
 display:block; float:left; padding:5px 6px 5px 10px; margin:0;
 text-decoration:none;  color:#2F2626;}
 
-#copyright{
-float:left;
-padding:0px;
-}
-
-h2.login{
+.login h2{
 	font-size:20px;
 	font-weight:bold;
 	color:#ffffff;
@@ -558,7 +551,7 @@ h2.login{
 	text-decoration:none;
 }
 
-form.login{
+.login form {
 margin-top:5px;
 margin-bottom:5px;
 width:auto;
@@ -566,4 +559,3 @@ float:right;
 border-style:solid;
 border-width:medium;
 }
-

@@ -1,10 +1,13 @@
 package pe.edu.upc.dw2011cp007.cartelera.model;
 
+import java.io.Serializable;
+
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 
 
-public class PeliculaModel {
+@SuppressWarnings("serial")
+public class PeliculaModel implements Serializable {
 
 	private int idPelicula;
 	private String nombrepelicula;
@@ -40,6 +43,27 @@ public class PeliculaModel {
 	private boolean enestreno;
 
 	private boolean encartelera;
+
+	public PeliculaModel() {
+	}
+	
+
+	public PeliculaModel(int idPelicula, String nombrepelicula,
+			TipopeliculaModel tipopeliculaModel, PaisModel paisModel,
+			String clasificacionPelicula, boolean doblada, boolean en3d,
+			boolean enestreno, boolean encartelera) {
+		super();
+		this.idPelicula = idPelicula;
+		this.nombrepelicula = nombrepelicula;
+		this.tipopeliculaModel = tipopeliculaModel;
+		this.paisModel = paisModel;
+		this.clasificacionPelicula = clasificacionPelicula;
+		this.doblada = doblada;
+		this.en3d = en3d;
+		this.enestreno = enestreno;
+		this.encartelera = encartelera;
+	}
+
 
 	public int getIdPelicula() {
 		return idPelicula;

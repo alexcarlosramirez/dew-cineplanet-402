@@ -56,7 +56,6 @@ class CineRowMapper implements ParameterizedRowMapper<CineModel> {
 		CineModel cineModel = new CineModel();
 		cineModel.setIdCine(rs.getInt("id_cine"));
 		cineModel.setNombrecine(rs.getString("no_cine"));
-		System.out.println(cineModel);
 		return cineModel;
 	}
 }

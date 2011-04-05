@@ -1,14 +1,3 @@
-truncate table cp_tb_horario;
-truncate table cp_tb_peliculaartista;
-truncate table cp_tb_peliculacine;
-truncate table cp_tb_pelicula;
-truncate table cp_tb_pais;
-truncate table cp_tb_cine;
-truncate table cp_tb_artista;
-truncate table cp_tb_tipopelicula;
-truncate table cp_tb_empleado;
-truncate table cp_tb_Perfil;
-
 insert into cp_tb_pais (no_pais) values ('PERU');
 insert into cp_tb_pais (no_pais) values ('COLOMBIA');
 insert into cp_tb_pais (no_pais) values ('BRAZIL');
@@ -111,3 +100,5 @@ INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('MANTENIMIENTO','MAN
 INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('INVITADO','ACCESO LIMITADO');
 INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('PREMIUM','USUARIO PREMIO');
 
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (1,'invitado01','invitado001','invitado0001',false,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (2,'invitado02','invitado002','invitado0002',true,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;

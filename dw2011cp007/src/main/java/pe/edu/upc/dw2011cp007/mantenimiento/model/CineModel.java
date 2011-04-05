@@ -1,15 +1,18 @@
 package pe.edu.upc.dw2011cp007.mantenimiento.model;
 
+import java.io.Serializable;
 
-public class CineModel {
 
-	private int idCine;
+@SuppressWarnings("serial")
+public class CineModel implements Serializable {
+
+	private Integer idCine;
 	private String nombrecine;
 
-	public int getIdCine() {
+	public Integer getIdCine() {
 		return idCine;
 	}
-	public void setIdCine(int idCine) {
+	public void setIdCine(Integer idCine) {
 		this.idCine = idCine;
 	}
 	public String getNombrecine() {

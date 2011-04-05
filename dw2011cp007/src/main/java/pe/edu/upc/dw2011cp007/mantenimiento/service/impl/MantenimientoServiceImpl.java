@@ -45,6 +45,10 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 		return cineRepository.eliminarCine(cineModel);
 	}
 
+	public ArrayList<CineModel> buscarListaCine() {
+		return cineRepository.buscarListaCine();
+	}
+
 	public CineModel buscarCinePorId(int idCine) {
 		ArrayList<CineModel> listaCineModel = cineRepository.buscarListaCine();
 		for (CineModel cineModel : listaCineModel) {
@@ -88,9 +92,7 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 		}
 		return null;
 	}
-	
-	
-	
+
 	public boolean registrarCombo(CombosModel combosModel) {
 		return combosRepository.registrarCombo(combosModel);
 		
@@ -134,5 +136,4 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 	public boolean eliminarSala(SalasModel salasModel) {
 		return salasRepository.eliminarSala(salasModel);
 	}
-
 }

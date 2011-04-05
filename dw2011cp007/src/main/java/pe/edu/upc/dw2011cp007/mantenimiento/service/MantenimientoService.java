@@ -1,5 +1,7 @@
 package pe.edu.upc.dw2011cp007.mantenimiento.service;
 
+import java.util.ArrayList;
+
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CombosModel;
@@ -14,6 +16,8 @@ public interface MantenimientoService {
 	boolean eliminarCine(CineModel cineModel);
 
 	CineModel buscarCinePorId(int i);
+
+	ArrayList<CineModel> buscarListaCine();
 
 	CineModel buscarCinePorNombre(String string);
 

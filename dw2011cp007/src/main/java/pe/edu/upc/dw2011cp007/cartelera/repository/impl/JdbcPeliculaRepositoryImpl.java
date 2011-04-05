@@ -13,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaRepository;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 
@@ -110,6 +111,35 @@ public class JdbcPeliculaRepositoryImpl extends JdbcDaoSupport implements Pelicu
 
 		ArrayList<PeliculaModel> peliculaModel = (ArrayList<PeliculaModel>) getJdbcTemplate().query(sql, new PeliculaRowMapper());
 		return peliculaModel;
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPelicula(PeliculaModel peliculaBuscar, CineModel cineModel) {
+		ArrayList<Object> parametros = new ArrayList<Object>();
+		String sql =
+			"SELECT p.* " +
+			"FROM cp_tb_pelicula p, cp_tb_peliculacine pc " +
+			"WHERE p.id_pelicula = pc.id_pelicula ";
+		if (peliculaBuscar.getNombrepelicula() == null) {
+			sql += "AND p.no_pelicula like '%' ";
+		} else {
+			sql += "AND p.no_pelicula like CONCAT('%', ?, '%') ";
+			parametros.add(peliculaBuscar.getNombrepelicula());
+		}
+		if (cineModel.getIdCine() != 0) {
+			sql += "AND pc.id_cine = ? ";
+			parametros.add(cineModel.getIdCine());
+		}
+		sql += "AND p.fl_enestreno = ? ";
+		parametros.add(new Boolean(peliculaBuscar.isEnestreno()));
+		sql += "AND p.fl_encartelera = ? ";
+		parametros.add(new Boolean(peliculaBuscar.isEncartelera()));
+
+		try {
+			ArrayList<PeliculaModel> listaPelicula = (ArrayList<PeliculaModel>) getJdbcTemplate().query(sql, parametros.toArray(), new PeliculaRowMapper());
+			return listaPelicula;
+		} catch (Exception e) {
+			return null;
+		}
 	}
 }
 

@@ -12,6 +12,7 @@ import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaArtistaRepository;
 import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaRepository;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 
 @Service
 public class CarteleraServiceImpl implements CarteleraService {
@@ -42,6 +43,10 @@ public class CarteleraServiceImpl implements CarteleraService {
 
 	public PeliculaModel buscarPelicula(PeliculaModel peliculaSel) {
 		return peliculaRepository.buscarPelicula(peliculaSel);
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPelicula(PeliculaModel peliculaBuscar, CineModel cineModel) {
+		return peliculaRepository.buscarListaPelicula(peliculaBuscar, cineModel);
 	}
 
 	public ArrayList<PeliculaModel> buscarListaPeliculaEnCartelera() {
