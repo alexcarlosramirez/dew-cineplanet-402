@@ -29,7 +29,7 @@
     <dependency>
     	<groupId>junit</groupId>
     	<artifactId>junit</artifactId>
-    	<version>4.8.1</version>
+    	<version>4.8.2</version>
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
@@ -75,13 +75,6 @@
       <scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>org.hibernate</groupId>
-    	<artifactId>hibernate-core</artifactId>
-    	<version>3.3.2.GA</version>
-    	<type>jar</type>
-    	<scope>test</scope>
-    </dependency>
-    <dependency>
     	<groupId>org.slf4j</groupId>
     	<artifactId>slf4j-api</artifactId>
     	<version>1.5.10</version>
@@ -97,14 +90,34 @@
     </dependency>
     <dependency>
     	<groupId>org.springframework</groupId>
-    	<artifactId>spring-orm</artifactId>
-    	<version>3.0.5.RELEASE</version>
+    	<artifactId>spring-webmvc</artifactId>
+    	<version>${org.springframework.version}</version>
     	<type>jar</type>
+    	<scope>compile</scope>
     </dependency>
     <dependency>
-    	<groupId>org.springframework</groupId>
-    	<artifactId>spring-webmvc</artifactId>
-    	<version>3.0.5.RELEASE</version>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-web</artifactId>
+    	<version>${org.springframework.version}</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>opensymphony</groupId>
+    	<artifactId>sitemesh</artifactId>
+    	<version>2.4.2</version>
+    	<type>jar</type>
+    	<scope>compile</scope>
+    </dependency>
+    <dependency>
+    	<groupId>commons-dbutils</groupId>
+    	<artifactId>commons-dbutils</artifactId>
+    	<version>1.2</version>
+    </dependency>
+    <dependency>
+    	<groupId>org.springframework.security</groupId>
+    	<artifactId>spring-security-config</artifactId>
+    	<version>${org.springframework.version}</version>
     	<type>jar</type>
     	<scope>compile</scope>
     </dependency>
@@ -112,18 +125,6 @@
     	<groupId>javax.servlet</groupId>
     	<artifactId>jstl</artifactId>
     	<version>1.2</version>
-    </dependency>
-    <dependency>
-    	<groupId>opensymphony</groupId>
-    	<artifactId>sitemesh</artifactId>
-    	<version>2.4.2</version>
-    </dependency>
-    <dependency>
-    	<groupId>junit</groupId>
-    	<artifactId>junit</artifactId>
-    	<version>4.8.2</version>
-    	<type>jar</type>
-    	<scope>test</scope>
     </dependency>
   </dependencies>
 

@@ -110,3 +110,10 @@ INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('ROOT','CONTROL TOTA
 INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('MANTENIMIENTO','MANTENIMIENTO DE TABLAS PRINCIPALES');
 INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('INVITADO','ACCESO LIMITADO');
 INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('PREMIUM','USUARIO PREMIO');
+
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (1,'invitado01','invitado001','invitado0001',false,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (2,'invitado02','invitado002','invitado0002',true,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;=======
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (1,'invitado01','invitado001','invitado0001',false,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
+INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (2,'invitado02','invitado002','invitado0002',true,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
+
+INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('PREMIUM','USUARIO PREMIO');

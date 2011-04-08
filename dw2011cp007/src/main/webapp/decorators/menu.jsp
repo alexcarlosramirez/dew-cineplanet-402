@@ -4,7 +4,9 @@
     <li><a href="<c:url value="/publico_inicio" />">Inicio</a></li>
     <li><a href="index.html">Cartelera</a></li>
     <li><a href="login.html">Pr&oacute;ximos Estrenos</a></li>
-    <li><a href="admin.html">Dulcer&iacute;a</a></li>
+    <li><a href="admin.html">Cat&aacute;logo de Peliculas</a></li>
+    <li><a href="admin.html">Promociones</a></li>
+    <li><a href="admin.html">Nuestros Cines</a></li>
   </ul>
 </div>
 <c:if test="${!empty session.usuarioLogueado}">

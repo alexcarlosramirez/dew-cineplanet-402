@@ -11,17 +11,14 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import static org.junit.Assert.*;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@ContextConfiguration(
-		locations={
-				//"classpath:test/resources/pe/edu/upc/dw2011cp007/config/test-infrastructure-config.xml",
-				"classpath:main/resources/pe/edu/upc/dw2011cp007/config/application-config.xml"})
+@ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 	
 public class CineConexionTest {
 	/**
 	 * The object being tested.
 	 */
 	
-	@Autowired
+	//@Autowired
 	/*
 	private RewardNetwork rewardNetwork;
     */

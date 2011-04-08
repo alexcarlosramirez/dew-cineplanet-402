@@ -10,6 +10,7 @@
 		<config>src/main/resources/pe/edu/upc/dw2011cp007/config/application-config.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/springapp/servlet-context.xml</config>
 		<config>src/main/webapp/WEB-INF/spring/root-context.xml</config>
+		<config>src/main/webapp/WEB-INF/applicationContext-security.xml</config>
 	</configs>
 	<configSets>
 	</configSets>
