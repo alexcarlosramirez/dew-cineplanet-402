@@ -11,6 +11,7 @@ public class HorarioModel {
 	private byte essubtitulado;
 	private byte esen3d;
 	private String horashorario;
+
 	public int getIdHorario() {
 		return idHorario;
 	}

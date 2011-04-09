@@ -11,10 +11,12 @@
     <td>
       <c:forEach items="${listaCine}" var="cine">
         <div class="offer_box_wide">
-          <img src="resources/images/p1.jpg" style="width: 130px; height: 98; border: 0px none;" alt="" title=""/>
+          <img src="<c:out value="resources/images/cine"/>/<c:out value="${cine.rutaimagen}"/>" style="width: 130px; height: 98; border: 0px none;" alt="" title=""/>
           <span style="color: red;"><c:out value="${cine.nombrecine}"/></span>
           <p class="offer">
-            LOCAL DE <c:out value="${cine.nombrecine}"/>
+            <c:out value="${cine.observacion}"/><br/>
+            Direccion: <c:out value="${cine.direccion}"/><br/>
+            Telefono: <c:out value="${cine.telefono}"/><br/>
           </p>
         </div>
       </c:forEach>

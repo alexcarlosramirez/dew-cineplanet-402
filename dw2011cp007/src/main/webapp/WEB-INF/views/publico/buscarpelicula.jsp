@@ -13,10 +13,11 @@
           <c:forEach items="${listaPeliculaFiltrada}" var="pelicula">
             <tr>
               <td class="elemento_cartelera">
-                Pel&iacute;cula:  <c:out value="${pelicula.nombrepelicula}"/>  <br/>  
-                Clasificaci&oacute;n:  <c:out value="${pelicula.clasificacionPelicula}"/>  <br/>
+                <a href="<c:out value="publico_detallepelicula?idPelicula="/><c:out value="${pelicula.idPelicula}"/>"><img src="<c:out value="resources/images/peliculas"/>/<c:out value="${pelicula.nombreimagen}"/>" style="width: 130px; height: 98; border: 0px none;" alt="" title=""/></a> <br/>
+                Pel&iacute;cula: <c:out value="${pelicula.nombrepelicula}"/> <br/>
+                Clasificaci&oacute;n: <c:out value="${pelicula.clasificacionPelicula}"/>  <br/>
                 Doblada: <c:out value="${pelicula.doblada}"/>  <br/>
-                3D:   <c:out value="${pelicula.en3d}"/>  <br/>
+                3D: <c:out value="${pelicula.en3d}"/> <br/>
                <hr/>
               </td>
             </tr>

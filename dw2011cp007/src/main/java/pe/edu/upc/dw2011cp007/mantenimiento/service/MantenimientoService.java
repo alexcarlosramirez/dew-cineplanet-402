@@ -2,9 +2,11 @@ package pe.edu.upc.dw2011cp007.mantenimiento.service;
 
 import java.util.ArrayList;
 
+import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CombosModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.ProductoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.SalasModel;
 
 public interface MantenimientoService {
@@ -44,6 +46,9 @@ public interface MantenimientoService {
 	boolean actualizarSala(SalasModel salasModel);
 
 	boolean eliminarSala(SalasModel salasModel);
+
+	ArrayList<ProductoModel> buscarListaProductoPorPelicula(
+			PeliculaModel peliculaModel);
 
 	
 }

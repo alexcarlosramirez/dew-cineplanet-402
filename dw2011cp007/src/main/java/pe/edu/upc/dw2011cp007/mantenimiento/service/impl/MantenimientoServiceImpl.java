@@ -5,13 +5,16 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CombosModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.ProductoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.SalasModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.ArtistaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.CineRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.CombosRepository;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.ProductoRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.SalasRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
@@ -21,16 +24,18 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 	private CineRepository cineRepository;
 	private CombosRepository combosRepository;
 	private SalasRepository salasRepository;
+	private ProductoRepository productoRepository;
 	@Autowired
 	public MantenimientoServiceImpl(CineRepository cineRepository,ArtistaRepository artistaRepository
 			,CombosRepository combosRepository
 			,SalasRepository salasRepository
+			, ProductoRepository productoRepository
 	) {
 		this.cineRepository = cineRepository;
 		this.artistaRepository = artistaRepository;
 		this.combosRepository = combosRepository;
 		this.salasRepository = salasRepository;
-		
+		this.productoRepository = productoRepository;
 	}
 	
 	public boolean registrarCine(CineModel cineModel) {
@@ -135,5 +140,10 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 
 	public boolean eliminarSala(SalasModel salasModel) {
 		return salasRepository.eliminarSala(salasModel);
+	}
+
+	public ArrayList<ProductoModel> buscarListaProductoPorPelicula(
+			PeliculaModel peliculaModel) {
+		return productoRepository.buscarListaProductoPorPelicula(peliculaModel);
 	}
 }

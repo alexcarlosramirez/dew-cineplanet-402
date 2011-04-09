@@ -7,7 +7,15 @@
     <td valign="top" style="height: 469px; clip: rect(0px,100%,469px,0px);">
       <table style="width: 100%;">
         <tr><td class="box_title"><span>Te recomendamos</span></td></tr>
-        <tr><td>IMG</td></tr>
+        <c:forEach items="${listaPeliculaHoy}" var="peliculaHoy">
+          <tr>
+            <td class="elemento_cartelera">
+              <img src="<c:out value="resources/images/peliculas"/>/<c:out value="${peliculaHoy.nombreimagen}"/>" style="width: 130px; height: 98; border: 0px none;" alt="" title=""/>
+              <br/>
+              <hr/>
+            </td>
+          </tr>
+        </c:forEach>
       </table>
     </td>
     <td class="column1" valign="top">
@@ -17,10 +25,8 @@
           <c:forEach items="${listaPelicula}" var="pelicula">
             <tr>
               <td class="elemento_cartelera">
-                Pel&iacute;cula: <c:out value="${pelicula.nombrepelicula}"/>  <br/>  
-                Clasificaci&oacute;n: <c:out value="${pelicula.clasificacionPelicula}"/>  <br/>
-                Doblada: <c:out value="${pelicula.doblada}"/>  <br/>
-                3D: <c:out value="${pelicula.en3d}"/>  <br/>
+                <a href="<c:out value="publico_detallepelicula?idPelicula="/><c:out value="${pelicula.idPelicula}"/>"><img src="<c:out value="resources/images/peliculas"/>/<c:out value="${pelicula.nombreimagen}"/>" style="width: 130px; height: 98; border: 0px none;" alt="" title=""/></a>
+                <br/>
                 <hr/>
               </td>
             </tr>

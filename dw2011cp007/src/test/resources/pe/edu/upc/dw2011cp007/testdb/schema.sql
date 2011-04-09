@@ -21,7 +21,11 @@ alter table cp_tb_pais modify id_pais int not null auto_increment;
 
 create table cp_tb_cine (
   id_cine int not null,
-  no_cine varchar(50)
+  no_cine varchar(50),
+  tx_observacion varchar(100),
+  tx_direccion varchar(50),
+  tx_telefono varchar(50),
+  tx_rutaimagen varchar(10)
 );
 alter table cp_tb_cine add constraint cp_pk_cine primary key (id_cine);
 alter table cp_tb_cine modify id_cine int not null auto_increment;
@@ -46,6 +50,8 @@ create table cp_tb_pelicula (
   id_pais                     int,
   id_tipopelicula             int,
   co_clasificacionpelicula    char(3),/*INF, TOD, +14, +18*/
+  tx_sinopsis                 varchar(300),
+  tx_nombreimagen             varchar(10),
   fl_doblada                  boolean,
   fl_en3d                     boolean,
   fl_enestreno                boolean,
@@ -85,9 +91,39 @@ alter table cp_tb_horario add constraint cp_pk_horario primary key (id_horario,i
 alter table cp_tb_horario add constraint cp_fk_hor_pelcin foreign key (id_pelicula,id_cine) references cp_tb_peliculacine (id_pelicula, id_cine);
 alter table cp_tb_horario modify id_horario int not null auto_increment;
 
--- -----------------------------------------------------
+-- --------------------------------------------------
+-- Table `dw2011cp007`.`cp_tb_producto`
+-- --------------------------------------------------
+create table cp_tb_tipoproducto (
+  id_tipoproducto             int not null,
+  no_tipoproducto             varchar(50)
+);
+alter table cp_tb_tipoproducto add constraint cp_pk_tipoproducto primary key (id_tipoproducto);
+
+create table cp_tb_producto (
+  id_producto                 int not null,
+  id_tipoproducto             int not null,
+  co_producto                 char(5),
+  no_producto                 varchar(50),
+  ss_producto                 double(5,2),
+  tx_rutaimagen               varchar(10)
+  fl_solopremiun              boolean
+);
+alter table cp_tb_producto add constraint cp_pk_producto primary key (id_producto);
+alter table cp_tb_producto add constraint cp_fk_pro_tippro foreign key (id_tipoproducto) references cp_tb_tipoproducto (id_tipoproducto);
+alter table cp_tb_producto modify id_producto int not null auto_increment;
+
+create table cp_tb_productopelicula (
+  id_producto                 int not null,
+  id_pelicula                 int not null
+);
+alter table cp_tb_productopelicula add constraint cp_pk_pelpro primary key (id_producto,id_pelicula);
+alter table cp_tb_productopelicula add constraint cp_fk_pelpro_pro foreign key (id_producto) references cp_tb_producto (id_producto);
+alter table cp_tb_productopelicula add constraint cp_fk_pelpro_pel foreign key (id_pelicula) references cp_tb_pelicula (id_pelicula);
+
+-- --------------------------------------------------
 -- Table `dw2011cp007`.`cp_tb_empleado`
--- -----------------------------------------------------
+-- --------------------------------------------------
 DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_empleado` ;
 
 CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`cp_tb_empleado` (
@@ -191,10 +227,9 @@ CREATE  TABLE IF NOT EXISTS `dw2011cp007`.`Perfil_has_cp_tb_funcion` (
     ON UPDATE NO ACTION);
     
     
------------------------------------------------------
-
-    --tabla de combos de dulceria
------------------------------------------------------
+-- ---------------------------------------------------
+-- tabla de combos de dulceria
+-- ---------------------------------------------------
 
 DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_combos`;
 CREATE TABLE  `dw2011cp007`.`cp_tb_combos` (
@@ -203,10 +238,9 @@ CREATE TABLE  `dw2011cp007`.`cp_tb_combos` (
   PRIMARY KEY (`id_combo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
  
------------------------------------------------------
-
-    --tabla salas la cual pertenece a un cine determinado
------------------------------------------------------
+-- ---------------------------------------------------
+-- tabla salas la cual pertenece a un cine determinado
+-- ---------------------------------------------------
 DROP TABLE IF EXISTS `dw2011cp007`.`cp_tb_salas`;
 CREATE TABLE  `dw2011cp007`.`cp_tb_salas` (
   `id_sala` int(10) unsigned NOT NULL AUTO_INCREMENT,

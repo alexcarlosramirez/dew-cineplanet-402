@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
@@ -27,6 +28,9 @@ public class InicioController {
 	public String index(Model model){
 		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
 		model.addAttribute("listaPelicula", listaPelicula);
+
+		List<HorarioModel> listaPeliculaHoy = carteleraService.buscarListaPeliculaProyectarHoy();
+		model.addAttribute("listaPeliculaHoy", null);
 
 		List<CineModel> listaCine = mantenimientoService.buscarListaCine();
 		model.addAttribute("listaCine", listaCine);

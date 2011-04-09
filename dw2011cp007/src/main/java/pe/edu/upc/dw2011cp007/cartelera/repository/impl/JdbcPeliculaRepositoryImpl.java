@@ -154,6 +154,8 @@ class PeliculaRowMapper implements ParameterizedRowMapper<PeliculaModel> {
 		peliculaModel.setIdPelicula(rs.getInt("id_pelicula"));
 		peliculaModel.setNombrepelicula(rs.getString("no_pelicula"));
 		peliculaModel.setClasificacionPelicula(rs.getString("co_clasificacionpelicula"));
+		peliculaModel.setSinopsis(rs.getString("tx_sinopsis"));
+		peliculaModel.setNombreimagen(rs.getString("tx_nombreimagen"));
 		peliculaModel.setDoblada(rs.getBoolean("fl_doblada"));
 		peliculaModel.setEn3d(rs.getBoolean("fl_en3d"));
 		peliculaModel.setEnestreno(rs.getBoolean("fl_enestreno"));

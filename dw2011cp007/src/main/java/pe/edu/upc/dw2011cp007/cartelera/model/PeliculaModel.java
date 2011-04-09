@@ -24,6 +24,9 @@ public class PeliculaModel implements Serializable {
 	 */
 	private String clasificacionPelicula;
 
+	private String sinopsis;
+	private String nombreimagen;
+
 	/**
 	 * <ul style="list-style: decimal;">
 	 * <li>True: subtitulada/doblada</li>
@@ -136,6 +139,23 @@ public class PeliculaModel implements Serializable {
 	public void setEncartelera(boolean encartelera) {
 		this.encartelera = encartelera;
 	}
+
+	public String getSinopsis() {
+		return sinopsis;
+	}
+
+	public void setSinopsis(String sinopsis) {
+		this.sinopsis = sinopsis;
+	}
+
+	public String getNombreimagen() {
+		return nombreimagen;
+	}
+
+	public void setNombreimagen(String nombreimagen) {
+		this.nombreimagen = nombreimagen;
+	}
+
 
 	@Override
 	public String toString() {
