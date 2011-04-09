@@ -3,6 +3,9 @@
         <pattern>/resources/*</pattern>
     </excludes> 
     <decorator name="default" page="default.jsp">
+        <pattern>/publico_*</pattern>
+    </decorator>
+    <decorator name="default2" page="default2.jsp">
         <pattern>/*</pattern>
     </decorator>
 </decorators>

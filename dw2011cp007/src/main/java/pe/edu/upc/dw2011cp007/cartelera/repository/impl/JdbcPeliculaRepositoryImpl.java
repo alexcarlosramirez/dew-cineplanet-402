@@ -116,10 +116,10 @@ public class JdbcPeliculaRepositoryImpl extends JdbcDaoSupport implements Pelicu
 	public ArrayList<PeliculaModel> buscarListaPelicula(PeliculaModel peliculaBuscar, CineModel cineModel) {
 		ArrayList<Object> parametros = new ArrayList<Object>();
 		String sql =
-			"SELECT p.* " +
+			"SELECT DISTINCT p.* " +
 			"FROM cp_tb_pelicula p, cp_tb_peliculacine pc " +
 			"WHERE p.id_pelicula = pc.id_pelicula ";
-		if (peliculaBuscar.getNombrepelicula() == null) {
+		if (peliculaBuscar.getNombrepelicula().isEmpty()) {
 			sql += "AND p.no_pelicula like '%' ";
 		} else {
 			sql += "AND p.no_pelicula like CONCAT('%', ?, '%') ";
@@ -129,10 +129,14 @@ public class JdbcPeliculaRepositoryImpl extends JdbcDaoSupport implements Pelicu
 			sql += "AND pc.id_cine = ? ";
 			parametros.add(cineModel.getIdCine());
 		}
-		sql += "AND p.fl_enestreno = ? ";
-		parametros.add(new Boolean(peliculaBuscar.isEnestreno()));
-		sql += "AND p.fl_encartelera = ? ";
-		parametros.add(new Boolean(peliculaBuscar.isEncartelera()));
+		if (peliculaBuscar.isEnestreno()){
+			sql += "AND p.fl_enestreno = ? ";
+			parametros.add(new Boolean(peliculaBuscar.isEnestreno()));	
+		}
+		if (peliculaBuscar.isEncartelera()){
+			sql += "AND p.fl_encartelera = ? ";
+			parametros.add(new Boolean(peliculaBuscar.isEncartelera()));	
+		}
 
 		try {
 			ArrayList<PeliculaModel> listaPelicula = (ArrayList<PeliculaModel>) getJdbcTemplate().query(sql, parametros.toArray(), new PeliculaRowMapper());

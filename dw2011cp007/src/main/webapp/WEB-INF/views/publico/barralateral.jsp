@@ -18,28 +18,27 @@
     </tr>
     <tr><td align="right">Cartelera: </td><td align="left"><input type="checkbox" name="encartelera"/></td></tr>
     <tr><td align="right">Estreno: </td><td align="left"><input type="checkbox" name="enestreno"/></td></tr>
-    <tr><td align="right" colspan="2"><input type="image" src="resources/images/find.gif" /></td></tr>
+    <tr><td align="center" colspan="2"><input type="image" src="resources/images/find.gif" /></td></tr>
   </table>
 </form>
-<table>
+<table border=0>
   <tr><td colspan="2" class="box_title"><span>Envia</span> tu consulta:</td></tr>
-  <tr><td align="right">Email: </td><td align="left"><input type="text"/></td></tr>
-  <tr><td align="right" colspan="2"><input type="image" src="resources/images/join.gif" /></td></tr>
+  <tr><td align="right">Email: </td><td align="left"><input type="text"></td></tr>
+  <tr><td align="left" colspan="2"><textarea rows="10" cols="10" style="width: 200px"></textarea></td></tr>
+  <tr><td align="center" colspan="2"><input type="image" src="resources/images/join.gif" /></td></tr>
 </table>
-<table>
+<table border=0>
   <tr><td colspan="2" class="box_title"><span>Contacto</span> Cineplanet:</td></tr>
   <tr>
-    <td colspan="2">
-      <img src="resources/images/contact_envelope.gif" style="width: 50px; height: 47; border: 0px none;" alt="" title="" />
+    <td align="left">
       <div class="contact_information">
         Email:
-        info@comapnyname.com<br />
+        info@cineplanet.com<br />
         Telephone: 0234 789 90<br />
         Mobile: 234 345 234534<br />
         Fax: 34534 3456 3456(54)<br />
-        <br />
-        <span>www.companyname.com</span>
       </div>
     </td>
+    <td><img src="resources/images/contact_envelope.gif" style="width: 30px; height: 37; border: 0px none;" alt="" title="" /></td>
   </tr>
 </table>

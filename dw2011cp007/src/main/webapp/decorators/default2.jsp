@@ -21,7 +21,7 @@
             </object>
           </div>
           <div class="banner_adds">
-          	<jsp:include page="cabecera_login.jsp" />
+          	
 		  </div>
 		  <div class="menu">
             <jsp:include page="menu.jsp" />
@@ -29,7 +29,6 @@
   	</div>      
   <div id="main_content" >
     <decorator:body/>            
-  	<jsp:include page="listaadicional.jsp" />
   </div>
   <div id="footer">
     <jsp:include page="piepagina.jsp" />

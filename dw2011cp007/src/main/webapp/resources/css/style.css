@@ -236,7 +236,7 @@ float:left;
 background:url(images/bottom_box_bg.gif) no-repeat center;
 }
 .box_title{
-width:257px;
+width:220px;
 text-align:center;
 font-size:18px;
 color:#615357;
@@ -420,7 +420,7 @@ float:left;
 font-size:10px;
 color:#385870;
 text-align:left;
-padding-left:20px;
+padding-left:10px;
 }
 .contact_information span{
 color:#d8325d;
