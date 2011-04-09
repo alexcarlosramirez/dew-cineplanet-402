@@ -1,6 +1,7 @@
 package pe.edu.upc.dw2011cp007.cartelera.service.impl;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -71,5 +72,9 @@ public class CarteleraServiceImpl implements CarteleraService {
 
 	public ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaModel) {
 		return peliculaArtistaRepository.buscarListaArtistaPorPelicula(peliculaModel);
+	}
+
+	public List<PeliculaModel> buscarListaPeliculaHoy() {
+		return peliculaRepository.buscarListaPeliculaHoy();
 	}
 }

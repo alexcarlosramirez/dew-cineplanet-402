@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
@@ -29,12 +28,44 @@ public class InicioController {
 		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
 		model.addAttribute("listaPelicula", listaPelicula);
 
-		List<HorarioModel> listaPeliculaHoy = carteleraService.buscarListaPeliculaProyectarHoy();
-		model.addAttribute("listaPeliculaHoy", null);
+		List<PeliculaModel> listaPeliculaHoy = carteleraService.buscarListaPeliculaHoy();
+		model.addAttribute("listaPeliculaHoy", listaPeliculaHoy);
 
 		List<CineModel> listaCine = mantenimientoService.buscarListaCine();
 		model.addAttribute("listaCine", listaCine);
 
 		return "publico/inicio";
+	}
+
+	@RequestMapping(value="/publico_cartelera")
+	public String buscarListaCartelera(Model model) {
+		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
+		model.addAttribute("listaPeliculaFiltrada", listaPelicula);
+
+		return "publico/buscarpelicula";
+	}
+
+	@RequestMapping(value="/publico_estrenos")
+	public String buscarListaEstrenos(Model model) {
+		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnEstreno();
+		model.addAttribute("listaPeliculaFiltrada", listaPelicula);
+
+		return "publico/buscarpelicula";
+	}
+
+	@RequestMapping(value="/publico_hoy")
+	public String buscarListaHoy(Model model) {
+		List<PeliculaModel> listaPeliculaHoy = carteleraService.buscarListaPeliculaHoy();
+		model.addAttribute("listaPeliculaFiltrada", listaPeliculaHoy);
+
+		return "publico/buscarpelicula";
+	}
+
+	@RequestMapping(value="/publico_cines")
+	public String buscarListaCines(Model model) {
+		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnEstreno();
+		model.addAttribute("listaPelicula", listaPelicula);
+
+		return "publico/buscarcine";
 	}
 }

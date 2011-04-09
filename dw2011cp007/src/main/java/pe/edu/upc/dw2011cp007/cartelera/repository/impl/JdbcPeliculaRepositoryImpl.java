@@ -3,6 +3,8 @@ package pe.edu.upc.dw2011cp007.cartelera.repository.impl;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import javax.sql.DataSource;
 
@@ -16,6 +18,7 @@ import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
+import pe.edu.upc.dw2011cp007.util.Fechas;
 
 @Repository
 public class JdbcPeliculaRepositoryImpl extends JdbcDaoSupport implements PeliculaRepository {
@@ -144,6 +147,22 @@ public class JdbcPeliculaRepositoryImpl extends JdbcDaoSupport implements Pelicu
 		} catch (Exception e) {
 			return null;
 		}
+	}
+
+	public List<PeliculaModel> buscarListaPeliculaHoy() {
+		String sql = 
+			"SELECT "
+			+ "DISTINCT p.* "
+			+ "FROM "
+			+ "cp_tb_horario h "
+			+ ", cp_tb_pelicula p "
+			+ ", cp_tb_cine c "
+			+ "WHERE fe_diahorario BETWEEN ? and ? "
+			+ "AND p.id_pelicula = h.id_pelicula "
+			+ "AND c.id_cine = h.id_cine";
+
+		ArrayList<PeliculaModel> listaHorarioModel = (ArrayList<PeliculaModel>) getJdbcTemplate().query(sql, new Date[]{Fechas.parseSqlDate("dd/MM/yyyy HH:mm", Fechas.aFormato("dd/MM/yyyy") + " 00:00"), Fechas.parseSqlDate("dd/MM/yyyy HH:mm", Fechas.aFormato("dd/MM/yyyy") + " 23:59")}, new PeliculaRowMapper());
+		return listaHorarioModel;
 	}
 }
 

@@ -1,6 +1,7 @@
 package pe.edu.upc.dw2011cp007.cartelera.service;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
 import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
@@ -28,4 +29,6 @@ public interface CarteleraService {
 	ArrayList<HorarioModel> buscarHorarioPorPelicula(PeliculaModel peliculaSel);
 
 	ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaSel);
+
+	List<PeliculaModel> buscarListaPeliculaHoy();
 }
