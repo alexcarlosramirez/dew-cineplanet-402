@@ -221,22 +221,22 @@ padding-bottom:10px;
 width:257px;
 height:10px;
 float:left;
-background:url(images/top_box_bg.gif) no-repeat center;
+background:url(..//images/top_box_bg.gif) no-repeat center;
 }
 .center_left_box{
 width:257px;
 height: auto;
 float:left;
-background:url(images/center_box_bg.gif) repeat-y;
+background:url(..//images/center_box_bg.gif) repeat-y;
 }
 .bottom_left_box{
 width:257px;
 height:10px;
 float:left;
-background:url(images/bottom_box_bg.gif) no-repeat center;
+background:url(..//images/bottom_box_bg.gif) no-repeat center;
 }
 .box_title{
-width:220px;
+width:257px;
 text-align:center;
 font-size:18px;
 color:#615357;
@@ -253,7 +253,7 @@ padding:5px;
 .proposal{
 width:287px;
 height:85px;
-background:url(images/proposal_box.gif) no-repeat center;
+background:url(..//images/proposal_box.gif) no-repeat center;
 background-position:0px 0px;
 margin-left:15px;
 margin-top:15px;
@@ -296,7 +296,7 @@ padding:0px;
 }
 .details_list ul li{
 padding:5px 5px 5px 25px;
-background:url(images/bullet.gif) no-repeat left;
+background:url(..//images/bullet.gif) no-repeat left;
 color:#333333;
 }
 .details_list ul li span{
@@ -305,7 +305,7 @@ color:#0464a1;
 .button{
 width:139px;
 height:30px;
-background:url(images/blank_button.gif) no-repeat center;
+background:url(..//images/blank_button.gif) no-repeat center;
 text-align:center;
 line-height:30px;
 font-weight:bold;
@@ -409,12 +409,13 @@ width:90px;
 padding-top:3px;
 text-align:right;
 }
-input[type="text"]{
+input.form_input{
 border: 1px solid #C8D2D9;
 background-color:#FFFFFF;
 margin:0px;
 width:150px;
 float:left;
+margin-left:10px;
 }
 .contact_information{
 font-size:10px;

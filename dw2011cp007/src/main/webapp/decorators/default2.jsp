@@ -9,6 +9,7 @@
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dijit/themes/claro/claro.css" />
     <link rel="stylesheet" type="text/css" href="http://ajax.googleapis.com/ajax/libs/dojo/1.6/dojox/image/resources/image.css" />
     <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/style.css" />" />
+    <link rel="stylesheet" type="text/css" href="<c:url value="resources/css/admin.css" />" />
   </head>
   <body>
     <div id="main_container">
@@ -28,7 +29,9 @@
           </div>
   	</div>      
   <div id="main_content" >
-    <decorator:body/>            
+  	
+    	<decorator:body/>
+                
   </div>
   <div id="footer">
     <jsp:include page="piepagina.jsp" />

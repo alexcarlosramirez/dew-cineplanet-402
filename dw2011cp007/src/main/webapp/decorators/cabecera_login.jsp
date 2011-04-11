@@ -3,9 +3,9 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"  %>
 
 <div style="float: left; margin-left: 90px">
-<a href="<c:url value="/carritocompra" />">
-	<embed type="application/x-shockwave-flash" src="resources/swf/venta_online.swf" width="180" height="90"  bgcolor="#666666" quality="high" wmode="transparent" menu="false">
-</a>
+	<a href="<c:url value="/carritocompra" />">
+		<embed type="application/x-shockwave-flash" src="resources/swf/venta_online.swf" width="180" height="90"  bgcolor="#666666" quality="high" wmode="transparent" menu="false">
+	</a>
 </div>    
 <div class="login">
 <table border=0 style="height: 50px; width: 370px">

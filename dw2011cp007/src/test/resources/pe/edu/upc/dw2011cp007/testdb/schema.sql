@@ -106,7 +106,7 @@ create table cp_tb_producto (
   co_producto                 char(5),
   no_producto                 varchar(50),
   ss_producto                 double(5,2),
-  tx_rutaimagen               varchar(10)
+  tx_rutaimagen               varchar(10),
   fl_solopremiun              boolean
 );
 alter table cp_tb_producto add constraint cp_pk_producto primary key (id_producto);

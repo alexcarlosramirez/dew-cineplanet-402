@@ -9,13 +9,14 @@
 						http://www.springframework.org/schema/security/spring-security-3.0.xsd">
 	
 	<http>
+		<intercept-url pattern="/logueo" access="IS_AUTHENTICATED_ANONYMOUSLY"/>
 		<intercept-url pattern="/" filters="none"/>
 		<intercept-url pattern="/publico_*" filters="none"/>
         <intercept-url pattern="/*" access="ROLE_USER" />
-        <form-login />
+        <form-login login-page="/logueo" />
         <anonymous />
         <http-basic />
-        <logout logout-success-url="/index.jsp" />
+        <logout />
 	</http>
 	
 	<authentication-manager>

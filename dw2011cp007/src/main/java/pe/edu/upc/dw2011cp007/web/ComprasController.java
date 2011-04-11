@@ -11,4 +11,6 @@ public class ComprasController {
 	public ModelAndView show() {
 		return new ModelAndView("restringido/compras");	
 	}
+	
+
 }
