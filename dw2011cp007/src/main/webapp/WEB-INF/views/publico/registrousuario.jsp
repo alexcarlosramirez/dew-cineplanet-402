@@ -1,35 +1,31 @@
-<table width="990" border="1" cellpadding="0" cellspacing="0">
+<table width="990" border="0" cellpadding="0" cellspacing="0">
 	<tbody>
 		<tr>
-			<td width="5" valign="top" background="img_cineplanet/inf_izq.jpg" style="border-width: 0"><img
-				src="img_cineplanet/sup_izq.jpg" width="5" height="350"></td>
+			<td width="5" valign="top" style="border-width: 0"></td>
 			<td width="980"
-				
 				valign="top" align="left"
 				style="background-repeat: repeat-x; background-color: #508fc9;border-width: 0">
-			<table width="980" border="1" cellspacing="0" cellpadding="0">
+			<table width="980" border="0" cellspacing="0" cellpadding="0">
 				<tbody>
 					<tr>
-						<td><img src="img_cineplanet/pix.gif" width="1" height="38"></td>
-						<td></td>
-						<td></td>
+						<td style="border-width: 0"></td>
+						<td style="border-width: 0"></td>
+						<td style="border-width: 0"></td>
 					</tr>
 					<tr>
-						<td width="10"></td>
-						<td width="960" valign="top" style="border-width: 0"><!-- InstanceBeginEditable name="contenido" -->
-						<table width="960" border="1" cellspacing="0" cellpadding="0">
+						<td width="10" style="border-width: 0"></td>
+						<td width="960" valign="top" style="border-width: 0">
+						<!-- InstanceBeginEditable name="contenido" -->
+						<table width="960" border="0" cellspacing="0" cellpadding="0">
 							<tbody>
 								<tr>
-									<td><img src="img_cineplanet/px-estrella2.jpg" width="13"
-										height="13"> <img
-										src="img_cineplanet/registrate_aqui.jpg" alt="" width="148"
-										height="16"></td>
+									<td style="border-width: 0"></td>
 								</tr>
 								<tr>
-									<td>&nbsp;</td>
+									<td style="border-width: 0">&nbsp;</td>
 								</tr>
 								<tr>
-									<td>
+									<td style="border-width: 0">
 									<form id="form1" name="form1" onsubmit="return validar(this)"
 										method="post" action="get_registro.php">
 									<table width="960" border="0" cellpadding="0" cellspacing="0">
@@ -37,44 +33,44 @@
 											<tr>
 												<td width="465" valign="top">
 												<table width="465" border="0" cellpadding="0"
-													cellspacing="0" class="text_blanco_sta">
+													cellspacing="0" >
 													<tbody>
 														<tr>
-															<td height="25" align="right">Email</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtemail"
+															<td height="25" align="right" style="border-width: 0">Email</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtemail"
 																name="txtemail" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td></td>
-															<td></td>
-															<td align="left"></td>
+															<td style="border-width: 0"></td>
+															<td style="border-width: 0"></td>
+															<td align="left" style="border-width: 0"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Contrase&ntilde;a</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input name="txtpass1"
+															<td height="25" align="right" style="border-width: 0">Contrase&ntilde;a</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input name="txtpass1"
 																type="password" class="nc_texto_negro" id="txtpass1"
 																size="37" maxlength="15"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Confirmar Contrase&ntilde;a</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input name="txtpass2"
+															<td height="25" align="right" style="border-width: 0">Confirmar Contrase&ntilde;a</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input name="txtpass2"
 																type="password" class="nc_texto_negro" id="txtpass2"
 																size="37" maxlength="15"></td>
 														</tr>
 														<tr>
-															<td height="15"></td>
-															<td align="left"></td>
-															<td align="left" class="f_txt_blanco">Tu contrase&ntilde;a
+															<td height="15" style="border-width: 0"></td>
+															<td align="left" style="border-width: 0"></td>
+															<td align="left" class="f_txt_blanco" style="border-width: 0">Tu contrase&ntilde;a
 															debe tener entre 4 y 15 caracteres</td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Cliente Premium</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><label>SI</label> <input
+															<td height="25" align="right" style="border-width: 0">Cliente Premium</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><label>SI</label> <input
 																name="radiotarjeta" id="radiohijos" type="radio"
 																value="Si"
 																onclick="document.getElementById(&quot;txt_tarjeta&quot;).value=&quot;&quot;;document.getElementById(&quot;txt_tarjeta&quot;).disabled=false">
@@ -84,90 +80,90 @@
 																checked="checked"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Numero de Tarjeta</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input name="txt_tarjeta"
+															<td height="25" align="right" style="border-width: 0">Numero de Tarjeta</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input name="txt_tarjeta"
 																type="text" disabled="disabled" class="cbox5_x"
 																id="txt_tarjeta" size="15" maxlength="12"></td>
 														</tr>
 														<tr>
-															<td width="165" height="25" align="right">Nombres</td>
-															<td width="20" align="left">&nbsp;</td>
-															<td width="280" align="left"><input id="txtnombre"
+															<td width="165" height="25" align="right" style="border-width: 0">Nombres</td>
+															<td width="20" align="left" style="border-width: 0">&nbsp;</td>
+															<td width="280" align="left" style="border-width: 0"><input id="txtnombre"
 																name="txtnombre" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Apellido Paterno</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtpaterno"
+															<td height="25" align="right" style="border-width: 0">Apellido Paterno</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtpaterno"
 																name="txtpaterno" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Apellido Materno</td>
+															<td height="25" align="right" style="border-width: 0">Apellido Materno</td>
 															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtmaterno"
+															<td align="left" style="border-width: 0"><input id="txtmaterno"
 																name="txtmaterno" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Sexo</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><label>M</label> <input name="sexo"
+															<td height="25" align="right" style="border-width: 0">Sexo</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><label>M</label> <input name="sexo"
 																id="sexo" type="radio" value="M"> <label>F</label>
 															<input name="sexo" id="sexo" type="radio" value="F"
 																checked="checked"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Direcci&oacute;n</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtdireccion"
+															<td height="25" align="right" style="border-width: 0">Direcci&oacute;n</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtdireccion"
 																name="txtdireccion" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Distrito</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtdistrito"
+															<td height="25" align="right" style="border-width: 0">Distrito</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtdistrito"
 																name="txtdistrito" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Ciudad</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtciudad"
+															<td height="25" align="right" style="border-width: 0">Ciudad</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtciudad"
 																name="txtciudad" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Departamento</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtdepartamento"
+															<td height="25" align="right" style="border-width: 0">Departamento</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtdepartamento"
 																name="txtdepartamento" type="text"
 																class="nc_texto_negro" size="37"></td>
 														</tr>
 													</tbody>
 												</table>
 												</td>
-												<td width="30" align="center" valign="top"><img
+												<td width="30" align="center" valign="top" style="border-width: 0"><img
 													src="img_cineplanet/pix-promo.jpg" alt="" width="3"
 													height="340"></td>
-												<td width="465" valign="top">
+												<td width="465" valign="top" style="border-width: 0">
 												<table width="465" border="0" cellpadding="0"
 													cellspacing="0" class="text_blanco_sta">
 													<tbody>
 														<tr>
-															<td height="25" align="right">DNI</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtdni" name="txtdni"
+															<td height="25" align="right" style="border-width: 0">DNI</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtdni" name="txtdni"
 																type="text" class="nc_texto_negro" size="37"></td>
 														</tr>
 														<tr>
-															<td width="180" height="25" align="right">Fecha de
+															<td width="180" height="25" align="right" style="border-width: 0">Fecha de
 															Nacimiento</td>
-															<td width="20" align="left">&nbsp;</td>
-															<td width="265" align="left"><select name="dia"
+															<td width="20" align="left" style="border-width: 0">&nbsp;</td>
+															<td width="265" align="left" style="border-width: 0"><select name="dia"
 																class="nc_texto_negro" id="dia">
 																<option value="0">D&iacute;a</option>
 																<option value="1">1</option>
@@ -310,23 +306,23 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Tel&eacute;fono</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txttelefono"
+															<td height="25" align="right" style="border-width: 0">Tel&eacute;fono</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txttelefono"
 																name="txttelefono" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Celular</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><input id="txtcelular"
+															<td height="25" align="right" style="border-width: 0">Celular</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><input id="txtcelular"
 																name="txtcelular" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Ocupaci&oacute;n</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><select name="cboocupacion"
+															<td height="25" align="right" style="border-width: 0">Ocupaci&oacute;n</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><select name="cboocupacion"
 																id="cboocupacion" class="nc_texto_negro">
 																<option value="0" selected="selected">Seleccionar</option>
 																<option value="EJ">Ejecutivo</option>
@@ -337,9 +333,9 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Estado Civil</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><select name="cboecivil"
+															<td height="25" align="right" style="border-width: 0">Estado Civil</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><select name="cboecivil"
 																id="cboecivil" class="nc_texto_negro">
 																<option value="0" selected="selected">Seleccionar</option>
 																<option value="S">Soltero</option>
@@ -348,9 +344,9 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td align="right">Cine Favorito</td>
-															<td align="left">&nbsp;</td>
-															<td align="left"><select name="cbocine"
+															<td align="right" style="border-width: 0">Cine Favorito</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
+															<td align="left" style="border-width: 0"><select name="cbocine"
 																class="nc_texto_negro" id="cbocine">
 																<option value="0" selected="selected">Seleccionar</option>
 																<option value="04">CinePlanet Alcázar</option>
@@ -374,47 +370,7 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td height="25" align="right">Qu&eacute; g&eacute;nero de
-															pel&iacute;cula te gusta?</td>
-															<td align="left">&nbsp;</td>
-															<td align="left">
-															<table border="0" cellpadding="6" cellspacing="0">
-																<tbody>
-																	<tr>
-																		<td><input name="checkbox1" type="checkbox"
-																			id="checkbox1" value="Ficcion"> Ficci&oacute;n</td>
-																		<td><input name="checkbox2" type="checkbox"
-																			id="checkbox2" value="Comedia"> Comedia</td>
-																		<td rowspan="5">(*)</td>
-																	</tr>
-																	<tr>
-																		<td><input name="checkbox3" type="checkbox"
-																			id="checkbox3" value="Romantica"> Rom&aacute;ntica</td>
-																		<td><input name="checkbox4" type="checkbox"
-																			id="checkbox4" value="Suspenso"> Suspenso</td>
-																	</tr>
-																	<tr>
-																		<td><input name="checkbox5" type="checkbox"
-																			id="checkbox5" value="Drama"> Drama</td>
-																		<td><input name="checkbox6" type="checkbox"
-																			id="checkbox6" value="Terror"> Terror</td>
-																	</tr>
-																	<tr>
-																		<td><input name="checkbox7" type="checkbox"
-																			id="checkbox7" value="Animado"> Animado</td>
-																		<td><input name="checkbox8" type="checkbox"
-																			id="checkbox8" value="Accion"> Acci&oacute;n</td>
-																	</tr>
-																	<tr>
-																		<td><input name="checkbox9" type="checkbox"
-																			id="checkbox9" value="Aventuras"> Aventuras</td>
-																		<td><input name="checkbox10" type="checkbox"
-																			id="checkbox10" value="Policiales">
-																		Policiales</td>
-																	</tr>
-																</tbody>
-															</table>
-															</td>
+															<td></td>
 														</tr>
 													</tbody>
 												</table>
@@ -424,47 +380,46 @@
 												</td>
 											</tr>
 											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
 											</tr>
 											<tr>
-												<td align="center" class="nc_texto_rojo"><strong></strong></td>
-												<td>&nbsp;</td>
-												<td align="center">
+												<td align="center" class="nc_texto_rojo" style="border-width: 0"><strong></strong></td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td align="center" style="border-width: 0">
 												<table width="250" border="0" cellpadding="0"
 													cellspacing="0">
 													<tbody>
 														<tr>
-															<td class="nc_texto_rojo"><strong>Ingrese
+															<td class="nc_texto_rojo" style="border-width: 0"><strong>Ingrese
 															C&oacute;digo: </strong></td>
-															<td><input name="uword" type="text"
+															<td style="border-width: 0"><input name="uword" type="text"
 																class="nc_texto_negro" id="uword" value="" size="20"></td>
 														</tr>
 														<tr>
-															<td width="130" class="nc_texto_rojo">&nbsp;</td>
-															<td width="120"><img src="inc/js/captcha.php" alt=""
-																width="100" height="30" vspace="3"></td>
+															<td width="130" class="nc_texto_rojo" style="border-width: 0">&nbsp;</td>
+															<td width="120" style="border-width: 0"></td>
 														</tr>
 													</tbody>
 												</table>
 												</td>
 											</tr>
 											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td align="center">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td align="center" style="border-width: 0">&nbsp;</td>
 											</tr>
 											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td align="center"><input type="image" border="0"
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td align="center" style="border-width: 0"><input type="image" border="0"
 													src="img_cineplanet/enviar_off.jpg"></td>
 											</tr>
 											<tr>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
-												<td>&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
+												<td style="border-width: 0">&nbsp;</td>
 											</tr>
 										</tbody>
 									</table>
@@ -472,18 +427,18 @@
 									</td>
 								</tr>
 								<tr>
-									<td>&nbsp;</td>
+									<td style="border-width: 0">&nbsp;</td>
 								</tr>
 							</tbody>
 						</table>
 						<!-- InstanceEndEditable --></td>
-						<td width="10"></td>
+						<td width="10" style="border-width: 0"></td>
 					</tr>
 				</tbody>
 			</table>
 			</td>
 			<td width="5" valign="top"
-				background="img_cineplanet/inf_der_cont.jpg"><img
+				style="border-width: 0"><img
 				src="img_cineplanet/inf_der.jpg" width="5" height="350"></td>
 		</tr>
 	</tbody>
