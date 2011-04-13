@@ -248,3 +248,20 @@ CREATE TABLE  `dw2011cp007`.`cp_tb_salas` (
   `id_cine` int(11) unsigned NOT NULL,
   PRIMARY KEY (`id_sala`) USING BTREE
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+
+
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.Tablas usadas por Spring Security
+-- -----------------------------------------------------
+DROP TABLE IF EXISTS `dw2011cp007`.`users`;
+create table users(
+      username varchar(50) not null primary key,
+      password varchar(50) not null,
+      enabled boolean not null);
+
+DROP TABLE IF EXISTS `dw2011cp007`.`authorities`;
+create table authorities (
+      username varchar(50) not null,
+      authority varchar(50) not null,
+      constraint fk_authorities_users foreign key(username) references users(username));
+      create unique index ix_auth_username on authorities (username,authority);

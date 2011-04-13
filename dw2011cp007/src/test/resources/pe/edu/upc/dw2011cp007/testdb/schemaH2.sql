@@ -72,4 +72,19 @@ CREATE  TABLE `Perfil_has_cp_tb_funcion` (
   `cp_tb_funcion_idfuncion` INT NOT NULL ,
   PRIMARY KEY (`Perfil_idPerfil`, `cp_tb_funcion_idfuncion`));
       
-    
+  
+  
+-- -----------------------------------------------------
+-- Table `dw2011cp007`.Tablas usadas por Spring Security
+-- -----------------------------------------------------
+  
+  create table users(
+      username varchar(50) not null primary key,
+      password varchar(50) not null,
+      enabled boolean not null);
+
+  create table authorities (
+      username varchar(50) not null,
+      authority varchar(50) not null,
+      constraint fk_authorities_users foreign key(username) references users(username));
+      create unique index ix_auth_username on authorities (username,authority);

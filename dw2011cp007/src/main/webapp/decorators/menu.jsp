@@ -6,7 +6,7 @@
     <li><a href="<c:url value="/publico_estrenos" />">Pr&oacute;ximos Estrenos</a></li>
     <li><a href="<c:url value="/publico_hoy" />">Presentamos hoy</a></li>
     <li><a href="<c:url value="/publico_cines" />">Nuestros Cines</a></li>
-    <li><a href="<c:url value="/carritocompra" />">PPP</a></li>
+    <li><a href="<c:url value="/carritocompra" />">Compra Online</a></li>
     <li><a href="http://localhost:8080/intranet/">Intranet</a></li>
   </ul>
 </div>

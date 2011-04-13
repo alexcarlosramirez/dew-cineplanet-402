@@ -13,7 +13,8 @@
 				<div class="form_row"><label class="left">Username: </label> <input
 					type="text" class="form_input" id="usernameField" name="j_username" /></div>
 				<div class="form_row"><label class="left">Password: </label> <input
-					type="password" class="form_input" id="passwordField" name="j_password" /></div>
+					type="password" class="form_input" id="passwordField" name="j_password" />
+				</div>
 				<div style="float: right; padding: 10px 25px 0 0;"><input
 					type="image" src="resources/images/login.gif" /></div>
 			</form>

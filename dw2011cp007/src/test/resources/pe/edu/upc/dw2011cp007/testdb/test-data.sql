@@ -164,3 +164,11 @@ INSERT INTO cp_tb_funcion (nofuncion,txtdescripcion) VALUES('PREMIUM','USUARIO P
 
 INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (1,'invitado01','invitado001','invitado0001',false,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
 INSERT INTO cp_tb_Cliente (coCliente,nologin,noApePaterno,noNombre,flPremium,txtemail,noContrasena,coEstadoUsuario,feRegistro) VALUES (2,'invitado02','invitado002','invitado0002',true,'miguelmac20@gmail.com','123456',1,SYSDATE()) ;
+
+
+INSERT INTO users VALUES ('user1', 'pass1', true);
+INSERT INTO users VALUES ('user2', 'pass2', true);
+ 
+INSERT INTO authorities VALUES ('user1', 'ROLE_USER');
+INSERT INTO authorities VALUES ('user1', 'ROLE_ADMIN');
+INSERT INTO authorities VALUES ('user2', 'ROLE_USER');

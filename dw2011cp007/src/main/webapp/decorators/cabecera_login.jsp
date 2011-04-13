@@ -8,17 +8,31 @@
 	</a>
 </div>    
 <div class="login">
-<table border=0 style="height: 50px; width: 370px">
-	<tr>
-		<td style="border-width: 0">
-		<form>
-		<h2 class="login2">Login</h2>
-		<input type="text" maxlength="20" tabindex="1"
-			style="width: 100px; height: 18px; border-style: groove; margin-right: 3px" />
-		<input type="password" name="textfield" tabindex="2"
-			style="width: 100px; height: 18px; float: left; margin-right: 3px; border: 1px solid #C8D2D9;" />
-			<img src="resources/images/login_up.jpg"></form>
-		</td>
-	</tr>
-</table>
+	<table border=0 style="width: 400px; height: 50px;margin: 0;padding-left: 23px">
+		<tr>
+			<td style="border-width:0;padding: 0;margin: 0;">
+				<form>
+				<table border="0"><tr>
+				<td style="border-width:0;padding: 0;margin: 0"><span class="login2">Login</span></td>
+				
+				<td style="border-width:0;padding: 0;margin: 0"><input type="text" maxlength="20" tabindex="1"
+				style="width: 100px; height: 18px; border: 1px solid #C8D2D9 ; background-color:#FFFFFF;" />
+				</td>
+				<td style="border-width:0;padding: 0"><input type="password" name="textfield" tabindex="2"
+				style="width: 100px; height: 18px; border: 1px solid #C8D2D9 ; background-color:#FFFFFF;" />
+				</td>
+				<td valign="middle" style="border-width:0;padding:0;margin: 0 ">
+				<input type="image" src="resources/images/login_up.jpg" />
+				</td>
+				</tr>
+				<tr>
+					<td style="border-width:0;padding: 0"></td>
+					<td style="border-width:0;padding: 0;margin: 0;color: white;font-weight: bold">
+					<a href="<c:url value="newuser" />">Registrarse</a></td>
+				</tr>
+				</table>
+				</form>
+			</td>
+		</tr>
+	</table>
 </div>
