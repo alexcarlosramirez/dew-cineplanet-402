@@ -21,6 +21,8 @@ SpringRoo <br>
 
 El proyecto en de intranet de encuentra en el siguiente repositorio:<br>
 
+https://dew-cineplanet-intranet-402.googlecode.com/svn/intranet
+
 <br>
 Nuestro proyecto principal tiene un enlace que llama al proyecto de SpringRoo.
 
