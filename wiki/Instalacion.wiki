@@ -1,0 +1,32 @@
+#summary One-sentence summary of this page.
+
+= Introduction =
+
+Para la ejecucion del proyecto es necesario contar con los siguientes requerimientos:
+
+Mysql 5.1 o superior
+Apache Maven
+Spring Tool Suite
+
+Se usaron los siguientes Frameworks:
+
+Junit 4.8.2
+Spring 3.05
+Spring MVC 3.05
+Spring Security 3.05
+
+Para la Intranet y mantenimiento de tablas se uso:
+
+SpringRoo 
+
+El proyecto en de intranet de encuentra en el siguiente repositorio:
+
+
+Nuestro proyecto principal tiene un enlace que llama al proyecto de SpringRoo.
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
