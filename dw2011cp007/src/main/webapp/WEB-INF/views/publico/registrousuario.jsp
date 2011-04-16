@@ -26,17 +26,16 @@
 								</tr>
 								<tr>
 									<td style="border-width: 0">
-									<form id="form1" name="form1" onsubmit="return validar(this)"
-										method="post" action="get_registro.php">
+									<form method="post" action="<c:url value="/publico_registraruser"/>">
 									<table width="960" border="0" cellpadding="0" cellspacing="0">
 										<tbody>
 											<tr>
-												<td width="465" valign="top">
+												<td width="465" valign="top" style="border-width: 0">
 												<table width="465" border="0" cellpadding="0"
 													cellspacing="0" >
 													<tbody>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Email</td>
+															<td height="25" align="right" style="border-width: 0">Email*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txtemail"
 																name="txtemail" type="text" class="nc_texto_negro"
@@ -48,14 +47,14 @@
 															<td align="left" style="border-width: 0"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Contrase&ntilde;a</td>
+															<td height="25" align="right" style="border-width: 0">Contrase&ntilde;a*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input name="txtpass1"
 																type="password" class="nc_texto_negro" id="txtpass1"
 																size="37" maxlength="15"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Confirmar Contrase&ntilde;a</td>
+															<td height="25" align="right" style="border-width: 0">Confirmar Contrase&ntilde;a*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input name="txtpass2"
 																type="password" class="nc_texto_negro" id="txtpass2"
@@ -65,7 +64,7 @@
 															<td height="15" style="border-width: 0"></td>
 															<td align="left" style="border-width: 0"></td>
 															<td align="left" class="f_txt_blanco" style="border-width: 0">Tu contrase&ntilde;a
-															debe tener entre 4 y 15 caracteres</td>
+															debe tener entre 8 y 15 caracteres</td>
 														</tr>
 														<tr>
 															<td height="25" align="right" style="border-width: 0">Cliente Premium</td>
@@ -87,22 +86,22 @@
 																id="txt_tarjeta" size="15" maxlength="12"></td>
 														</tr>
 														<tr>
-															<td width="165" height="25" align="right" style="border-width: 0">Nombres</td>
+															<td width="165" height="25" align="right" style="border-width: 0">Nombres*</td>
 															<td width="20" align="left" style="border-width: 0">&nbsp;</td>
 															<td width="280" align="left" style="border-width: 0"><input id="txtnombre"
 																name="txtnombre" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Apellido Paterno</td>
+															<td height="25" align="right" style="border-width: 0">Apellido Paterno*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txtpaterno"
 																name="txtpaterno" type="text" class="nc_texto_negro"
 																size="37"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Apellido Materno</td>
-															<td align="left">&nbsp;</td>
+															<td height="25" align="right" style="border-width: 0">Apellido Materno*</td>
+															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txtmaterno"
 																name="txtmaterno" type="text" class="nc_texto_negro"
 																size="37"></td>
@@ -116,7 +115,7 @@
 																checked="checked"></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Direcci&oacute;n</td>
+															<td height="25" align="right" style="border-width: 0">Direcci&oacute;n*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txtdireccion"
 																name="txtdireccion" type="text" class="nc_texto_negro"
@@ -154,7 +153,7 @@
 													cellspacing="0" class="text_blanco_sta">
 													<tbody>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">DNI</td>
+															<td height="25" align="right" style="border-width: 0">DNI*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txtdni" name="txtdni"
 																type="text" class="nc_texto_negro" size="37"></td>
@@ -306,7 +305,7 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td height="25" align="right" style="border-width: 0">Tel&eacute;fono</td>
+															<td height="25" align="right" style="border-width: 0">Tel&eacute;fono*</td>
 															<td align="left" style="border-width: 0">&nbsp;</td>
 															<td align="left" style="border-width: 0"><input id="txttelefono"
 																name="txttelefono" type="text" class="nc_texto_negro"
@@ -370,57 +369,14 @@
 															</select></td>
 														</tr>
 														<tr>
-															<td></td>
+															<td style="border-width: 0;text-align: center;" align="center" colspan="2"><input type="submit"></td></td>
 														</tr>
 													</tbody>
 												</table>
 												<br>
-												<center><span class="ctxt_blanco"> (*) Por
-												lo menos debes seleccionar un g&eacute;nero de pel&iacute;cula.</span></center>
 												</td>
 											</tr>
-											<tr>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-											</tr>
-											<tr>
-												<td align="center" class="nc_texto_rojo" style="border-width: 0"><strong></strong></td>
-												<td style="border-width: 0">&nbsp;</td>
-												<td align="center" style="border-width: 0">
-												<table width="250" border="0" cellpadding="0"
-													cellspacing="0">
-													<tbody>
-														<tr>
-															<td class="nc_texto_rojo" style="border-width: 0"><strong>Ingrese
-															C&oacute;digo: </strong></td>
-															<td style="border-width: 0"><input name="uword" type="text"
-																class="nc_texto_negro" id="uword" value="" size="20"></td>
-														</tr>
-														<tr>
-															<td width="130" class="nc_texto_rojo" style="border-width: 0">&nbsp;</td>
-															<td width="120" style="border-width: 0"></td>
-														</tr>
-													</tbody>
-												</table>
-												</td>
-											</tr>
-											<tr>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-												<td align="center" style="border-width: 0">&nbsp;</td>
-											</tr>
-											<tr>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-												<td align="center" style="border-width: 0"><input type="image" border="0"
-													src="img_cineplanet/enviar_off.jpg"></td>
-											</tr>
-											<tr>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-												<td style="border-width: 0">&nbsp;</td>
-											</tr>
+											
 										</tbody>
 									</table>
 									</form>

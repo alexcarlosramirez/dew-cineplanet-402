@@ -46,6 +46,13 @@ insert into cp_tb_pelicula (no_pelicula, id_pais, id_tipopelicula, co_clasificac
 insert into cp_tb_pelicula (no_pelicula, id_pais, id_tipopelicula, co_clasificacionpelicula, tx_sinopsis, tx_nombreimagen, fl_doblada, fl_en3d, fl_enestreno, fl_encartelera) values ('EL MAESTRO DE LAS ARTES MARCIANAS', 2, 4, '+14', 'SIPNOPSIS 7', 'PEL007.jpg', false, false, true, true);
 insert into cp_tb_pelicula (no_pelicula, id_pais, id_tipopelicula, co_clasificacionpelicula, tx_sinopsis, tx_nombreimagen, fl_doblada, fl_en3d, fl_enestreno, fl_encartelera) values ('LA CAIDA DEL IMPERIO DE LAS HORMIGAS', 3, 4, '+14', 'SIPNOPSIS 8', 'PEL008.jpg', false, false, true, true);
 
+update cp_tb_pelicula set tx_sinopsis='Siglo IV. Egipto bajo el Imperio Romano. Las violentas revueltas religiosas en las calles de Alejandría alcanzan a su legendaria Biblioteca. Atrapada tras sus muros, la brillante astrónoma Hipatia lucha por salvar la sabiduría del Mundo Antiguo con la ayuda de sus discípulos.' where id_pelicula=4;  
+update cp_tb_pelicula set tx_sinopsis='En Saw 7 un grupo de supervivientes de los juegos de Jigsaw se reunirán para buscar el apoyo del gurú de autoayuda y superviviente Bobby Dagen, un hombre que tiene un oscuro secreto en el que quiere desatar una nueva oleada de terror...' where id_pelicula=5;
+update cp_tb_pelicula set tx_sinopsis='Basado en hechos reales, el film toma como base una novela de Matt Baglio. Un estudiante norteamericano que se prepara para el sacerdocio, está en una etapa de pérdida de fé, para recuperarla acudirá a la escuela de exorcismos de El Vaticano en la que se verá cara a cara con las fuerzas demoníacas' where id_pelicula=3;
+update cp_tb_pelicula set tx_sinopsis='Martin Lawrence regresa como el agente del FBI Malcolm Turner y su alter-ego del espionaje "Big Momma". Pero en esta ocasión, se une a Turner su hijastro adolescente Trent al tiempo en que se van de agentes encubiertos a una escuela para las artes exclusiva para señoritas.' where id_pelicula=6;
+update cp_tb_pelicula set tx_sinopsis='Let Me In se centra en un niño triste llamado Owen, maltratado por sus compañeros de clase y abandonado por sus padres divorciados; sin embargo, algo cambiará en la solitaria vida de Owen cuando conozca a una nueva y misteriosa vecina llamada Abby.' where id_pelicula=7;
+update cp_tb_pelicula set tx_sinopsis='Will es un soldado que ha pasado los últimos tiempos en hospitales del ejército, curando sus heridas de su tiempo pasado en la guerra de Iraq. Además, la mujer que dejó atrás ha seguido con su vida, y ya no puede contar con ella.' where id_pelicula=8;
+
 insert into cp_tb_peliculaartista values (1, 1);
 insert into cp_tb_peliculaartista values (1, 2);
 insert into cp_tb_peliculaartista values (1, 3);
@@ -105,8 +112,6 @@ insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario,
 insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario, fl_doblada, fl_en3d) values (6, 3, SYSDATE(),'12-18', false, false);
 insert into cp_tb_horario (id_pelicula, id_cine, fe_diahorario, no_horashorario, fl_doblada, fl_en3d) values (6, 5, SYSDATE(),'16-22', false,true);
 
-----------------------
-
 insert into cp_tb_tipoproducto values (1, 'ROPA');
 insert into cp_tb_tipoproducto values (2, 'GORROS');
 insert into cp_tb_tipoproducto values (3, 'WALLPAPERS');
@@ -149,7 +154,6 @@ insert into cp_tb_productopelicula values (14, 6);
 insert into cp_tb_productopelicula values (15, 7);
 insert into cp_tb_productopelicula values (16, 8);
 
-----------------------
 
 INSERT into cp_tb_empleado (`coCodigo`, `noApePaterno`, `noApeMaterno`, `noNombre`, `cotipodoc`, `nudocumento`, `txtemail`, `noUnidadTrabajo`, `noPuestoTrabajo`, `noTelefono`, `noAnexo`, `coJefeInmediato`, `noContrasena`, `coEstadoEmpleado`, `coEstadoPassword`, `feRegistro`) VALUES ('MCOSIOESPI', 'COSIO', 'ESPINO', 'MIGUEL', '1', '42587813', 'MIGUELMAC20@GMAIL.COM', 'TECNOLOGIA', 'ANALISTA QA', '2222222', '1512', NULL, '123456789', '1', '1', SYSDATE());
 

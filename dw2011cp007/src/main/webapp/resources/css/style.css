@@ -189,7 +189,7 @@ background-color:#FFFFFF;
 /*------------------------middle_content-----------*/
 .column1{
 width:250px;
-/*float:left;*/
+float:left;
 margin:0px;
 padding:10px 10px 10px 5px;
 }
@@ -201,7 +201,7 @@ padding:10px 5px 10px 5px;
 }
 .column3{
 width:320px;
-/*float:left;*/
+float:left;
 margin:0px;
 padding:10px 10px 10px 5px;
 }
