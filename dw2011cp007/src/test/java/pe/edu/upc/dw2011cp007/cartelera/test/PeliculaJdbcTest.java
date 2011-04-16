@@ -1,6 +1,8 @@
 package pe.edu.upc.dw2011cp007.cartelera.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import java.util.ArrayList;
 
@@ -15,7 +17,17 @@ import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 
-
+/**
+ * Test con conexi&oacute;n a base de datos de los m&eacute;todos de la clase
+ * {@link PeliculaModel}.
+ * 
+ * @author <ul>
+ *         <li>Romeo Maita</li>
+ *         <li>Yonni Lopez</li>
+ *         <li>Miguel Cosio</li>
+ *         <li>Alexander Ramirez</li>
+ *         </ul>
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class PeliculaJdbcTest {
@@ -23,8 +35,10 @@ public class PeliculaJdbcTest {
 	@Autowired
 	private CarteleraService carteleraService;
 
-
-	//@Test
+	/**
+	 * Busca una pelicula según su nombre.
+	 */
+	@Test
 	public void buscarPeliculaPorNombre() {
 		PeliculaModel peliculaInsertar = new PeliculaModel();
 		peliculaInsertar.setNombrepelicula("LA CAIDA DEL IMPERIO DE LAS HORMIGAS");
@@ -36,6 +50,10 @@ public class PeliculaJdbcTest {
 		System.out.println(peliculaBuscar);
 	}
 
+	/**
+	 * Realiza, de manera r&aacute;pida, las operaciones del mantenimiento de una pelicula.
+	 * (Operaciones usadas para pruebas, el mantenimiento fue incluido en SpringRoo)
+	 */
 	@Test
 	public void mantenimientoPelicula() {
 		PaisModel paisModel = new PaisModel();
@@ -82,7 +100,7 @@ public class PeliculaJdbcTest {
 	/**
 	 * Muestra la lista de peliculas en cartelera.
 	 */
-	//@Test
+	@Test
 	public void buscarListaPeliculaEnCartelera() {
 		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
 		assertTrue(listaPelicula.size()>0);
@@ -100,7 +118,7 @@ public class PeliculaJdbcTest {
 	 * Permite al usuario consultar la lista de cines y la programación de peliculas de cada uno.
 	 * Se considera pelicula en estreno aquella que tiene se proyectan hoy por primera vez
 	 */
-	//@Test
+	@Test
 	public void buscarListaPeliculaEnEstreno() {
 		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnEstreno();
 		assertTrue(listaPelicula.size()>0);

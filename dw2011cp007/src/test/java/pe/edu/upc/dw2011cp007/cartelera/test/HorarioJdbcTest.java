@@ -16,6 +16,17 @@ import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 
+/**
+ * Test con conexi&oacute;n a base de datos de los m&eacute;todos de la clase
+ * {@link HorarioModel}.
+ * 
+ * @author <ul>
+ *         <li>Romeo Maita</li>
+ *         <li>Yonni Lopez</li>
+ *         <li>Miguel Cosio</li>
+ *         <li>Alexander Ramirez</li>
+ *         </ul>
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class HorarioJdbcTest {
@@ -26,7 +37,6 @@ public class HorarioJdbcTest {
 	/**
 	 * Muestra la lista de peliculas a proyectarse el día de hoy.
 	 */
-
 	@Test
 	public void buscarListaPeliculaProyectarHoy() {
 		ArrayList<HorarioModel> listaHorarioPeliculaSel = carteleraService.buscarListaPeliculaProyectarHoy();
