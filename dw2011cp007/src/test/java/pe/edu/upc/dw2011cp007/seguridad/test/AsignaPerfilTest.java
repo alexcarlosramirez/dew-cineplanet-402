@@ -6,13 +6,12 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
-import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class AsignaPerfilTest {
 	
-	private PerfilRepository lista_perfiles;
+//	private PerfilRepository lista_perfiles;
 //	private UsuarioInternoRepository lista_usuarios= new UsuarioInternoRepository();
 
 	@BeforeClass
