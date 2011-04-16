@@ -12,9 +12,10 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
 /**
  * Test con conexi&oacute;n a base de datos de los m&eacute;todos de la clase
@@ -33,6 +34,8 @@ public class HorarioJdbcTest {
 
 	@Autowired
 	CarteleraService carteleraService;
+	@Autowired
+	MantenimientoService mantenimientoService;
 
 	/**
 	 * Muestra la lista de peliculas a proyectarse el día de hoy.
@@ -66,11 +69,11 @@ public class HorarioJdbcTest {
 		PeliculaModel peliculaBuscar = new PeliculaModel();
 		peliculaBuscar.setIdPelicula(idPeliculaSel);
 
-		PeliculaModel peliculaSel = carteleraService.buscarPelicula(peliculaBuscar);
+		PeliculaModel peliculaSel = mantenimientoService.buscarPelicula(peliculaBuscar);
 		assertNotNull(peliculaSel);
 
 		ArrayList<HorarioModel> listaHorarioPeliculaSel = carteleraService.buscarHorarioPorPelicula(peliculaSel);
-		ArrayList<ArtistaModel> listaArtistaModel = carteleraService.buscarListaArtistaPorPelicula(peliculaSel);
+		ArrayList<ArtistaModel> listaArtistaModel = mantenimientoService.buscarListaArtistaPorPelicula(peliculaSel);
 		System.out.println("==========================================================");
 		System.out.println("@Test buscarPeliculaSeleccionada");
 		System.out.println("Se encontró pelicula como " + peliculaSel);
@@ -83,6 +86,41 @@ public class HorarioJdbcTest {
 		System.out.println("Actuan:");
 		for (ArtistaModel artistaModel : listaArtistaModel) {
 			System.out.println(artistaModel.getNombreartista());
+		}
+		System.out.println("==========================================================");
+	}
+
+	/**
+	 * Muestra la lista de peliculas en cartelera.
+	 */
+	@Test
+	public void buscarListaPeliculaEnCartelera() {
+		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
+		assertTrue(listaPelicula.size()>0);
+
+		System.out.println("==========================================================");
+		System.out.println("@Test buscarListaPeliculaEnCartelera");
+		System.out.println("Se encontraron " + listaPelicula.size() + " peliculas.");
+		for (PeliculaModel peliculaModel : listaPelicula) {
+			System.out.println(peliculaModel);
+		}
+		System.out.println("==========================================================");
+	}
+
+	/**
+	 * Permite al usuario consultar la lista de cines y la programación de peliculas de cada uno.
+	 * Se considera pelicula en estreno aquella que tiene se proyectan hoy por primera vez
+	 */
+	@Test
+	public void buscarListaPeliculaEnEstreno() {
+		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnEstreno();
+		assertTrue(listaPelicula.size()>0);
+
+		System.out.println("==========================================================");
+		System.out.println("@Test buscarListaPeliculaEnEstreno");
+		System.out.println("Se encontraron " + listaPelicula.size() + " peliculas.");
+		for (PeliculaModel peliculaModel : listaPelicula) {
+			System.out.println(peliculaModel);
 		}
 		System.out.println("==========================================================");
 	}

@@ -2,9 +2,6 @@ package pe.edu.upc.dw2011cp007.cartelera.test;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertNull;
-import static org.junit.Assert.assertTrue;
-
-import java.util.ArrayList;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -12,10 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
-import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
 /**
  * Test con conexi&oacute;n a base de datos de los m&eacute;todos de la clase
@@ -33,7 +30,7 @@ import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 public class PeliculaJdbcTest {
 
 	@Autowired
-	private CarteleraService carteleraService;
+	MantenimientoService mantenimientoService;
 
 	/**
 	 * Busca una pelicula según su nombre.
@@ -45,7 +42,7 @@ public class PeliculaJdbcTest {
 	
 		System.out.println("==========================================================");
 		System.out.println("@Test buscarPeliculaPorNombre");
-		PeliculaModel peliculaBuscar = carteleraService.buscarPelicula(peliculaInsertar);
+		PeliculaModel peliculaBuscar = mantenimientoService.buscarPelicula(peliculaInsertar);
 		assertNotNull(peliculaBuscar);
 		System.out.println(peliculaBuscar);
 	}
@@ -74,8 +71,8 @@ public class PeliculaJdbcTest {
 
 		System.out.println("==========================================================");
 		System.out.println("@Test mantenimientoPelicula:registrarPelicula");
-		carteleraService.registrarPelicula(peliculaInsertar);
-		PeliculaModel peliculaBuscar = carteleraService.buscarPelicula(peliculaInsertar);
+		mantenimientoService.registrarPelicula(peliculaInsertar);
+		PeliculaModel peliculaBuscar = mantenimientoService.buscarPelicula(peliculaInsertar);
 		assertNotNull(peliculaBuscar);
 		System.out.println(peliculaBuscar);
 		peliculaInsertar.setIdPelicula(peliculaBuscar.getIdPelicula());
@@ -84,51 +81,16 @@ public class PeliculaJdbcTest {
 		System.out.println("@Test mantenimientoPelicula:modificarPelicula");
 		peliculaInsertar.setDoblada(true);
 		peliculaInsertar.setEn3d(true);
-		carteleraService.modificarPelicula(peliculaInsertar);
-		peliculaBuscar = carteleraService.buscarPelicula(peliculaInsertar);
+		mantenimientoService.modificarPelicula(peliculaInsertar);
+		peliculaBuscar = mantenimientoService.buscarPelicula(peliculaInsertar);
 		assertNotNull(peliculaBuscar);
 		System.out.println(peliculaBuscar);
 
 		System.out.println("==========================================================");
 		System.out.println("@Test mantenimientoPelicula:eliminarPelicula");
-		carteleraService.eliminarPelicula(peliculaInsertar);
-		peliculaBuscar = carteleraService.buscarPelicula(peliculaInsertar);
+		mantenimientoService.eliminarPelicula(peliculaInsertar);
+		peliculaBuscar = mantenimientoService.buscarPelicula(peliculaInsertar);
 		assertNull(peliculaBuscar);
 		System.out.println(peliculaBuscar);
-	}
-
-	/**
-	 * Muestra la lista de peliculas en cartelera.
-	 */
-	@Test
-	public void buscarListaPeliculaEnCartelera() {
-		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnCartelera();
-		assertTrue(listaPelicula.size()>0);
-
-		System.out.println("==========================================================");
-		System.out.println("@Test buscarListaPeliculaEnCartelera");
-		System.out.println("Se encontraron " + listaPelicula.size() + " peliculas.");
-		for (PeliculaModel peliculaModel : listaPelicula) {
-			System.out.println(peliculaModel);
-		}
-		System.out.println("==========================================================");
-	}
-
-	/**
-	 * Permite al usuario consultar la lista de cines y la programación de peliculas de cada uno.
-	 * Se considera pelicula en estreno aquella que tiene se proyectan hoy por primera vez
-	 */
-	@Test
-	public void buscarListaPeliculaEnEstreno() {
-		ArrayList<PeliculaModel> listaPelicula = carteleraService.buscarListaPeliculaEnEstreno();
-		assertTrue(listaPelicula.size()>0);
-
-		System.out.println("==========================================================");
-		System.out.println("@Test buscarListaPeliculaEnEstreno");
-		System.out.println("Se encontraron " + listaPelicula.size() + " peliculas.");
-		for (PeliculaModel peliculaModel : listaPelicula) {
-			System.out.println(peliculaModel);
-		}
-		System.out.println("==========================================================");
 	}
 }
