@@ -17,18 +17,15 @@ Spring Security 3.05 <br>
 
 Para la Intranet y mantenimiento de tablas se uso:<br>
 
-SpringRoo <br>
+SpringRoo <br/>
 
-El proyecto en de intranet de encuentra en el siguiente repositorio:<br>
+= Repositorio SVN =
 
+El home de la página web es:<br/>
+http://dew-cineplanet-402.googlecode.com/svn/
+
+El proyecto en de intranet de encuentra en el siguiente repositorio:<br/>
 https://dew-cineplanet-intranet-402.googlecode.com/svn/intranet
 
-<br>
-Nuestro proyecto principal tiene un enlace que llama al proyecto de SpringRoo.
-
-= Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+_Nota:<br>
+Nuestro proyecto principal tiene un enlace que llama al proyecto de SpringRoo._
