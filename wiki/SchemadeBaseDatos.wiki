@@ -1,13 +1,10 @@
 #summary One-sentence summary of this page.
 
-= Introduction =
+= INSTALACIÓN =
 
-Para crear la base de datos es necesario utilizar los scripts ubicados en la carpeta de Test/resources 
-
+Para crear la base de datos es necesario utilizar los scripts ubicados en la paquete _pe/edu/upc/dw2011cp007/testdb_ que se encuentra en *_raiz del proyecto/src/test/resources_*
 
 = Details =
-
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+Los archivos encontrados en el paquete son dos:<br/>
+*schema.sql* - Contiene la estructura de las tablas.<br/>
+*test-data.sql* - Contiene datos de prueba. No es obligatorio ejecutar.
