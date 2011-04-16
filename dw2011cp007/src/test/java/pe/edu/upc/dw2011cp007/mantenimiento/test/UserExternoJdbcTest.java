@@ -1,6 +1,8 @@
 package pe.edu.upc.dw2011cp007.mantenimiento.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertNull;
+import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,17 +13,30 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.UsuarioExternoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.UsuarioExternoRepository;
 
+/**
+ * Test con conexi&oacute;n a base de datos de los m&eacute;todos de la clase
+ * {@link UsuarioExternoModel}.
+ *
+ * @author <ul>
+ *         <li>Romeo Maita</li>
+ *         <li>Yonni Lopez</li>
+ *         <li>Miguel Cosio</li>
+ *         <li>Alexander Ramirez</li>
+ *         </ul>
+ */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
-
-public class UserExternoTest {
+public class UserExternoJdbcTest {
 	@Autowired
 	UsuarioExternoRepository usuarioExternoRepository;
-	
+
+	/**
+	 * Realiza las operaciones de un mantenimiento de un usuario externo. Es decir, un usuario cliente del cine.
+	 */
 	@Test
 	public void mantenimientousuarioExternoModel(){
 		UsuarioExternoModel usuarioExternoModel= new UsuarioExternoModel();
-		
+
 		usuarioExternoModel.setUserGenCodigo("PRUEBA01");
 		usuarioExternoModel.setUserGenApePaterno("PETROVICH");
 		usuarioExternoModel.setUserGenApeMaterno("GIL");
@@ -35,11 +50,11 @@ public class UserExternoTest {
 		usuarioExternoModel.setUserGenUsuarioPassword(usuarioExternoModel.getUserGenCodigo());
 		usuarioExternoModel.setUserGenEstadopassword("2");
 		usuarioExternoModel.setUserGenEstadoUsuario("0");
-		
+
 		boolean resinsert= usuarioExternoRepository.grabarUsuario(usuarioExternoModel);
 		assertTrue(resinsert);
 		System.out.println("Usuario: " + usuarioExternoModel.getUserGenApePaterno() + " registrado");
-			
+
 		//Buscar el registro ingresado
 		usuarioExternoModel=usuarioExternoRepository.buscarUsuarioExternoPorUsuario("PRUEBA01");
 		assertNotNull(usuarioExternoModel);
@@ -60,7 +75,7 @@ public class UserExternoTest {
 		System.out.println(usuarioExternoModel.getUserGenEstadopassword());
 		System.out.println(usuarioExternoModel.getUserGenFechaRegistro());
 		*/
-		
+
 		//actualizar el registro
 		usuarioExternoModel.setUserGenApePaterno("PETROVICH");
 		usuarioExternoModel.setUserGenApeMaterno("GILGIL");
@@ -69,18 +84,16 @@ public class UserExternoTest {
 		usuarioExternoModel.setUsuarioExternoPremium(true);
 		boolean resupdate = usuarioExternoRepository.actualizarUsuario(usuarioExternoModel);
 		assertTrue(resupdate);
-		System.out.println("Usuario "+ usuarioExternoModel.getUserGenNombre()+ " Actualizado - Premium: " +
-				usuarioExternoModel.isUsuarioExternoPremium());
-		
+		System.out.println("Usuario "+ usuarioExternoModel.getUserGenNombre()+ " Actualizado - Premium: " + usuarioExternoModel.isUsuarioExternoPremium());
+
 		usuarioExternoModel=usuarioExternoRepository.buscarUsuarioExternoPorUsuario("PRUEBA01");
-		
+
 		//borrar el registro
 		boolean resdelete = usuarioExternoRepository.eliminarUsuario("PRUEBA01");
 		assertTrue(resdelete);
-		
+
 		usuarioExternoModel=usuarioExternoRepository.buscarUsuarioExternoPorUsuario("OPETROVICH");
 		assertNull(usuarioExternoModel);
 		System.out.println("Usuario Eliminado");
-
 	}
 }

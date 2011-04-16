@@ -1,23 +1,20 @@
-package pe.edu.upc.dw2011cp007;
+package pe.edu.upc.dw2011cp007.seguridad.test;
 
 import org.junit.BeforeClass;
-
 import org.junit.runner.RunWith;
-
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import pe.edu.upc.dw2011cp007.seguridad.model.PerfilModel;
-
 import pe.edu.upc.dw2011cp007.seguridad.repository.PerfilRepository;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations={"classpath:pe/edu/upc/dw2011cp007/config/application-config.xml"})
 public class AsignaPerfilTest {
 	
-	static PerfilRepository lista_perfiles;
-//	static UsuarioInternoRepository lista_usuarios= new UsuarioInternoRepository();
-	
+	private PerfilRepository lista_perfiles;
+//	private UsuarioInternoRepository lista_usuarios= new UsuarioInternoRepository();
+
 	@BeforeClass
 	public static void crear_perfil(){
 		PerfilModel perfil1 = new PerfilModel();
@@ -71,8 +68,6 @@ public class AsignaPerfilTest {
 	
 	//@Test
 	public void asignaperfil(){
-		
 //		System.out.println(lista_usuarios.getCtrlUsuario().size()+"");
-		
 	}
 }
