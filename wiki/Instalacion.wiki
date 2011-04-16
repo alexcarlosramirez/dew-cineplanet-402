@@ -4,24 +4,24 @@
 
 Para la ejecucion del proyecto es necesario contar con los siguientes requerimientos:
 
-Mysql 5.1 o superior
-Apache Maven
-Spring Tool Suite
+Mysql 5.1 o superior <br>
+Apache Maven <br> 
+Spring Tool Suite <br>
 
 Se usaron los siguientes Frameworks:
 
-Junit 4.8.2
-Spring 3.05
-Spring MVC 3.05
-Spring Security 3.05
+Junit 4.8.2 <br>
+Spring 3.05 <br>
+Spring MVC 3.05 <br>
+Spring Security 3.05 <br>
 
-Para la Intranet y mantenimiento de tablas se uso:
+Para la Intranet y mantenimiento de tablas se uso:<br>
 
-SpringRoo 
+SpringRoo <br>
 
-El proyecto en de intranet de encuentra en el siguiente repositorio:
+El proyecto en de intranet de encuentra en el siguiente repositorio:<br>
 
-
+<br>
 Nuestro proyecto principal tiene un enlace que llama al proyecto de SpringRoo.
 
 = Details =
