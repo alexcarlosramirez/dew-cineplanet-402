@@ -13,10 +13,10 @@ import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
 import pe.edu.upc.dw2011cp007.cartelera.model.HorarioModel;
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaCineModel;
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.repository.HorarioRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaCineModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.util.Fechas;
 
 @Repository

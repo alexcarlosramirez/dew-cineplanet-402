@@ -9,9 +9,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
 @SessionAttributes({"listaCine"})

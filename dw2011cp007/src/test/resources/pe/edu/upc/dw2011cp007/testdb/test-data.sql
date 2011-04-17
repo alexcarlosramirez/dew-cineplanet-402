@@ -1,19 +1,3 @@
---Vt6kz8zr9Du8
-
-truncate table cp_tb_horario;
-truncate table cp_tb_peliculaartista;
-truncate table cp_tb_peliculacine;
-truncate table cp_tb_pelicula;
-truncate table cp_tb_pais;
-truncate table cp_tb_cine;
-truncate table cp_tb_artista;
-truncate table cp_tb_tipopelicula;
-
-truncate table cp_tb_Cliente;
-truncate table cp_tb_empleado;
-truncate table cp_tb_Perfil;
-truncate table cp_tb_funcion;
-
 insert into cp_tb_pais (no_pais) values ('PERU');
 insert into cp_tb_pais (no_pais) values ('COLOMBIA');
 insert into cp_tb_pais (no_pais) values ('BRAZIL');
@@ -119,22 +103,22 @@ insert into cp_tb_tipoproducto values (4, 'DULCES');
 insert into cp_tb_tipoproducto values (5, 'JUGUETES');
 insert into cp_tb_tipoproducto values (6, 'ACCESORIOS');
 
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (1, 'ASD13', 'POLO ESTAMPADO "MI PERRO"', 5.00, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (3, 'MOADI', 'WP "MI PERRO Y YO"', 0.00, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (5, '2938J', 'MUÑECO ANIMADO DEL PERRO', 10.00, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (2, '293DM', 'GORRO ESTAPADO ESCENA DE LA MORDIDA', 4.50, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (4, '239ID', 'VASO DE GASEOSA DE NO MUERDE', 1.00, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (6, '2M9FF', 'LLAVERO DEL MORDEDOR', 2.50, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (1, '2MF9I', 'JEAN DEL ABEJORRO', 23.00, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (2, '2O3IM', 'GORRO DEL ABEJORRO', 5.00, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (3, '2M3F0', 'WP "EL ABEJORRO"', 0.0, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (4, '2O30F', 'CANCHA DE ZANAHORIA', 2.00, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (5, '20FDO', 'JUGUETE MOVIBLE DE LA VERDURA ASESINA', 6.00, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (6, '23FI0', 'PEINE CON IMAGEN DE LA VERDURA ASESINA', 5.00, true);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (1, '945UH', 'MANTA DEL DIA DE CAMPO', 3.00, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (2, 'DN834', 'GORRO ROMANTICO DE YOLANDA', 2.5, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (3, 'KAJSB', 'WP DE LA PELEA DEL MAESTRO Y ALUMNO', 0.0, false);
-insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, fl_solopremiun) values (4, '2WDUH', 'CARAMELOS HORMIGA', 0.10, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (1, 'ASD13', 'POLO ESTAMPADO "MI PERRO"', 5.00, 5, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (3, 'MOADI', 'WP "MI PERRO Y YO"', 0.00, -1, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (5, '2938J', 'MUÑECO ANIMADO DEL PERRO', 10.00, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (2, '293DM', 'GORRO ESTAPADO ESCENA DE LA MORDIDA', 4.50, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (4, '239ID', 'VASO DE GASEOSA DE NO MUERDE', 1.00, 5, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (6, '2M9FF', 'LLAVERO DEL MORDEDOR', 2.50, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (1, '2MF9I', 'JEAN DEL ABEJORRO', 23.00, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (2, '2O3IM', 'GORRO DEL ABEJORRO', 5.00, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (3, '2M3F0', 'WP "EL ABEJORRO"', 0.0, -1, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (4, '2O30F', 'CANCHA DE ZANAHORIA', 2.00, 5, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (5, '20FDO', 'JUGUETE MOVIBLE DE LA VERDURA ASESINA', 6.00, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (6, '23FI0', 'PEINE CON IMAGEN DE LA VERDURA ASESINA', 5.00, 5, true);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (1, '945UH', 'MANTA DEL DIA DE CAMPO', 3.00, 5, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (2, 'DN834', 'GORRO ROMANTICO DE YOLANDA', 2.5, 5, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (3, 'KAJSB', 'WP DE LA PELEA DEL MAESTRO Y ALUMNO', 0.0, -1, false);
+insert into cp_tb_producto (id_tipoproducto, co_producto, no_producto, ss_producto, nu_stockproducto, fl_solopremiun) values (4, '2WDUH', 'CARAMELOS HORMIGA', 0.10, 5, false);
 update cp_tb_producto p set p.tx_rutaimagen = concat('P', p.co_producto, '.jpg');
 
 insert into cp_tb_productopelicula values (1, 1);

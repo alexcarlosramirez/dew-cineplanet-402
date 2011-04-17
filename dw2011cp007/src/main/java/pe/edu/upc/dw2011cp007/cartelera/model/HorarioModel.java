@@ -2,6 +2,8 @@ package pe.edu.upc.dw2011cp007.cartelera.model;
 
 import java.util.Date;
 
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaCineModel;
+
 
 public class HorarioModel {
 

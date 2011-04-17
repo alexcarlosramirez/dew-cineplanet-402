@@ -9,9 +9,9 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.cartelera.service.CarteleraService;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ProductoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 
@@ -37,7 +37,7 @@ public class PeliculaController {
 		peliculaModel.setEnestreno(enestreno!=null?true:false);
 		CineModel cineModel = new CineModel();
 		cineModel.setIdCine(idCine);
-		List<PeliculaModel> listaPelicula = carteleraService.buscarListaPelicula(peliculaModel, cineModel);
+		List<PeliculaModel> listaPelicula = mantenimientoService.buscarListaPelicula(peliculaModel, cineModel);
 		model.addAttribute("listaPeliculaFiltrada", listaPelicula);
 
 		return "publico/buscarpelicula";
@@ -50,7 +50,7 @@ public class PeliculaController {
 		PeliculaModel peliculaSel = new PeliculaModel();
 		peliculaSel.setIdPelicula(idPelicula);
 
-		PeliculaModel peliculaModel = carteleraService.buscarPelicula(peliculaSel);
+		PeliculaModel peliculaModel = mantenimientoService.buscarPelicula(peliculaSel);
 		model.addAttribute("peliculaSelecccionada", peliculaModel);
 
 		ArrayList<ProductoModel> listaMerchandising = mantenimientoService.buscarListaProductoPorPelicula(peliculaSel);
