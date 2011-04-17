@@ -266,15 +266,7 @@ padding:5px 5px 5px 20px;
 color:#FFFFFF;
 font-weight:bold;
 }
-.small_title{
-background-color:#385870;
-text-align:left;
-width:100%;
-padding:5px 5px 5px 15px;
-color:#FFFFFF;
-font-weight:bold;
-}
-.title2{
+.title2 {
 background-color:#eef1f3;
 text-align:left;
 width:300px;
@@ -283,7 +275,20 @@ color:#d8325d;
 font-weight:bold;
 margin-left:5px;
 }
-
+.small_title{
+  display: block;
+  background-color:#385870;
+  text-indent: 10px;
+  color:#FFFFFF;
+  font-weight:bold;
+  width: 320px;
+  height: 25px;
+}
+.list_movie {
+  width: 320px;
+  height: 469px;
+  overflow: auto;
+}
 /*-------------------details list----------------*/
 .details_list{
 padding:10px;
@@ -317,8 +322,8 @@ color:#d8325d;
 }
 /*---------------offer_box----------------------*/
 .offer_box{
-width:320px;
-height:106px;
+width:280px;
+height:120px;
 background-color:#f3f5f6;
 padding:10px;
 margin:10px 0px 10px 0px;
@@ -341,11 +346,10 @@ margin:5px;
 }
 .offer_info{
 padding:5px;
-}
-.offer_info span{
 font-weight:bold;
 color:#d8325d;
 }
+
 p.offer{
 text-align:justify;
 font-size:10px;

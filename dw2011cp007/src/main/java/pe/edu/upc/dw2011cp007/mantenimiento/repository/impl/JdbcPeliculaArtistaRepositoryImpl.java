@@ -1,4 +1,4 @@
-package pe.edu.upc.dw2011cp007.cartelera.repository.impl;
+package pe.edu.upc.dw2011cp007.mantenimiento.repository.impl;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,9 +11,9 @@ import javax.sql.DataSource;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
-import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaArtistaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.PeliculaArtistaRepository;
 
 
 @Repository

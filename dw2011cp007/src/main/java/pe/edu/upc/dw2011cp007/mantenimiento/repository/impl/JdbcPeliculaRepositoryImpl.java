@@ -1,4 +1,4 @@
-package pe.edu.upc.dw2011cp007.cartelera.repository.impl;
+package pe.edu.upc.dw2011cp007.mantenimiento.repository.impl;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,11 +13,11 @@ import org.springframework.jdbc.core.simple.ParameterizedRowMapper;
 import org.springframework.jdbc.core.support.JdbcDaoSupport;
 import org.springframework.stereotype.Repository;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
-import pe.edu.upc.dw2011cp007.cartelera.repository.PeliculaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.PeliculaRepository;
 import pe.edu.upc.dw2011cp007.util.Fechas;
 
 @Repository

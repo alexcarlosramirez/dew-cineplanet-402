@@ -5,15 +5,15 @@ import java.util.ArrayList;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pe.edu.upc.dw2011cp007.cartelera.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.CineModel;
-import pe.edu.upc.dw2011cp007.mantenimiento.model.CombosModel;
+import pe.edu.upc.dw2011cp007.mantenimiento.model.PeliculaModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.ProductoModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.model.SalasModel;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.ArtistaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.CineRepository;
-import pe.edu.upc.dw2011cp007.mantenimiento.repository.CombosRepository;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.PeliculaArtistaRepository;
+import pe.edu.upc.dw2011cp007.mantenimiento.repository.PeliculaRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.ProductoRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.repository.SalasRepository;
 import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
@@ -22,22 +22,21 @@ import pe.edu.upc.dw2011cp007.mantenimiento.service.MantenimientoService;
 public class MantenimientoServiceImpl implements MantenimientoService {
 
 	private CineRepository cineRepository;
-	private CombosRepository combosRepository;
 	private SalasRepository salasRepository;
 	private ProductoRepository productoRepository;
+	private PeliculaRepository peliculaRepository;
+	private PeliculaArtistaRepository peliculaArtistaRepository;
+
 	@Autowired
-	public MantenimientoServiceImpl(CineRepository cineRepository,ArtistaRepository artistaRepository
-			,CombosRepository combosRepository
-			,SalasRepository salasRepository
-			, ProductoRepository productoRepository
-	) {
+	public MantenimientoServiceImpl(CineRepository cineRepository, ArtistaRepository artistaRepository, SalasRepository salasRepository, ProductoRepository productoRepository, PeliculaRepository peliculaRepository, PeliculaArtistaRepository peliculaArtistaRepository) {
 		this.cineRepository = cineRepository;
 		this.artistaRepository = artistaRepository;
-		this.combosRepository = combosRepository;
 		this.salasRepository = salasRepository;
 		this.productoRepository = productoRepository;
+		this.peliculaRepository = peliculaRepository;
+		this.peliculaArtistaRepository = peliculaArtistaRepository;
 	}
-	
+
 	public boolean registrarCine(CineModel cineModel) {
 		return cineRepository.registrarCine(cineModel);
 	}
@@ -89,46 +88,23 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 		
 	}
 
-	public CineModel buscarCinePorNombre(String string) {
+	public CineModel buscarCinePorNombre(String nombrecine) {
 		ArrayList<CineModel> listaCineModel = cineRepository.buscarListaCine();
 		for (CineModel cineModel : listaCineModel) {
-			if (cineModel.getNombrecine().equals(string))
+			if (cineModel.getNombrecine().equals(nombrecine))
 				return cineModel;
 		}
 		return null;
-	}
-
-	public boolean registrarCombo(CombosModel combosModel) {
-		return combosRepository.registrarCombo(combosModel);
-		
-	}
-
-	public CombosModel buscarComboPorNombre(String string) {
-		ArrayList<CombosModel> listaCombosModel = combosRepository.buscarListaCombo();
-		for (CombosModel combosModel : listaCombosModel) {
-			if (combosModel.getNombreCombo().equals(string))
-				return combosModel;
-		}
-		return null;
-	}
-
-	public boolean actualizarCombo(CombosModel combosModel) {
-		return combosRepository.modificarCombo(combosModel);
-
-	}
-
-	public boolean eliminarCombo(CombosModel combosModel) {
-		return combosRepository.eliminarCombo(combosModel);
 	}
 
 	public boolean registrarSala(SalasModel salasModel) {
 		return salasRepository.registrarSala(salasModel);
 	}
 
-	public SalasModel buscarSalaPorNombre(String string) {
+	public SalasModel buscarSalaPorNombre(String nombresala) {
 		ArrayList<SalasModel> listaSalasModel = salasRepository.buscarListaSala();
 		for (SalasModel salasModel : listaSalasModel) {
-			if (salasModel.getNombreSala().equals(string))
+			if (salasModel.getNombreSala().equals(nombresala))
 				return salasModel;
 		}
 		return null;
@@ -145,5 +121,36 @@ public class MantenimientoServiceImpl implements MantenimientoService {
 	public ArrayList<ProductoModel> buscarListaProductoPorPelicula(
 			PeliculaModel peliculaModel) {
 		return productoRepository.buscarListaProductoPorPelicula(peliculaModel);
+	}
+
+	public ArrayList<ProductoModel> buscarListaProducto() {
+		return productoRepository.buscarListaProducto();
+	}
+
+	public ProductoModel buscarProducto(ProductoModel productoModel) {
+		return productoRepository.buscarProducto(productoModel);
+	}
+	public boolean registrarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.registrarPelicula(peliculaModel);
+	}
+
+	public boolean modificarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.modificarPelicula(peliculaModel);
+	}
+
+	public boolean eliminarPelicula(PeliculaModel peliculaModel) {
+		return peliculaRepository.eliminarPelicula(peliculaModel);
+	}
+
+	public PeliculaModel buscarPelicula(PeliculaModel peliculaSel) {
+		return peliculaRepository.buscarPelicula(peliculaSel);
+	}
+
+	public ArrayList<PeliculaModel> buscarListaPelicula(PeliculaModel peliculaBuscar, CineModel cineModel) {
+		return peliculaRepository.buscarListaPelicula(peliculaBuscar, cineModel);
+	}
+
+	public ArrayList<ArtistaModel> buscarListaArtistaPorPelicula(PeliculaModel peliculaModel) {
+		return peliculaArtistaRepository.buscarListaArtistaPorPelicula(peliculaModel);
 	}
 }

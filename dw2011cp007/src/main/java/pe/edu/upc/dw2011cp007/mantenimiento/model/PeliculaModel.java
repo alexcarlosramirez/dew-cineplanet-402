@@ -1,9 +1,7 @@
-package pe.edu.upc.dw2011cp007.cartelera.model;
+package pe.edu.upc.dw2011cp007.mantenimiento.model;
 
 import java.io.Serializable;
 
-import pe.edu.upc.dw2011cp007.mantenimiento.model.PaisModel;
-import pe.edu.upc.dw2011cp007.mantenimiento.model.TipopeliculaModel;
 
 
 @SuppressWarnings("serial")

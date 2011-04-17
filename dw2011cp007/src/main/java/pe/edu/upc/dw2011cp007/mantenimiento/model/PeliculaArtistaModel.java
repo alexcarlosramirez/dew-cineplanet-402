@@ -1,6 +1,5 @@
-package pe.edu.upc.dw2011cp007.cartelera.model;
+package pe.edu.upc.dw2011cp007.mantenimiento.model;
 
-import pe.edu.upc.dw2011cp007.mantenimiento.model.ArtistaModel;
 
 public class PeliculaArtistaModel {
 

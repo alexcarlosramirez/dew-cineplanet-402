@@ -7,9 +7,17 @@ public class ProductoModel {
 	private String codigoproducto;
 	private String nombreproducto;
 	private double precioproducto;
+	private int stockproducto;
 	private String rutaimagen;
 	private boolean solopremiun;
 
+	public ProductoModel() {
+		
+	}
+
+	public ProductoModel(Integer idProducto) {
+		this.idProducto = idProducto;
+	}
 	public int getIdProducto() {
 		return idProducto;
 	}
@@ -51,5 +59,11 @@ public class ProductoModel {
 	}
 	public void setSolopremiun(boolean solopremiun) {
 		this.solopremiun = solopremiun;
+	}
+	public int getStockproducto() {
+		return stockproducto;
+	}
+	public void setStockproducto(int stockproducto) {
+		this.stockproducto = stockproducto;
 	}
 }

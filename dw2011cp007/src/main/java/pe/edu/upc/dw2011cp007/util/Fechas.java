@@ -359,4 +359,9 @@ public class Fechas extends Date {
 		SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
 		return dateFormat.format(new Fechas());
 	}
+
+	public static String aFormato(Date fecha, String formato) {
+		SimpleDateFormat dateFormat = new SimpleDateFormat(formato);
+		return dateFormat.format(fecha);
+	}
 }

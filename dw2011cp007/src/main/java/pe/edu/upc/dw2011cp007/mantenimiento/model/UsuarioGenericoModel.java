@@ -1,6 +1,6 @@
 package pe.edu.upc.dw2011cp007.mantenimiento.model;
 
-public abstract class UsuarioGenericoModel {
+public class UsuarioGenericoModel {
 	
 	private String userGenCodigo;
 	private String userGenApePaterno;

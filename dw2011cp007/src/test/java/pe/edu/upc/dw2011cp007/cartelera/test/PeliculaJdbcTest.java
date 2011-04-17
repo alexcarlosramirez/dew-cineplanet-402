@@ -39,9 +39,7 @@ public class PeliculaJdbcTest {
 	public void buscarPeliculaPorNombre() {
 		PeliculaModel peliculaInsertar = new PeliculaModel();
 		peliculaInsertar.setNombrepelicula("LA CAIDA DEL IMPERIO DE LAS HORMIGAS");
-	
-		System.out.println("==========================================================");
-		System.out.println("@Test buscarPeliculaPorNombre");
+
 		PeliculaModel peliculaBuscar = mantenimientoService.buscarPelicula(peliculaInsertar);
 		assertNotNull(peliculaBuscar);
 		System.out.println(peliculaBuscar);
@@ -51,7 +49,7 @@ public class PeliculaJdbcTest {
 	 * Realiza, de manera r&aacute;pida, las operaciones del mantenimiento de una pelicula.
 	 * (Operaciones usadas para pruebas, el mantenimiento fue incluido en SpringRoo)
 	 */
-	@Test
+	//@Test
 	public void mantenimientoPelicula() {
 		PaisModel paisModel = new PaisModel();
 		paisModel.setIdPais(5);
